@@ -91,7 +91,7 @@
 <!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-  // Countdown Timer
+  // Countdown target: 29 May 2026, 09:00 AM
   const eventDate = new Date("May 29, 2026 09:00:00").getTime();
 
   function updateCountdown() {
@@ -116,10 +116,9 @@
     document.getElementById("seconds").innerText = seconds;
   }
 
-  // Run immediately on load
+  // Run immediately when page loads
   updateCountdown();
-
-  // Then run every second
+  // Then update every second
   const timer = setInterval(updateCountdown, 1000);
 </script>
 
