@@ -13,10 +13,9 @@
 
     /* Navbar with glass effect */
     .navbar { 
-      background: rgba(255, 255, 255, 0.7); 
-      backdrop-filter: blur(12px); 
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,0.3);
+      background: rgba(255, 255, 255, 0.85); 
+      backdrop-filter: blur(10px); 
+      -webkit-backdrop-filter: blur(10px);
     }
     .navbar-brand { font-weight: bold; color: #333 !important; display: flex; align-items: center; }
     .navbar-brand img { height: 40px; margin-right: 8px; }
@@ -37,50 +36,54 @@
     }
     .nav-link:hover::after { width: 100%; }
 
-    /* Hero Section */
+    /* Hero Section with Background Image + Gradient */
     .hero {
       position: relative;
       background: url("pic2.png") no-repeat center center/cover;
-      height: 65vh; /* smaller so the whole group fits */
+      height: 100vh;
       color: white;
       text-align: center;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 60px 15px 40px;
+      padding: 60px 15px 20px;
     }
     .hero::before {
       content: "";
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.45); /* dark overlay */
+      background: linear-gradient(135deg, rgba(30, 60, 150, 0.8), rgba(200, 0, 80, 0.8));
       z-index: 0;
     }
-    .hero::after {
-      content: "";
-      position: absolute;
-      bottom: 0; left: 0;
-      width: 100%; height: 120px;
-      background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(60,0,100,0.7) 70%, rgba(150,0,120,0.9) 100%);
-      z-index: 1;
-    }
-    .hero > * { position: relative; z-index: 2; }
-    .hero h1 { font-size: 2.6rem; font-weight: bold; margin-bottom: 10px; }
-    .hero p { font-size: 1.2rem; max-width: 800px; margin: 0 auto; }
+    .hero > * { position: relative; z-index: 1; }
 
-    /* Content Sections */
+    .hero h1 { font-size: 3rem; font-weight: bold; margin-bottom: 20px; }
+    .hero p { font-size: 1.2rem; max-width: 850px; margin: 0 auto; line-height: 1.6; }
+
+    /* Content Section */
     .content {
       padding: 80px 20px;
       background: #f9f9f9;
       color: #333;
-      position: relative;
-      z-index: 2;
+      text-align: center;
     }
-    .content h2 { font-weight: bold; margin-bottom: 20px; text-align: center; }
-    .content p, .content ul { max-width: 900px; margin: 0 auto 40px; font-size: 1.1rem; line-height: 1.7; text-align: center; }
+    .content h2 { font-weight: bold; margin-bottom: 20px; }
+    .content p, .content ul { max-width: 900px; margin: 0 auto 40px; font-size: 1.1rem; line-height: 1.7; }
     .content ul { text-align: left; }
     .content li { margin-bottom: 10px; }
+
+    /* Desktop adjustments */
+    @media (min-width: 769px) {
+      .hero h1 { font-size: 3.2rem; }
+      .hero p { font-size: 1.3rem; }
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 1rem; }
+    }
   </style>
 </head>
 <body>
@@ -89,8 +92,7 @@
 <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
   <div class="container">
     <a class="navbar-brand" href="index.html">
-      <img src="logo.png" alt="Logo">
-      FPTVSC 2026
+      <img src="logo.png" alt="Logo"> FPTVSC 2026
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
@@ -105,7 +107,7 @@
         <li class="nav-item"><a class="nav-link" href="sponsors.html">Sponsors</a></li>
         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
       </ul>
-      <img src="logo-uthm-web.png" alt="UTHM Logo" class="d-none d-lg-block" style="height:40px; margin-left:15px;">
+      <img src="logo-uthm-web.png" alt="UTHM Logo" style="height:40px; margin-left:15px;">
     </div>
   </div>
 </nav>
@@ -113,7 +115,12 @@
 <!-- Hero -->
 <section class="hero">
   <h1>About the Challenge</h1>
-  <p>Celebrating innovation, skills, and the spirit of TVET excellence — FPTV Skills Challenge 2026 unites young talents from across Malaysia.</p>
+  <p>
+    FPTV Skills Challenge 2026 celebrates innovation, skills, and the spirit of TVET excellence.  
+    Hosted by Universiti Tun Hussein Onn Malaysia (UTHM), this prestigious event brings together talented youths nationwide to compete in hands-on skill-based challenges.  
+    Over 70 participants across 7 diverse trades will showcase their technical mastery, creativity, and teamwork during 3 action-packed days.  
+    More than a competition, it is a platform for inspiring future industry leaders and advancing Malaysia’s TVET agenda in the era of Industry 4.0.
+  </p>
 </section>
 
 <!-- Content -->
@@ -129,19 +136,19 @@
 <section class="content">
   <h2>Objectives</h2>
   <ul>
-    <li>To provide a competitive platform for showcasing technical and vocational skills.</li>
-    <li>To bridge the gap between education and industry through hands-on challenges.</li>
-    <li>To encourage innovation, problem-solving, and entrepreneurial thinking among participants.</li>
-    <li>To foster collaboration across institutions, industries, and communities.</li>
-    <li>To cultivate a culture of excellence and resilience aligned with national TVET goals and SDG4.</li>
+    <li>Provide a competitive platform for showcasing technical and vocational skills.</li>
+    <li>Bridge the gap between education and industry through hands-on challenges.</li>
+    <li>Encourage innovation, problem-solving, and entrepreneurial thinking among participants.</li>
+    <li>Foster collaboration across institutions, industries, and communities.</li>
+    <li>Cultivate a culture of excellence and resilience aligned with national TVET goals and SDG4.</li>
   </ul>
 </section>
 
 <section class="content">
   <h2>Impact</h2>
   <p>
-    FPTV Skills Challenge has a transformative impact by preparing skilled graduates for the workforce, promoting lifelong learning, and enhancing Malaysia’s competitiveness globally.  
-    The 2026 edition will gather over <strong>70 participants</strong> across <strong>7 skill categories</strong>, competing in a dynamic 3-day event hosted at UTHM.
+    FPTV Skills Challenge strengthens Malaysia’s TVET ecosystem by preparing skilled graduates for the workforce, promoting lifelong learning, and elevating global competitiveness.  
+    The 2026 edition will bring together <strong>70 participants</strong> across <strong>7 skill trades</strong> in a dynamic 3-day showcase of excellence hosted at UTHM.
   </p>
 </section>
 
