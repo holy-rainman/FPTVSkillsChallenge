@@ -40,8 +40,8 @@
     /* Hero Section */
     .hero {
       position: relative;
-      background: url("pic1.png") no-repeat center center/cover;
-      height: 100vh;
+      background: url("pic2.png") no-repeat center center/cover;
+      height: 70vh;
       color: white;
       text-align: center;
       display: flex;
@@ -54,22 +54,26 @@
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.55);
       z-index: 0;
     }
     .hero > * { position: relative; z-index: 1; }
-    .hero h1 { font-size: 2.5rem; font-weight: bold; margin-bottom: 10px; }
-    .hero p { font-size: 1.1rem; }
+    .hero h1 { font-size: 2.8rem; font-weight: bold; margin-bottom: 10px; }
+    .hero p { font-size: 1.2rem; max-width: 800px; margin: 0 auto; }
 
-    /* Content Section */
+    /* Content Sections */
     .content {
       padding: 60px 20px;
       background: #f9f9f9;
       color: #333;
-      text-align: center;
     }
-    .content h2 { font-weight: bold; margin-bottom: 20px; }
-    .content p { max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.6; }
+    .content h2 { font-weight: bold; margin-bottom: 20px; text-align: center; }
+    .content p { max-width: 900px; margin: 0 auto 40px; font-size: 1.1rem; line-height: 1.7; text-align: center; }
+    .content ul { max-width: 800px; margin: 0 auto 40px; font-size: 1.05rem; line-height: 1.7; }
+    .content li { margin-bottom: 10px; }
+
+    /* Section Alternating Backgrounds */
+    .content:nth-child(even) { background: #ffffff; }
   </style>
 </head>
 <body>
@@ -94,7 +98,6 @@
         <li class="nav-item"><a class="nav-link" href="sponsors.html">Sponsors</a></li>
         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
       </ul>
-      <!-- UTHM Logo on right -->
       <img src="logo-uthm-web.png" alt="UTHM Logo" class="d-none d-lg-block" style="height:40px; margin-left:15px;">
     </div>
   </div>
@@ -103,15 +106,42 @@
 <!-- Hero -->
 <section class="hero">
   <h1>About the Challenge</h1>
-  <p>This is where you introduce the purpose, history, and vision of FPTV Skills Challenge 2026.</p>
+  <p>Celebrating innovation, skills, and the spirit of TVET excellence — FPTV Skills Challenge 2026 unites young talents from across Malaysia.</p>
 </section>
 
 <!-- Content -->
 <section class="content">
-  <h2>Our Mission</h2>
+  <h2>Our Mission & Vision</h2>
   <p>
-    The FPTV Skills Challenge 2026 is dedicated to promoting TVET excellence by bringing together students, educators, and industry experts. 
-    This page will highlight the history, objectives, and impact of the event.
+    <strong>Mission:</strong> To foster technical and vocational excellence through real-world competitions that enhance creativity, teamwork, and problem-solving among future industry leaders.  
+    <br><br>
+    <strong>Vision:</strong> To be a leading national TVET competition that empowers youth, nurtures industry-relevant skills, and supports Malaysia’s aspirations in the era of IR 4.0.
+  </p>
+</section>
+
+<section class="content">
+  <h2>Objectives</h2>
+  <ul>
+    <li>To provide a competitive platform for showcasing technical and vocational skills.</li>
+    <li>To bridge the gap between education and industry through hands-on challenges.</li>
+    <li>To encourage innovation, problem-solving, and entrepreneurial thinking among participants.</li>
+    <li>To foster collaboration across institutions, industries, and communities.</li>
+    <li>To cultivate a culture of excellence and resilience aligned with national TVET goals and SDG4.</li>
+  </ul>
+</section>
+
+<section class="content">
+  <h2>Key Stakeholders</h2>
+  <p>
+    The challenge is organized by <strong>Faculty of Technical and Vocational Education (FPTV), UTHM</strong>, with support from industry partners, educational institutions, and national bodies including <strong>BPLTV</strong>, <strong>WorldSkills Malaysia</strong>, and leading TVET-driven industries.
+  </p>
+</section>
+
+<section class="content">
+  <h2>Impact</h2>
+  <p>
+    FPTV Skills Challenge has a transformative impact by preparing skilled graduates for the workforce, promoting lifelong learning, and enhancing Malaysia’s competitiveness globally.  
+    The 2026 edition will gather over <strong>70 participants</strong> across <strong>7 skill categories</strong>, competing in a dynamic 3-day event hosted at UTHM.
   </p>
 </section>
 
