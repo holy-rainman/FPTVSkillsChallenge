@@ -36,11 +36,11 @@
     }
     .nav-link:hover::after { width: 100%; }
 
-    /* Hero Section with Background Image + Gradient */
+    /* Hero Section with Fixed Background + Gradient */
     .hero {
       position: relative;
       background: url("pic2.png") no-repeat center center/cover;
-      background-attachment: fixed; /* static background */
+      background-attachment: fixed; /* keeps background static */
       height: 100vh;
       color: white;
       text-align: center;
@@ -48,30 +48,31 @@
       flex-direction: column;
       justify-content: center;
       padding: 60px 15px 20px;
+      overflow: hidden;
     }
     .hero::before {
       content: "";
-      position: absolute;
+      position: fixed; /* overlay also fixed */
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: linear-gradient(135deg, rgba(30, 60, 150, 0.7), rgba(200, 0, 80, 0.7));
+      background: linear-gradient(135deg, rgba(30, 60, 150, 0.75), rgba(200, 0, 80, 0.75));
       z-index: 0;
-      background-attachment: fixed; /* static overlay */
     }
     .hero > * { position: relative; z-index: 1; }
 
+    /* Hero Text */
     .hero h1 { 
       font-size: 3rem; 
       font-weight: bold; 
       margin-bottom: 20px; 
-      text-shadow: 2px 2px 6px rgba(0,0,0,0.8); /* black glow */
+      text-shadow: 3px 3px 8px rgba(0,0,0,0.9); 
     }
     .hero p { 
       font-size: 1.2rem; 
       max-width: 850px; 
       margin: 0 auto; 
-      line-height: 1.6;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.7); /* black glow */
+      line-height: 1.6; 
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.85);
     }
 
     /* Content Section */
@@ -94,7 +95,8 @@
 
     /* Mobile adjustments */
     @media (max-width: 768px) {
-      .hero { background-attachment: scroll; } /* fix parallax issues on mobile */
+      .hero { background-attachment: scroll; } /* mobile fix */
+      .hero::before { position: absolute; }
       .hero h1 { font-size: 2rem; }
       .hero p { font-size: 1rem; }
     }
@@ -131,9 +133,8 @@
   <h1>About the Challenge</h1>
   <p>
     FPTV Skills Challenge 2026 celebrates innovation, skills, and the spirit of TVET excellence.  
-    Hosted by Universiti Tun Hussein Onn Malaysia (UTHM), this prestigious event brings together talented youths nationwide to compete in hands-on skill-based challenges.  
-    Over 70 participants across 7 diverse trades will showcase their technical mastery, creativity, and teamwork during 3 action-packed days.  
-    More than a competition, it is a platform for inspiring future industry leaders and advancing Malaysia’s TVET agenda in the era of Industry 4.0.
+    Hosted by Universiti Tun Hussein Onn Malaysia (UTHM), this prestigious event unites talented youths nationwide to compete in hands-on, skill-based challenges.  
+    With over 70 participants across 7 diverse trades, the Challenge is more than a competition — it is a platform for inspiring future industry leaders, promoting lifelong learning, and advancing Malaysia’s TVET agenda in the era of Industry 4.0.
   </p>
 </section>
 
@@ -143,7 +144,7 @@
   <p>
     <strong>Mission:</strong> To foster technical and vocational excellence through real-world competitions that enhance creativity, teamwork, and problem-solving among future industry leaders.  
     <br><br>
-    <strong>Vision:</strong> To be a leading national TVET competition that empowers youth, nurtures industry-relevant skills, and supports Malaysia’s aspirations in the era of IR 4.0.
+    <strong>Vision:</strong> To be Malaysia’s leading TVET competition that empowers youth, nurtures industry-relevant skills, and supports national aspirations in the era of IR 4.0.
   </p>
 </section>
 
