@@ -20,44 +20,60 @@
       background: linear-gradient(135deg, rgba(30, 30, 120, 0.9), rgba(200, 0, 100, 0.8));
       color: white;
       text-align: center;
-      padding: 90px 20px 120px 20px;
+      padding: 70px 20px 80px 20px; /* reduced padding for tighter fit */
     }
     .hero h1 {
       font-size: 3rem;
       font-weight: 700;
-      margin-top: -20px;
+      margin-top: -10px;
     }
     .hero p.subtheme {
-      font-size: 0.9rem; /* smaller so it fits in 1 line */
+      font-size: 1rem;
       margin-top: 5px;
-      white-space: nowrap; /* force single line */
-      overflow: hidden;
-      text-overflow: ellipsis;
+      white-space: nowrap; /* keep in one line */
     }
     @media (max-width: 768px) {
       .hero h1 { font-size: 2.3rem; }
-      .hero p.subtheme { font-size: 0.75rem; }
+      .hero p.subtheme { font-size: 0.85rem; }
     }
     .event-date {
       font-size: 1.1rem;
       font-weight: 600;
-      margin: 15px 0 5px 0;
+      margin: 10px 0 3px 0;
     }
     .event-venue {
       font-size: 1rem;
       font-weight: 500;
       margin-bottom: 20px;
     }
-    .countdown { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-top: 20px; }
+    .countdown {
+      display: flex;
+      justify-content: center;
+      flex-wrap: nowrap; /* force in one line */
+      gap: 15px;
+      margin-top: 20px;
+      overflow-x: auto; /* allow horizontal scroll on very small screens */
+    }
     .count-box {
       background: rgba(255, 255, 255, 0.2);
       padding: 20px;
       border-radius: 12px;
-      min-width: 120px;
+      min-width: 100px;
     }
     .count-box span { display: block; font-size: 2rem; font-weight: bold; }
-    .stats { display: flex; justify-content: center; gap: 40px; margin-top: 40px; flex-wrap: wrap; }
-    .stats .card { text-align: center; padding: 20px; border-radius: 12px; min-width: 150px; }
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+    .stats .card {
+      text-align: center;
+      padding: 20px;
+      border-radius: 12px;
+      min-width: 150px;
+    }
     .btn-custom { margin: 10px; }
   </style>
 </head>
@@ -90,7 +106,7 @@
 <!-- Hero -->
 <section class="hero" id="home">
   <h1>FPTV Skills Challenge</h1>
-  <p class="subtheme">Membangunkan Kecemerlangan Teknikal & Vokasional</p>
+  <p class="subtheme">Membangunkan Kecemerlangan TVET</p>
   <p class="event-date"><i class="bi bi-calendar-event"></i> Event Date: 29 – 31 May 2026</p>
   <p class="event-venue"><i class="bi bi-geo-alt"></i> UTHM</p>
   
