@@ -31,8 +31,17 @@
       padding: 15px;
       border-radius: 10px;
       min-width: 80px;
+      text-align: center;
     }
-    .count-box span { display: block; font-size: 1.5rem; font-weight: bold; }
+    .count-box span {
+      display: block;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .time-label {
+      font-size: 1rem;
+      font-weight: normal;
+    }
 
     .btn-custom { margin: 10px; }
 
@@ -53,6 +62,8 @@
       .hero h2 { font-size: 0.95rem; }
       .count-box { padding: 10px; min-width: 65px; }
       .count-box span { font-size: 1.2rem; }
+      .time-label { font-size: 0.9rem; }
+
       .stats { gap: 10px; }
       .stats .card { flex: 1 1 30%; padding: 10px; }
       .stats .label-desktop { display: none; }
@@ -96,10 +107,10 @@
   
   <h3>Event Countdown</h3>
   <div class="countdown">
-    <div class="count-box"><span id="days">0</span>Days</div>
-    <div class="count-box"><span id="hours">0</span>Hours</div>
-    <div class="count-box"><span id="minutes">0</span><span class="minutes-label">Minutes</span></div>
-    <div class="count-box"><span id="seconds">0</span><span class="seconds-label">Seconds</span></div>
+    <div class="count-box"><span id="days">0</span><div class="time-label days-label">Days</div></div>
+    <div class="count-box"><span id="hours">0</span><div class="time-label hours-label">Hours</div></div>
+    <div class="count-box"><span id="minutes">0</span><div class="time-label minutes-label">Minutes</div></div>
+    <div class="count-box"><span id="seconds">0</span><div class="time-label seconds-label">Seconds</div></div>
   </div>
   
   <div class="mt-4">
@@ -121,7 +132,7 @@
       <h4>3</h4>
       <p>
         <span class="label-desktop">Hari Pertandingan</span>
-        <span class="label-mobile">3 Hari</span>
+        <span class="label-mobile">Hari</span>
       </p>
     </div>
   </div>
