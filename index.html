@@ -116,9 +116,10 @@
     document.getElementById("seconds").innerText = seconds;
   }
 
-  // Run once immediately
+  // Run immediately on load
   updateCountdown();
-  // Then update every second
+
+  // Then run every second
   const timer = setInterval(updateCountdown, 1000);
 </script>
 
