@@ -19,86 +19,77 @@
       background: linear-gradient(135deg, #1e3c96 0%, #a00080 50%, #c80050 100%);
       color: white;
       text-align: center;
-      padding: 90px 20px 30px;
+      padding: 80px 15px 20px;
       height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
     }
-    .hero h1 { font-size: 3rem; font-weight: bold; margin-bottom: 10px; }
-    .hero h2 { font-size: 1.2rem; font-weight: normal; margin-bottom: 15px; }
-    .event-date, .event-venue { font-size: 1rem; margin-bottom: 6px; }
+    .hero h1 { font-size: 2.5rem; font-weight: bold; margin-bottom: 5px; }
+    .hero h2 { font-size: 1rem; font-weight: normal; margin-bottom: 10px; }
+    .event-date, .event-venue { font-size: 0.9rem; margin-bottom: 4px; }
 
-    /* UTHM logo in hero */
     .uthm-logo {
-      margin: 10px auto 20px;
-      max-height: 50px;
+      margin: 6px auto 12px;
+      max-height: 36px;
     }
 
     /* Countdown */
-    .countdown { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 10px; }
+    .countdown { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
     .count-box {
       background: rgba(255, 255, 255, 0.2);
-      padding: 25px 20px;
-      border-radius: 14px;
-      min-width: 110px;
+      padding: 10px;
+      border-radius: 10px;
+      min-width: 60px;
       text-align: center;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.2);
     }
     .count-box span {
       display: block;
-      font-size: 2.8rem;
-      font-weight: 800;
+      font-size: 1.3rem;
+      font-weight: bold;
       background: linear-gradient(45deg, #ffffff, #dcdcdc);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
     .time-label {
-      font-size: 1.1rem;
-      font-weight: 500;
-      margin-top: 5px;
+      font-size: 0.8rem;
+      font-weight: normal;
       color: #eee;
     }
 
     /* Buttons */
-    .btn-custom { margin: 10px; }
+    .btn-custom { margin: 8px; padding: 6px 14px; font-size: 0.9rem; }
 
     /* Stats */
     .stats {
       display: flex;
       justify-content: center;
-      gap: 12px;
-      margin-top: 20px;
+      gap: 6px;
+      margin-top: 12px;
       flex-wrap: wrap;
     }
     .stats .card {
-      flex: 1 1 100px;
+      flex: 1 1 30%;
       text-align: center;
       padding: 6px;
       border-radius: 8px;
       background: #fff;
       box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-      max-width: 140px;
+      max-width: 95px;
     }
-    .stats .card i { font-size: 1.5rem; margin-bottom: 3px; }
-    .stats .card h4 { font-size: 0.95rem; font-weight: 600; margin: 3px 0; }
-    .stats .card p { font-size: 0.8rem; margin: 0; }
+    .stats .card i { font-size: 1.2rem; margin-bottom: 2px; }
+    .stats .card h4 { font-size: 0.9rem; font-weight: 600; margin: 2px 0; }
+    .stats .card p { font-size: 0.7rem; margin: 0; }
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      body { overflow-y:hidden; }
-      .hero { padding-top: 80px; }
-      .hero h1 { font-size: 2.2rem; }
-      .hero h2 { font-size: 1rem; }
-      .count-box { padding: 15px; min-width: 70px; }
-      .count-box span { font-size: 1.8rem; }
-      .time-label { font-size: 0.9rem; }
-      .stats { gap: 6px; margin-top: 15px; }
-      .stats .card { flex: 1 1 30%; max-width: 100px; padding: 5px; }
-      .stats .card i { font-size: 1.2rem; }
-      .stats .card h4 { font-size: 0.8rem; }
-      .stats .card p { font-size: 0.7rem; }
-      .uthm-logo { max-height: 40px; margin: 8px auto 15px; }
+    /* Desktop adjustments */
+    @media (min-width: 769px) {
+      .hero h1 { font-size: 3rem; }
+      .hero h2 { font-size: 1.2rem; }
+      .count-box { padding: 20px; min-width: 110px; }
+      .count-box span { font-size: 2.6rem; }
+      .time-label { font-size: 1.1rem; }
+      .stats .card { max-width: 160px; padding: 10px; }
+      .uthm-logo { display:none; }
     }
   </style>
 </head>
@@ -135,7 +126,7 @@
   <p class="event-date"><i class="bi bi-calendar-event"></i> Event Date: 29 – 31 May 2026</p>
   <p class="event-venue"><i class="bi bi-geo-alt"></i> UTHM</p>
 
-  <!-- UTHM logo centered -->
+  <!-- UTHM logo centered (only mobile) -->
   <img src="logo-uthm-web.png" alt="UTHM Logo" class="uthm-logo d-block d-lg-none">
 
   <h3>Event Countdown</h3>
@@ -146,7 +137,7 @@
     <div class="count-box"><span id="seconds">0</span><div class="time-label seconds-label">Seconds</div></div>
   </div>
   
-  <div class="mt-4">
+  <div class="mt-3">
     <a href="#register" class="btn btn-danger btn-custom">Register Now</a>
     <a href="#categories" class="btn btn-primary btn-custom">View Categories</a>
   </div>
