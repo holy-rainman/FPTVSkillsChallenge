@@ -15,87 +15,103 @@
     .navbar-brand img { height: 40px; margin-right: 8px; }
     .navbar-nav img { height: 36px; margin-left: 15px; }
 
+    /* Hero Section with Background Image + Overlay */
     .hero {
-      background: linear-gradient(135deg, #1e3c96 0%, #a00080 50%, #c80050 100%);
+      position: relative;
+      background: url("pic1.png") no-repeat center center/cover;
+      height: 100vh;
       color: white;
       text-align: center;
-      padding: 70px 15px 20px;
-      height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      padding: 60px 15px 20px;
     }
-    .hero h1 { font-size: 2.5rem; font-weight: bold; margin-bottom: 5px; }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(135deg, rgba(30, 60, 150, 0.8), rgba(200, 0, 80, 0.8));
+      z-index: 0;
+    }
+    .hero > * { position: relative; z-index: 1; }
+
+    .hero h1 { font-size: 2.5rem; font-weight: bold; margin-bottom: 10px; }
     .hero h2 { font-size: 1rem; font-weight: normal; margin-bottom: 10px; }
     .event-date, .event-venue { font-size: 0.9rem; margin-bottom: 4px; }
 
     .uthm-logo {
       margin: 6px auto 12px;
-      max-height: 36px;
+      max-height: 40px;
     }
 
     /* Countdown */
-    .countdown { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
+    .countdown { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 10px; }
     .count-box {
       background: rgba(255, 255, 255, 0.2);
-      padding: 10px;
+      padding: 15px;
       border-radius: 10px;
-      min-width: 70px;
+      min-width: 80px;
       text-align: center;
     }
     .count-box span {
       display: block;
-      font-size: 1.3rem;
+      font-size: 1.8rem;
       font-weight: bold;
-      background: linear-gradient(45deg, #ffffff, #dcdcdc);
+      background: linear-gradient(45deg, #ffffff, #dddddd);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
     .time-label {
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       font-weight: normal;
       color: #eee;
     }
 
-    /* Buttons */
-    .btn-custom { margin: 8px; padding: 6px 14px; font-size: 0.9rem; }
+    .btn-custom { margin: 8px; padding: 8px 16px; font-size: 1rem; }
 
     /* Stats */
     .stats {
       display: flex;
       justify-content: center;
       gap: 12px;
-      margin-top: 15px;
+      margin-top: 20px;
       flex-wrap: wrap;
     }
     .stats .card {
-      flex: 1 1 30%;
+      flex: 1 1 25%;
       text-align: center;
-      padding: 8px;
-      border-radius: 8px;
+      padding: 10px;
+      border-radius: 10px;
       background: #fff;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      max-width: 150px;
     }
-    .stats .card i { font-size: 1.2rem; margin-bottom: 2px; }
-    .stats .card h4 { font-size: 0.9rem; font-weight: 600; margin: 2px 0; }
-    .stats .card p { font-size: 0.7rem; margin: 0; }
+    .stats .card i { font-size: 1.5rem; margin-bottom: 6px; }
+    .stats .card h4 { font-size: 1.2rem; font-weight: 600; margin: 5px 0; }
+    .stats .card p { font-size: 0.9rem; margin: 0; }
 
     /* Desktop adjustments */
     @media (min-width: 769px) {
-      .hero { padding: 70px 15px 20px; }
-      .hero h1 { font-size: 3rem; }
-      .hero h2 { font-size: 1.2rem; }
+      .hero h1 { font-size: 3.2rem; }
+      .hero h2 { font-size: 1.3rem; }
       .count-box { padding: 20px; min-width: 120px; }
       .count-box span { font-size: 2.8rem; }
-      .time-label { font-size: 1.1rem; }
-      .stats .card { max-width: 120px; padding: 12px; } /* reduced box width */
+      .time-label { font-size: 1.2rem; }
       .uthm-logo { display:none; }
     }
 
     /* Mobile adjustments */
     @media (max-width: 768px) {
-      .hero { padding-top: 40px; }
+      .hero { padding-top: 30px; }
       .hero h1 { font-size: 2rem; }
+      .hero h2 { font-size: 0.95rem; }
+      .count-box { padding: 10px; min-width: 65px; }
+      .count-box span { font-size: 1.4rem; }
+      .time-label { font-size: 0.8rem; }
+      .stats .card { max-width: 95px; padding: 6px; }
+      .uthm-logo { display:block; }
     }
   </style>
 </head>
