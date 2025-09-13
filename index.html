@@ -62,15 +62,14 @@
     }
     .count-box span { display: block; font-size: 2rem; font-weight: bold; }
 
-    /* ✅ Responsive countdown + stats */
+    /* ✅ Responsive countdown */
     @media (max-width: 768px) {
       .count-box { min-width: 70px; padding: 10px; }
       .count-box span { font-size: 1.2rem; }
       .count-box p { font-size: 0.75rem; } 
-      .stats { gap: 10px; }
-      .stats .card { flex: 1; min-width: 0; padding: 10px; }
     }
 
+    /* Stats section */
     .stats {
       display: flex;
       justify-content: center;
@@ -83,7 +82,24 @@
       padding: 20px;
       border-radius: 12px;
       min-width: 150px;
+      flex: 1;
     }
+
+    /* ✅ Responsive stats for Android */
+    @media (max-width: 768px) {
+      .stats {
+        gap: 8px;
+      }
+      .stats .card {
+        flex: 1 1 calc(33.33% - 10px);
+        min-width: 0;
+        padding: 12px;
+      }
+      .stats h4 { font-size: 1.1rem; }
+      .stats p { font-size: 0.75rem; }
+      .stats i { font-size: 1.4rem !important; }
+    }
+
     .btn-custom { margin: 10px; }
   </style>
 </head>
@@ -133,15 +149,15 @@
   </div>
   <div class="stats">
     <div class="card">
-      <i class="bi bi-people" style="font-size:2rem;"></i>
+      <i class="bi bi-people"></i>
       <h4>70</h4><p>Peserta</p>
     </div>
     <div class="card">
-      <i class="bi bi-trophy" style="font-size:2rem;"></i>
+      <i class="bi bi-trophy"></i>
       <h4>7</h4><p>Bidang Kemahiran</p>
     </div>
     <div class="card">
-      <i class="bi bi-calendar-event" style="font-size:2rem;"></i>
+      <i class="bi bi-calendar-event"></i>
       <h4>3</h4><p>Hari Pertandingan</p>
     </div>
   </div>
