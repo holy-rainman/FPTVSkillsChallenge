@@ -13,71 +13,85 @@
     .navbar { background: white; }
     .navbar-brand { font-weight: bold; color: #333 !important; display: flex; align-items: center; }
     .navbar-brand img { height: 40px; margin-right: 8px; }
-    .navbar-logo-right { height: 36px; margin-left: 10px; }
+    .navbar-nav img { height: 36px; margin-left: 15px; }
 
     .hero {
-      background: linear-gradient(
-        135deg,
-        rgba(30, 60, 150, 0.9) 0%,
-        rgba(120, 0, 100, 0.6) 50%,
-        rgba(200, 0, 80, 0.9) 100%
-      );
+      background: linear-gradient(135deg, #1e3c96 0%, #a00080 50%, #c80050 100%);
       color: white;
       text-align: center;
+      padding: 100px 20px 40px;
       height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 20px;
     }
     .hero h1 { font-size: 3rem; font-weight: bold; margin-bottom: 10px; }
-    .hero h2 { font-size: 1.2rem; margin-bottom: 15px; }
-    .event-date { font-size: 1rem; margin-bottom: 5px; }
-    .event-venue { font-size: 1rem; margin-bottom: 15px; }
-    .uthm-logo-mobile { display: none; margin: 10px auto; max-width: 120px; }
+    .hero h2 { font-size: 1.2rem; font-weight: normal; margin-bottom: 15px; }
+    .event-date, .event-venue { font-size: 1rem; margin-bottom: 8px; }
 
-    .countdown { display: flex; justify-content: center; gap: 15px; flex-wrap: nowrap; margin-bottom: 15px; }
+    /* Countdown Emphasis */
+    .countdown { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 10px; }
     .count-box {
       background: rgba(255, 255, 255, 0.2);
-      padding: 12px;
-      border-radius: 10px;
-      min-width: 90px;
+      padding: 30px 25px;
+      border-radius: 14px;
+      min-width: 130px;
       text-align: center;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.2);
     }
-    .count-box span { display: block; font-size: 1.6rem; font-weight: bold; }
-    .time-label { font-size: 1rem; }
+    .count-box span {
+      display: block;
+      font-size: 3rem;
+      font-weight: 800;
+      background: linear-gradient(45deg, #ffffff, #dcdcdc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .time-label {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-top: 5px;
+      color: #eee;
+    }
 
-    .btn-custom { margin: 8px; }
+    /* Buttons */
+    .btn-custom { margin: 10px; }
 
+    /* Stats Boxes */
     .stats {
       display: flex;
       justify-content: center;
       gap: 15px;
+      margin-top: 25px;
       flex-wrap: wrap;
     }
     .stats .card {
       flex: 1 1 100px;
       text-align: center;
-      padding: 12px;
-      border-radius: 12px;
+      padding: 8px;
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      max-width: 160px;
     }
-    .stats .label-desktop { display: inline; }
-    .stats .label-mobile { display: none; }
+    .stats .card i { font-size: 1.6rem; margin-bottom: 5px; }
+    .stats .card h4 { font-size: 1rem; font-weight: 600; margin: 5px 0; }
+    .stats .card p { font-size: 0.85rem; margin: 0; }
 
-    /* Responsive adjustments */
+    /* Responsive */
     @media (max-width: 768px) {
-      body { overflow:hidden; }
-      .hero { padding: 15px; }
+      body { overflow-y:hidden; }
+      .hero { padding-top: 80px; }
       .hero h1 { font-size: 2.2rem; }
       .hero h2 { font-size: 1rem; }
-      .uthm-logo-mobile { display: block; }
-      .count-box { padding: 8px; min-width: 65px; }
-      .count-box span { font-size: 1.2rem; }
+      .count-box { padding: 15px; min-width: 70px; }
+      .count-box span { font-size: 1.8rem; }
       .time-label { font-size: 0.9rem; }
-      .stats { gap: 8px; }
-      .stats .card { flex: 1 1 30%; padding: 8px; }
-      .stats .label-desktop { display: none; }
-      .stats .label-mobile { display: inline; }
+      .stats { gap: 8px; margin-top: 15px; }
+      .stats .card { flex: 1 1 30%; max-width: 110px; padding: 6px; }
+      .stats .card i { font-size: 1.3rem; }
+      .stats .card h4 { font-size: 0.9rem; }
+      .stats .card p { font-size: 0.75rem; }
     }
   </style>
 </head>
@@ -102,7 +116,7 @@
         <li class="nav-item"><a class="nav-link" href="#sponsors">Sponsors</a></li>
         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
       </ul>
-      <img src="logo-uthm-web.png" alt="UTHM" class="navbar-logo-right d-none d-lg-block">
+      <img src="logo-uthm-web.png" alt="UTHM Logo">
     </div>
   </div>
 </nav>
@@ -113,10 +127,7 @@
   <h2>Membangunkan Kecemerlangan TVET</h2>
   <p class="event-date"><i class="bi bi-calendar-event"></i> Event Date: 29 – 31 May 2026</p>
   <p class="event-venue"><i class="bi bi-geo-alt"></i> UTHM</p>
-
-  <!-- UTHM logo visible only on mobile -->
-  <img src="logo-uthm-web.png" alt="UTHM Logo" class="uthm-logo-mobile">
-
+  
   <h3>Event Countdown</h3>
   <div class="countdown">
     <div class="count-box"><span id="days">0</span><div class="time-label days-label">Days</div></div>
@@ -124,28 +135,24 @@
     <div class="count-box"><span id="minutes">0</span><div class="time-label minutes-label">Minutes</div></div>
     <div class="count-box"><span id="seconds">0</span><div class="time-label seconds-label">Seconds</div></div>
   </div>
-
-  <div>
+  
+  <div class="mt-4">
     <a href="#register" class="btn btn-danger btn-custom">Register Now</a>
     <a href="#categories" class="btn btn-primary btn-custom">View Categories</a>
   </div>
 
   <div class="stats">
     <div class="card">
-      <i class="bi bi-people" style="font-size:2rem;"></i>
+      <i class="bi bi-people"></i>
       <h4>70</h4><p>Peserta</p>
     </div>
     <div class="card">
-      <i class="bi bi-trophy" style="font-size:2rem;"></i>
+      <i class="bi bi-trophy"></i>
       <h4>7</h4><p>Bidang</p>
     </div>
     <div class="card">
-      <i class="bi bi-calendar-event" style="font-size:2rem;"></i>
-      <h4>3</h4>
-      <p>
-        <span class="label-desktop">Hari Pertandingan</span>
-        <span class="label-mobile">Hari</span>
-      </p>
+      <i class="bi bi-calendar-event"></i>
+      <h4>3</h4><p>Hari Pertandingan</p>
     </div>
   </div>
 </section>
@@ -158,14 +165,17 @@
     const now = new Date().getTime();
     const diff = eventDate - now;
     if (diff <= 0) return;
+
     const days = Math.floor(diff / (1000*60*60*24));
     const hours = Math.floor((diff % (1000*60*60*24))/(1000*60*60));
     const minutes = Math.floor((diff % (1000*60*60))/(1000*60));
     const seconds = Math.floor((diff % (1000*60))/1000);
+
     document.getElementById("days").innerText = days;
     document.getElementById("hours").innerText = hours;
     document.getElementById("minutes").innerText = minutes;
     document.getElementById("seconds").innerText = seconds;
+
     if (window.innerWidth <= 768) {
       document.querySelector(".minutes-label").innerText = "Min";
       document.querySelector(".seconds-label").innerText = "Sec";
