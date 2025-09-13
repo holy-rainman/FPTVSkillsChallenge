@@ -61,8 +61,8 @@
 <section class="hero" id="home">
   <h1>FPTVSC 2025</h1>
   <p>Pertandingan Kemahiran FPTV 2025 - Membangunkan Kecemerlangan Teknikal & Vokasional</p>
-  <h3>Event Countdown</h3>
-  <div class="countdown">
+  <h3 id="countdown-title">Event Countdown</h3>
+  <div class="countdown" id="countdown">
     <div class="count-box"><span id="days">0</span>Days</div>
     <div class="count-box"><span id="hours">0</span>Hours</div>
     <div class="count-box"><span id="minutes">0</span>Minutes</div>
@@ -93,19 +93,33 @@
 <script>
   // Countdown Timer
   const eventDate = new Date("May 26, 2025 09:00:00").getTime();
-  const timer = setInterval(function(){
+
+  function updateCountdown() {
     const now = new Date().getTime();
     const diff = eventDate - now;
-    const days = Math.floor(diff / (1000*60*60*24));
-    const hours = Math.floor((diff % (1000*60*60*24))/(1000*60*60));
-    const minutes = Math.floor((diff % (1000*60*60))/(1000*60));
-    const seconds = Math.floor((diff % (1000*60))/1000);
+
+    if (diff <= 0) {
+      document.getElementById("countdown-title").innerText = "Event Started!";
+      document.getElementById("countdown").style.display = "none";
+      clearInterval(timer);
+      return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
     document.getElementById("days").innerText = days;
     document.getElementById("hours").innerText = hours;
     document.getElementById("minutes").innerText = minutes;
     document.getElementById("seconds").innerText = seconds;
-    if(diff < 0) clearInterval(timer);
-  },1000);
+  }
+
+  // Run once immediately
+  updateCountdown();
+  // Then update every second
+  const timer = setInterval(updateCountdown, 1000);
 </script>
 
 </body>
