@@ -64,24 +64,22 @@
       display: block;
       font-size: 1.8rem;
       font-weight: bold;
-      background: linear-gradient(45deg, #ffffff, #dddddd);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: #fff; /* ensure bright text */
     }
     .time-label {
       font-size: 0.9rem;
       font-weight: normal;
-      color: #eee;
+      color: #f5f5f5;
     }
 
     .btn-custom { margin: 8px; padding: 8px 16px; font-size: 1rem; }
 
-    /* Stats */
+    /* Stats (Unified with Countdown Style) */
     .stats {
       display: flex;
       justify-content: center;
       gap: 12px;
-      margin-top: 20px;
+      margin-top: 15px; /* tighter gap with countdown */
       flex-wrap: wrap;
     }
     .stats .card {
@@ -89,13 +87,15 @@
       text-align: center;
       padding: 10px;
       border-radius: 10px;
-      background: rgba(255,255,255,0.9); /* translucent */
+      background: rgba(255,255,255,0.2); /* translucent */
       box-shadow: 0 2px 6px rgba(0,0,0,0.08);
       max-width: 150px;
+      color: #fff; /* white text */
+      font-weight: bold;
     }
-    .stats .card i { font-size: 1.5rem; margin-bottom: 6px; }
-    .stats .card h4 { font-size: 1.2rem; font-weight: 600; margin: 5px 0; }
-    .stats .card p { font-size: 0.9rem; margin: 0; }
+    .stats .card i { font-size: 1.6rem; margin-bottom: 6px; display: block; color: #fff; }
+    .stats .card h4 { font-size: 1.3rem; margin: 5px 0; font-weight: bold; }
+    .stats .card p { font-size: 0.9rem; margin: 0; color: #eee; }
 
     /* Desktop adjustments */
     @media (min-width: 769px) {
@@ -104,7 +104,7 @@
       .count-box { padding: 20px; min-width: 120px; }
       .count-box span { font-size: 2.8rem; }
       .time-label { font-size: 1.2rem; }
-      .stats .card { max-width: 160px; padding: 10px; }
+      .stats .card { max-width: 160px; padding: 12px; }
       .uthm-logo { display:none; }
     }
 
@@ -118,7 +118,7 @@
       .count-box { padding: 10px; min-width: 65px; }
       .count-box span { font-size: 1.4rem; }
       .time-label { font-size: 0.8rem; }
-      .stats { margin-top: 15px; }
+      .stats { margin-top: 10px; } /* reduced gap */
       .stats .card { max-width: 95px; padding: 6px; }
       .uthm-logo { display:block; }
     }
