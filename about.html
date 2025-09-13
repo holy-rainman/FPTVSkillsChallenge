@@ -40,6 +40,7 @@
     .hero {
       position: relative;
       background: url("pic2.png") no-repeat center center/cover;
+      background-attachment: fixed; /* static background */
       height: 100vh;
       color: white;
       text-align: center;
@@ -53,13 +54,25 @@
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: linear-gradient(135deg, rgba(30, 60, 150, 0.8), rgba(200, 0, 80, 0.8));
+      background: linear-gradient(135deg, rgba(30, 60, 150, 0.7), rgba(200, 0, 80, 0.7));
       z-index: 0;
+      background-attachment: fixed; /* static overlay */
     }
     .hero > * { position: relative; z-index: 1; }
 
-    .hero h1 { font-size: 3rem; font-weight: bold; margin-bottom: 20px; }
-    .hero p { font-size: 1.2rem; max-width: 850px; margin: 0 auto; line-height: 1.6; }
+    .hero h1 { 
+      font-size: 3rem; 
+      font-weight: bold; 
+      margin-bottom: 20px; 
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.8); /* black glow */
+    }
+    .hero p { 
+      font-size: 1.2rem; 
+      max-width: 850px; 
+      margin: 0 auto; 
+      line-height: 1.6;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.7); /* black glow */
+    }
 
     /* Content Section */
     .content {
@@ -81,6 +94,7 @@
 
     /* Mobile adjustments */
     @media (max-width: 768px) {
+      .hero { background-attachment: scroll; } /* fix parallax issues on mobile */
       .hero h1 { font-size: 2rem; }
       .hero p { font-size: 1rem; }
     }
