@@ -245,6 +245,12 @@
         margin-bottom: 0;
       }
     }
+    /* Hide Timeline section on mobile (Android) */
+    @media (max-width: 768px) {
+      section.timeline-section {
+        display: none;
+      }
+    }
     
   </style>
 </head>
@@ -320,7 +326,7 @@
 </section>
 
 <!-- Timeline -->
-<section class="glass-section" data-aos="fade-up">
+<section class="glass-section timeline-section" data-aos="fade-up">
   <div class="container">
     <h2>Our Journey</h2>
     <div class="timeline">
