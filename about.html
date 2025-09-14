@@ -70,7 +70,7 @@
     .hero {
       height: 35vh;
       padding-top: 80px;
-      padding-bottom: 0;  /* tighten space before next section */
+      padding-bottom: 0 !important; /* buang space bawah subtitle */
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -216,7 +216,7 @@
     }
      /* 🔧 Reduce first section gap */
       .glass-section:first-of-type {
-        margin-top: 10px;   /* reduce top margin of first section */
+         margin-top: 0 !important;     /* rapat terus dengan hero */
       }
     /* Mobile-specific fix */
        @media (max-width: 768px) {
