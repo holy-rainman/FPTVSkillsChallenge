@@ -62,6 +62,15 @@
       font-size: 2rem;
       color: #dc3545;
       margin-bottom: 12px;
+      transition: transform 0.3s;
+    }
+    .impact-cards .card:hover i {
+      animation: bounceIcon 0.8s;
+    }
+    @keyframes bounceIcon {
+      0%, 100% { transform: translateY(0); }
+      30% { transform: translateY(-8px); }
+      60% { transform: translateY(-4px); }
     }
 
     /* Timeline */
@@ -110,6 +119,10 @@
       border-radius: 12px;
       padding: 20px;
       text-align: center;
+      transition: transform 0.3s;
+    }
+    .testimonial:hover {
+      transform: scale(1.03);
     }
     .testimonial img {
       width: 80px; height: 80px;
@@ -177,7 +190,7 @@
         <h2>Empowering TVET, Shaping the Future</h2>
         <p>
           The <strong>FPTV Skills Challenge (FPTVSC)</strong> is proudly organized by the Faculty of Technical and Vocational Education (FPTV),
-          Universiti Tun Hussein Onn Malaysia, in conjunction with <strong>Hari TVET Negara</strong>. 
+          Universiti Tun Hussein Onn Malaysia, in conjunction with <strong>Hari TVET Negara</strong>.
           This annual event reflects FPTV’s commitment to producing graduates who are <em>job-ready, adaptable, and innovative</em>.
         </p>
         <p>
@@ -196,27 +209,27 @@
 </section>
 
 <!-- Why FPTVSC Matters -->
-<section class="impact-cards py-5 bg-light">
+<section class="impact-cards py-5 bg-light" data-aos="fade-up">
   <div class="container">
     <h2 class="fw-bold text-center mb-5">Why FPTVSC Matters</h2>
     <div class="row g-4">
       <div class="col-md-4" data-aos="zoom-in">
         <div class="card p-4 text-center h-100">
-          <i class="bi bi-lightbulb"></i>
+          <i class="bi bi-lightbulb animate__animated"></i>
           <h5 class="fw-bold">Innovation in Action</h5>
           <p>Students bring fresh solutions to technical challenges, showing the power of creativity in TVET fields.</p>
         </div>
       </div>
       <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
         <div class="card p-4 text-center h-100">
-          <i class="bi bi-people"></i>
+          <i class="bi bi-people animate__animated"></i>
           <h5 class="fw-bold">Collaboration & Teamwork</h5>
           <p>Competitions encourage teamwork, communication, and leadership — essential workplace skills.</p>
         </div>
       </div>
       <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
         <div class="card p-4 text-center h-100">
-          <i class="bi bi-award"></i>
+          <i class="bi bi-award animate__animated"></i>
           <h5 class="fw-bold">Excellence Recognized</h5>
           <p>Performance is evaluated by professionals, giving students recognition and exposure to industry standards.</p>
         </div>
@@ -310,15 +323,15 @@
     <h2 class="text-center mb-5">Testimonials</h2>
     <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="testimonial mx-auto col-md-6">
+        <div class="carousel-item active" data-aos="fade-up">
+          <div class="testimonial mx-auto col-md-6 animate__animated animate__fadeInUp">
             <img src="person1.jpg" alt="Student">
             <p>"FPTVSC gave me the confidence to apply my skills in real industry-like challenges."</p>
             <h6>- Student Participant</h6>
           </div>
         </div>
-        <div class="carousel-item">
-          <div class="testimonial mx-auto col-md-6">
+        <div class="carousel-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="testimonial mx-auto col-md-6 animate__animated animate__fadeInUp">
             <img src="person2.jpg" alt="Industry Expert">
             <p>"This event reflects the true potential of Malaysian TVET graduates."</p>
             <h6>- Industry Judge</h6>
