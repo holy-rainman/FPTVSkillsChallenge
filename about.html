@@ -13,14 +13,17 @@
 
     /* Navbar with glass effect */
     .navbar { 
-      background: rgba(255, 255, 255, 0.9); 
+      background: rgba(255, 255, 255, 0.85); 
       backdrop-filter: blur(10px); 
       -webkit-backdrop-filter: blur(10px);
     }
     .navbar-brand { font-weight: bold; color: #333 !important; display: flex; align-items: center; }
     .navbar-brand img { height: 40px; margin-right: 8px; }
     .navbar-nav img { height: 36px; margin-left: 15px; }
-    .nav-link { position: relative; transition: color 0.3s; }
+    .nav-link {
+      position: relative;
+      transition: color 0.3s;
+    }
     .nav-link::after {
       content: "";
       position: absolute;
@@ -38,7 +41,7 @@
       position: relative;
       background: url("pic1.png") no-repeat center center;
       background-size: cover;
-      height: 55vh;
+      height: 60vh;
       color: white;
       text-align: center;
       display: flex;
@@ -51,96 +54,67 @@
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: linear-gradient(135deg, rgba(30, 60, 150, 0.75), rgba(200, 0, 80, 0.75));
+      background: linear-gradient(135deg, rgba(30, 60, 150, 0.7), rgba(200, 0, 80, 0.7));
       z-index: 0;
     }
     .hero > * { position: relative; z-index: 1; }
 
-    /* Section styling */
-    .section-title {
+    @media (max-width: 768px) {
+      .hero {
+        background: url("pic6.png") no-repeat center center;
+        background-size: cover;
+      }
+    }
+
+    /* About content */
+    .about-section {
+      padding: 60px 20px;
+    }
+    .about-section h2 {
       font-weight: bold;
       margin-bottom: 20px;
     }
-    .about-section, .mission-vision, .impact-cards, .future-vision {
-      padding: 70px 20px;
+    .about-section p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #444;
     }
-
-    /* Image alignment */
-    .about-img {
-      max-height: 320px;
+    .about-section ul {
+      margin-top: 15px;
+    }
+    .about-section li {
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+    .about-section .row {
+      min-height: 320px;
+    }
+    .about-section img {
       width: 100%;
+      height: auto;
       object-fit: contain;
+      margin: auto;
+    }
+    .about-section .col-md-6 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
-    /* Cards */
-    .icon-card i {
-      font-size: 2.2rem;
-      color: #dc3545;
-      margin-bottom: 10px;
-    }
-    .icon-card {
+    /* Impact cards */
+    .impact-cards .card {
+      border: none;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      padding: 25px;
       transition: transform 0.3s, box-shadow 0.3s;
-      background: #fff;
     }
-    .icon-card:hover {
+    .impact-cards .card:hover {
       transform: translateY(-6px);
       box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     }
-
-    /* Timeline */
-    .timeline {
-      position: relative;
-      padding: 2rem 0;
-      margin-top: 40px;
-    }
-    .timeline::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 50%;
-      width: 4px;
-      background: #dc3545;
-      transform: translateX(-50%);
-    }
-    .timeline-item {
-      position: relative;
-      margin: 2rem 0;
-      width: 50%;
-      padding: 1rem 2rem;
-    }
-    .timeline-item.left { left: 0; text-align: right; }
-    .timeline-item.right { left: 50%; }
-    .timeline-item::before {
-      content: "";
-      position: absolute;
-      top: 20px;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background: #fff;
-      border: 4px solid #dc3545;
-      z-index: 1;
-    }
-    .timeline-item.left::before { right: -10px; }
-    .timeline-item.right::before { left: -10px; }
-    .timeline-card {
-      background: #fff;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-
-    /* Testimonials placeholder */
-    .testimonials {
-      background: #f8f9fa;
-      padding: 70px 20px;
-      text-align: center;
-      color: #777;
-      font-style: italic;
+    .impact-cards .card i {
+      font-size: 2rem;
+      margin-bottom: 12px;
     }
 
     /* Bottom-right logo */
@@ -173,10 +147,9 @@
     }
 
     @media (max-width: 768px) {
-      .timeline::before { left: 8px; }
-      .timeline-item { width: 100%; padding-left: 2.5rem; text-align: left !important; }
-      .timeline-item.left, .timeline-item.right { left: 0; }
-      .timeline-item::before { left: -2px; }
+      .bottom-right-logo img {
+        height: 28px;
+      }
     }
   </style>
 </head>
@@ -209,127 +182,74 @@
 <!-- Hero -->
 <section class="hero" id="about">
   <h1>About FPTV Skills Challenge 2026</h1>
-  <p class="lead">Showcasing TVET excellence and preparing students for the workforce of tomorrow.</p>
+  <p class="lead">
+    Showcasing TVET excellence and preparing students for the workforce of tomorrow.
+  </p>
 </section>
 
-<!-- About the Event (Hari TVET Negara) -->
+<!-- About Content -->
 <section class="about-section">
   <div class="container">
-    <div class="row g-5 align-items-center">
-      <div class="col-md-6 text-center">
-        <img src="about.png" alt="FPTV Skills Challenge" class="img-fluid about-img rounded shadow">
-      </div>
+    <div class="row g-5">
+      <!-- Left image -->
       <div class="col-md-6">
-        <h2 class="section-title">About the Event</h2>
+        <img src="about.png" alt="FPTV Skills Challenge" class="img-fluid rounded shadow">
+      </div>
+      <!-- Right content -->
+      <div class="col-md-6">
+        <h2>Empowering TVET, Shaping the Future</h2>
         <p>
           The <strong>FPTV Skills Challenge (FPTVSC)</strong> is proudly organized by the Faculty of Technical and Vocational Education (FPTV), Universiti Tun Hussein Onn Malaysia, 
-          in conjunction with <strong>Hari TVET Negara</strong> — a national initiative dedicated to celebrating and strengthening Malaysia’s <strong>Technical and Vocational Education and Training (TVET)</strong> ecosystem.
+          in conjunction with <strong>Hari TVET Negara</strong>. This annual event reflects FPTV’s commitment to producing graduates who are <em>job-ready, adaptable, and innovative</em>.
         </p>
         <p>
-          By aligning with Hari TVET Negara, FPTVSC underscores its role as more than a student competition: it is a <strong>national movement</strong> to elevate skills, foster innovation, and connect academia with industry demands. 
+          Through hands-on competitions judged by industry experts, students demonstrate technical knowledge, creativity, and collaboration that directly mirror workplace demands. 
+          The challenge provides real-world exposure, strengthens industry–academia ties, and promotes TVET as a premier pathway to professional success.
         </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Mission & Vision -->
-<section class="mission-vision bg-light">
-  <div class="container">
-    <h2 class="section-title text-center">Mission & Vision</h2>
-    <div class="row g-4 mt-4">
-      <div class="col-md-6">
-        <div class="icon-card h-100">
-          <i class="bi bi-bullseye"></i>
-          <h5>Mission</h5>
-          <ul>
-            <li>Enhance TVET graduates’ competitiveness through real-world skill challenges.</li>
-            <li>Promote industry-aligned competencies reflecting workplace demands.</li>
-            <li>Foster creativity, innovation, and collaboration among students.</li>
-            <li>Establish FPTVSC as a benchmark competition aligned with national and international TVET agendas.</li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="icon-card h-100">
-          <i class="bi bi-eye"></i>
-          <h5>Vision</h5>
-          <ul>
-            <li>Be recognized as Malaysia’s leading TVET skills competition.</li>
-            <li>Expand to MTUN and ASEAN participation.</li>
-            <li>Support Hari TVET Negara and Malaysia’s graduate employability goals.</li>
-            <li>Champion innovation and excellence in TVET education.</li>
-          </ul>
-        </div>
+        <ul class="list-unstyled">
+          <li>✅ Strengthening industry collaboration</li>
+          <li>✅ Enhancing practical, job-ready skills</li>
+          <li>✅ Promoting innovation and creativity in TVET</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Growth & Impact -->
-<section class="about-section">
+<section class="impact-cards py-5 bg-light">
   <div class="container">
-    <h2 class="section-title">Growth & Impact</h2>
-    <ul>
-      <li><strong>Started in 2024</strong>: Hosted by FPTV, UTHM, with sponsors steadily growing alongside the event.</li>
-      <li><strong>Rising Participation</strong>: Students compete in pre-qualification rounds, with only the best reaching the finals.</li>
-      <li><strong>Expanding Reach</strong>: While currently within FPTV, FPTVSC is set to expand across MTUN and beyond.</li>
-      <li><strong>Industry Relevance</strong>: Endorsed by industry experts, ensuring challenges mirror workplace demands.</li>
-    </ul>
-  </div>
-</section>
-
-<!-- Timeline -->
-<section class="timeline-section bg-light">
-  <div class="container">
-    <h2 class="section-title text-center">Our Journey</h2>
-    <div class="timeline">
-      <div class="timeline-item left">
-        <div class="timeline-card">
-          <h5>2024 – The Beginning</h5>
-          <p>FPTV Skills Challenge started at UTHM with participation limited to FPTV students.</p>
+    <h2 class="fw-bold text-center mb-5">Growth & Impact</h2>
+    <div class="row g-4 text-center">
+      <div class="col-md-3">
+        <div class="card h-100 p-4 shadow-sm border-0">
+          <i class="bi bi-calendar-event text-danger"></i>
+          <h5 class="fw-bold mt-3">Started in 2024</h5>
+          <p>Hosted by FPTV, UTHM, with sponsors steadily growing alongside the event.</p>
         </div>
       </div>
-      <div class="timeline-item right">
-        <div class="timeline-card">
-          <h5>2025 – Growing Recognition</h5>
-          <p>More sponsors came onboard as the competition gained attention for its TVET focus.</p>
+      <div class="col-md-3">
+        <div class="card h-100 p-4 shadow-sm border-0">
+          <i class="bi bi-people-fill text-primary"></i>
+          <h5 class="fw-bold mt-3">Rising Participation</h5>
+          <p>Students compete in pre-qualification rounds, with only the best reaching the finals.</p>
         </div>
       </div>
-      <div class="timeline-item left">
-        <div class="timeline-card">
-          <h5>2026 – Towards Expansion</h5>
-          <p>Pre-qualification rounds introduced, with participants expanding beyond FPTV into other faculties within UTHM, strengthening collaboration across disciplines.</p>
+      <div class="col-md-3">
+        <div class="card h-100 p-4 shadow-sm border-0">
+          <i class="bi bi-arrows-angle-expand text-success"></i>
+          <h5 class="fw-bold mt-3">Expanding Reach</h5>
+          <p>Currently within FPTV, FPTVSC is set to expand across MTUN and beyond.</p>
         </div>
       </div>
-      
-      <div class="timeline-item right">
-        <div class="timeline-card">
-          <h5>Future – MTUN Collaboration</h5>
-          <p>Exploring integration with the Malaysian Technical University Network (MTUN), a strategic alliance of four universities (UTHM, UTeM, UMP, UniMAP). 
-          This collaboration aims to elevate TVET competitions into a broader platform, preparing the ground for eventual national and ASEAN-level showcases.</p>
+      <div class="col-md-3">
+        <div class="card h-100 p-4 shadow-sm border-0">
+          <i class="bi bi-award-fill text-warning"></i>
+          <h5 class="fw-bold mt-3">Industry Relevance</h5>
+          <p>Endorsed by industry experts, ensuring challenges mirror workplace demands.</p>
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- Testimonials Placeholder -->
-<section class="testimonials">
-  <h2 class="section-title">Testimonials</h2>
-  <p>“This section will showcase quotes from participants, winners, and sponsors in the future.”</p>
-</section>
-
-<!-- Future Vision -->
-<section class="future-vision">
-  <div class="container">
-    <h2 class="section-title">Future Vision</h2>
-    <ul>
-      <li>Expand participation nationwide, including MTUN and beyond.</li>
-      <li>Introduce international exposure for Malaysian students.</li>
-      <li>Strengthen industry partnerships for more relevant challenges.</li>
-      <li>Position FPTVSC as a launchpad for engineers, technologists, and educators.</li>
-    </ul>
   </div>
 </section>
 
@@ -340,9 +260,11 @@
 <div class="bottom-right-logo">
   <img src="pic3.png" alt="Reduced Logo">
 </div>
+
 <div class="visitor-counter">
   👀 <span id="visitorCount">1200</span> Visitors
 </div>
+
 <script>
   let count = localStorage.getItem("visitorCount") || 1200;
   count++;
