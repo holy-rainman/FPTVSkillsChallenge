@@ -93,8 +93,6 @@
     }
     .hero h1 {
       font-weight: bold;
-      font-size: 2.5rem;
-      text-shadow: 0 0 6px rgba(0,0,0,0.9);
       margin-bottom: 10px;
     }
     .hero p {
@@ -234,13 +232,23 @@
       margin-top: 0 !important;
       padding-top: 0 !important; /* instead of default 60px */
     }
+
+    /* Desktop size (same as index.html) */
+    @media (min-width: 769px) {
+      .hero h1 {
+        font-size: 3.2rem;
+      }
+    }
     /* Mobile-specific fix */
        @media (max-width: 768px) {
       .hero {
         padding-top: 110px;     /* space bawah navbar 90*/
         padding-bottom: 0px;   /* rapatkan subtitle dengan section bawah */
       }
-    
+      .hero h1 {
+        font-size: 1.8rem;
+        margin-bottom: 6px;
+      }
       .hero p {
         font-size: 0.9rem;   /* smaller font for subtitle */
         margin-bottom: 0px;   /* rapatkan subtitle 10*/
