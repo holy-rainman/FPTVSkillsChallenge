@@ -36,12 +36,12 @@
     }
     .nav-link:hover::after { width: 100%; }
 
-    /* Hero Section (background, gradient, overlay) */
+    /* Hero Section */
     .hero {
       position: relative;
       background: url("pic1.png") no-repeat center center;
       background-size: cover;
-      height: 80vh; /* slightly reduced so categories are easier to reach */
+      height: 70vh;
       color: white;
       text-align: center;
       display: flex;
@@ -59,7 +59,6 @@
     }
     .hero > * { position: relative; z-index: 1; }
 
-    /* Mobile background override */
     @media (max-width: 768px) {
       .hero {
         background: url("pic6.png") no-repeat center center;
@@ -67,28 +66,77 @@
       }
     }
 
-    /* UTHM logo with white transparent box */
-    .uthm-logo {
-      margin: 6px auto 10px;
-      max-height: 36px;
-      background: rgba(255,255,255,0.65);
-      padding: 4px 10px;
+    /* About content */
+    .about-section {
+      padding: 80px 20px;
+    }
+    .about-section h2 {
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .about-section p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #444;
+    }
+    .about-section ul {
+      margin-top: 15px;
+    }
+    .about-section li {
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+
+    /* Highlight cards */
+    .impact-cards .card {
+      border: none;
       border-radius: 12px;
-      display: inline-block;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .impact-cards .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .impact-cards .card i {
+      font-size: 2rem;
+      color: #dc3545;
+      margin-bottom: 12px;
     }
 
-    /* Competition Categories */
-    .competition-categories h5 { margin-top: 10px; font-weight: bold; }
-    .competition-categories p { font-size: 0.9rem; color: #555; }
-
-    /* Desktop adjustments */
-    @media (min-width: 769px) {
-      .uthm-logo { display:none; }
+    /* Bottom-right logo */
+    .bottom-right-logo {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      z-index: 1000;
+    }
+    .bottom-right-logo img {
+      height: 40px;
+      width: auto;
+      opacity: 0.9;
     }
 
-    /* Mobile adjustments */
+    /* Visitor counter */
+    .visitor-counter {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      background: rgba(255,255,255,0.7);
+      padding: 4px 10px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      color: #333;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
     @media (max-width: 768px) {
-      .uthm-logo { display:block; }
+      .bottom-right-logo img {
+        height: 28px;
+      }
     }
   </style>
 </head>
@@ -121,71 +169,66 @@
 <!-- Hero -->
 <section class="hero" id="about">
   <h1>About FPTV Skills Challenge 2026</h1>
-  <p class="lead">The Faculty of Technical and Vocational Education (FPTV), Universiti Tun Hussein Onn Malaysia, proudly organizes the FPTV Skills Challenge as part of <strong>Hari TVET Negara</strong>. This initiative showcases the commitment of the faculty to empower TVET education and prepare students with real-world, job-ready skills.</p>
+  <p class="lead">
+    Showcasing TVET excellence and preparing students for the workforce of tomorrow.
+  </p>
 </section>
 
-<!-- Competition Categories Section -->
-<section class="competition-categories py-5" id="categories">
-  <div class="container text-center">
-    <h2 class="fw-bold mb-4">Competition Categories</h2>
+<!-- About Content -->
+<section class="about-section">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <!-- Left image -->
+      <div class="col-md-6 text-center">
+        <img src="about_pic.png" alt="FPTV Skills Challenge" class="img-fluid rounded shadow">
+      </div>
+      <!-- Right content -->
+      <div class="col-md-6">
+        <h2>Empowering TVET, Shaping the Future</h2>
+        <p>
+          The <strong>FPTV Skills Challenge (FPTVSC)</strong> is proudly organized by the Faculty of Technical and Vocational Education (FPTV), Universiti Tun Hussein Onn Malaysia, 
+          in conjunction with <strong>Hari TVET Negara</strong>. This annual event reflects FPTV’s commitment to producing graduates who are <em>job-ready, adaptable, and innovative</em>.
+        </p>
+        <p>
+          Through hands-on competitions judged by industry experts, students demonstrate technical knowledge, creativity, and collaboration that directly mirror workplace demands. 
+          The challenge provides real-world exposure, strengthens industry–academia ties, and promotes TVET as a premier pathway to professional success.
+        </p>
+        <ul class="list-unstyled">
+          <li>✅ Strengthening industry collaboration</li>
+          <li>✅ Enhancing practical, job-ready skills</li>
+          <li>✅ Promoting innovation and creativity in TVET</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Impact Highlights -->
+<section class="impact-cards py-5 bg-light">
+  <div class="container">
+    <h2 class="fw-bold text-center mb-5">Why FPTVSC Matters</h2>
     <div class="row g-4">
-
-      <!-- Electrical -->
-      <div class="col-6 col-md-3">
-        <img src="icon_Electrical.png" alt="Electrical" class="img-fluid mb-2" style="height:70px;">
-        <h5>Electrical</h5>
-        <p>Hands-on wiring, diagnostics, and control.</p>
+      <div class="col-md-4">
+        <div class="card p-4 text-center h-100">
+          <i class="bi bi-lightbulb"></i>
+          <h5 class="fw-bold">Innovation in Action</h5>
+          <p>Students bring fresh solutions to technical challenges, showing the power of creativity in TVET fields.</p>
+        </div>
       </div>
-
-      <!-- Electronics -->
-      <div class="col-6 col-md-3">
-        <img src="icon_Electronics.png" alt="Electronics" class="img-fluid mb-2" style="height:70px;">
-        <h5>Electronics</h5>
-        <p>Circuit design, embedded system programming & assembly.</p>
+      <div class="col-md-4">
+        <div class="card p-4 text-center h-100">
+          <i class="bi bi-people"></i>
+          <h5 class="fw-bold">Collaboration & Teamwork</h5>
+          <p>Competitions encourage teamwork, communication, and leadership — essential workplace skills.</p>
+        </div>
       </div>
-
-      <!-- Welding -->
-      <div class="col-6 col-md-3">
-        <img src="icon_Welding.png" alt="Welding" class="img-fluid mb-2" style="height:70px;">
-        <h5>Welding</h5>
-        <p>Fabrication practices with design and planning.</p>
+      <div class="col-md-4">
+        <div class="card p-4 text-center h-100">
+          <i class="bi bi-award"></i>
+          <h5 class="fw-bold">Excellence Recognized</h5>
+          <p>Performance is evaluated by professionals, giving students recognition and exposure to industry standards.</p>
+        </div>
       </div>
-
-      <!-- Creative Multimedia -->
-      <div class="col-6 col-md-3">
-        <img src="icon_Creative.png" alt="Creative Multimedia" class="img-fluid mb-2" style="height:70px;">
-        <h5>Creative Multimedia</h5>
-        <p>Graphic design and animation tasks.</p>
-      </div>
-
-      <!-- Machining -->
-      <div class="col-6 col-md-3">
-        <img src="icon_Machining.png" alt="Machining" class="img-fluid mb-2" style="height:70px;">
-        <h5>Machining</h5>
-        <p>Metal cutting, turning, and tool handling.</p>
-      </div>
-
-      <!-- Culinary -->
-      <div class="col-6 col-md-3">
-        <img src="icon_Cooking.png" alt="Culinary" class="img-fluid mb-2" style="height:70px;">
-        <h5>Culinary</h5>
-        <p>Food preparation, kitchen techniques, and hygiene practices.</p>
-      </div>
-
-      <!-- HVAC -->
-      <div class="col-6 col-md-3">
-        <img src="icon_HVAC.png" alt="HVAC" class="img-fluid mb-2" style="height:70px;">
-        <h5>HVAC</h5>
-        <p>Air-conditioning design and troubleshooting.</p>
-      </div>
-
-      <!-- Civil Technology -->
-      <div class="col-6 col-md-3">
-        <img src="icon_Civil.png" alt="Civil Technology" class="img-fluid mb-2" style="height:70px;">
-        <h5>Civil Technology</h5>
-        <p>Construction planning, structural design, and site practices.</p>
-      </div>
-
     </div>
   </div>
 </section>
@@ -201,44 +244,6 @@
 <div class="visitor-counter">
   👀 <span id="visitorCount">1200</span> Visitors
 </div>
-
-<style>
-  /* bottom-right logo */
-  .bottom-right-logo {
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    z-index: 1000;
-  }
-  .bottom-right-logo img {
-    height: 40px;
-    width: auto;
-    opacity: 0.9;
-  }
-
-  /* visitor counter */
-  .visitor-counter {
-    position: fixed;
-    bottom: 10px;
-    left: 10px;
-    background: rgba(255,255,255,0.7);
-    padding: 4px 10px;
-    border-radius: 8px;
-    font-size: 0.8rem;
-    color: #333;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-  }
-
-  /* Mobile adjustment */
-  @media (max-width: 768px) {
-    .bottom-right-logo img {
-      height: 28px;
-    }
-  }
-</style>
 
 <script>
   // simple visitor counter simulation (increments when page reloads)
