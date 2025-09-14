@@ -59,6 +59,14 @@
     }
     .hero > * { position: relative; z-index: 1; }
 
+    /* Mobile background override */
+    @media (max-width: 768px) {
+      .hero {
+        background: url("pic6.png") no-repeat center center;
+        background-size: cover;  /* keep same style */
+      }
+    }
+
     /* UTHM logo with white transparent box */
     .uthm-logo {
       margin: 6px auto 10px;
