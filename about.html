@@ -213,6 +213,14 @@
       font-size: 0.8rem;
       color: #333;
     }
+    /* Mobile-specific fix */
+    @media (max-width: 768px) {
+      .hero {
+        padding-top: 90px;   /* kasi ruang sikit bawah navbar */
+        padding-bottom: 20px; /* rapatkan sikit dengan gambar bawah */
+        height: auto;        /* biar tinggi ikut content */
+      }
+    }
   </style>
 </head>
 <body>
