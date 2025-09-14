@@ -214,10 +214,11 @@
       font-size: 0.8rem;
       color: #333;
     }
-     /* 🔧 Reduce first section gap */
-      .glass-section:first-of-type {
-         margin-top: 0 !important;     /* rapat terus dengan hero */
-      }
+     /* Remove extra padding on the first glass-section */
+    .glass-section:first-of-type {
+      margin-top: 0 !important;
+      padding-top: 10px !important; /* instead of default 60px */
+    }
     /* Mobile-specific fix */
        @media (max-width: 768px) {
       .hero {
