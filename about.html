@@ -27,6 +27,15 @@
       background-size: cover;
       color: #fff;
     }
+
+     /* Navbar toggler customization */
+    .navbar-toggler {
+      border: none;
+    }
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%280,0,0,0.7%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+    
    /* Black glow for white text, excluding navbar */
     .hero h1, 
     .hero p,
@@ -222,7 +231,7 @@
     /* Mobile-specific fix */
        @media (max-width: 768px) {
       .hero {
-        padding-top: 120px;     /* space bawah navbar 90*/
+        padding-top: 110px;     /* space bawah navbar 90*/
         padding-bottom: 0px;   /* rapatkan subtitle dengan section bawah */
       }
     
