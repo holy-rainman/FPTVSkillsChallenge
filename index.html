@@ -30,7 +30,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 60px 15px 20px;
+      padding: 40px 15px 20px;
     }
     .hero::before {
       content: "";
@@ -41,6 +41,22 @@
       z-index: 0;
     }
     .hero > * { position: relative; z-index: 1; }
+
+    /* Main Title */
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 800; /* bold */
+      margin-bottom: 8px;
+      color: #fff;
+    }
+
+    /* Tagline */
+    .hero h2 {
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin-bottom: 12px;
+      color: #f1f1f1;
+    }
 
     /* Countdown */
     .countdown { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
@@ -61,7 +77,7 @@
       color: #fff;
     }
 
-    /* Stats Section (white font/icons always) */
+    /* Stats Section */
     .stats { display: flex; justify-content: center; gap: 10px; margin-top: 15px; flex-wrap: wrap; }
     .stats .card {
       flex: 1 1 25%; max-width: 150px;
@@ -100,6 +116,10 @@
 
     /* Mobile adjustments */
     @media (max-width: 768px) {
+      .hero { padding-top: 30px; } /* tighter spacing */
+      .hero h1 { font-size: 2rem; font-weight: 800; margin-bottom: 6px; }
+      .hero h2 { font-size: 0.95rem; margin-bottom: 8px; white-space: nowrap; }
+
       .count-box { min-width: 60px; padding: 10px; }
       .count-box span { font-size: 1.2rem; }
       .time-label { font-size: 0.7rem; }
