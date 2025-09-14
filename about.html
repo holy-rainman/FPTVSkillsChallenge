@@ -16,34 +16,9 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-    
-      /* Full-page background with gradient overlay */
-      background: 
-        linear-gradient(45deg, rgba(30,60,150,0.6), rgba(200,0,80,0.6)),
-        url("pic1.png") no-repeat center center fixed;
-      background-size: cover;
-      color: white;
-    }
-
-    /* Global text styling */
-    body, p, span, h1, h2, h3, h4, h5, h6 {
-      color: #fff !important; /* force white text */
-      text-shadow: 0 0 6px rgba(0,0,0,0.9); /* black glow */
-    }
-
-    /* Navbar links stay dark */
-    .navbar .nav-link {
-      color: #000 !important;
-      text-shadow: none !important;
-    }
-
-    /* Navbar brand also dark */
-    .navbar-brand, .navbar-brand img {
-      color: #000 !important;
-      text-shadow: none !important;
+      margin:0;
+      padding:0;
+      overflow-x:hidden;
     }
 
     /* Navbar */
@@ -57,55 +32,30 @@
       align-items: center;
     }
     .navbar-brand img { height: 40px; margin-right: 8px; }
-    
+
     /* Hero Section */
     .hero {
+      position: relative;
+      background: url("pic1.png") no-repeat center center/cover;
       height: 60vh;
+      color: white;
       text-align: center;
       display: flex;
       flex-direction: column;
       justify-content: center;
     }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top:0; left:0;
+      width:100%; height:100%;
+      background: linear-gradient(135deg, rgba(30,60,150,0.6), rgba(200,0,80,0.6));
+    }
+    .hero > * { position: relative; z-index: 1; }
 
-    /* Sections floating effect */
-    section {
-      padding: 80px 20px;
-      background: rgba(0, 0, 0, 0.4); /* translucent dark background */
-      border-radius: 16px;
-      margin: 40px auto;
-      max-width: 1200px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.5);
-    }
-
-    /* Card styling */
-    .impact-cards .card {
-      background: rgba(255,255,255,0.1);
-      border: none;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      color: #fff;
-    }
-    .impact-cards .card i {
-      color: #ffd700;
-    }
-    
-    /* Timeline cards */
-    .timeline-card {
-      background: rgba(0,0,0,0.5);
-      color: #fff;
-    }
-    
-    /* Testimonials */
-    .testimonial {
-      background: rgba(0,0,0,0.5);
-      color: #fff;
-    }
-    
-    /* Visitor counter & floating logo */
-    .visitor-counter {
-      background: rgba(0,0,0,0.6);
-      color: #fff;
-    }
+    /* Sections */
+    section { padding: 80px 20px; }
+    h2 { font-weight: bold; margin-bottom: 20px; }
 
     /* Impact Cards + Growth Boxes */
     .impact-cards .card {
@@ -209,18 +159,6 @@
       border-radius: 8px;
       font-size: 0.8rem;
       color: #333;
-    }
-
-    /* Headings inside white/light background sections */
-    .bg-light h2,
-    .bg-light h3,
-    .bg-light h4,
-    .bg-light h5,
-    .bg-light h6,
-    .testimonial h2,
-    section.bg-light h2 {
-      color: #000 !important;        /* black font */
-      text-shadow: none !important;  /* remove glow */
     }
   </style>
 </head>
