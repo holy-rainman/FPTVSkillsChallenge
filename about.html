@@ -14,12 +14,21 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
 
   <style>
-    /* Body with fixed background */
+    /* Body fixed background + global gradient overlay */
     body {
       font-family: Arial, sans-serif;
       margin:0; padding:0; overflow-x:hidden;
       background: url("pic1.png") no-repeat center center fixed;
       background-size: cover;
+      position: relative;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(135deg, rgba(30,60,150,0.5), rgba(200,0,80,0.5));
+      z-index: -1; /* sits behind content */
     }
 
     /* Navbar */
@@ -45,17 +54,22 @@
     }
     .hero > * { position: relative; z-index: 1; }
 
-    /* Sections transparent/frosted */
+    /* Sections floating glass effect */
     section {
       padding: 80px 20px;
       position: relative;
-      background: rgba(255,255,255,0.85); /* frosted look */
-      border-radius: 12px;
+      background: rgba(255,255,255,0.15); /* much more transparent */
+      border-radius: 16px;
       margin: 40px auto;
       max-width: 1200px;
+      backdrop-filter: blur(10px); /* frosted glass */
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2); /* subtle glow */
     }
-    section.hero { background: transparent; margin:0; border-radius:0; }
-
+    section.hero {
+      background: transparent;
+      margin:0; border-radius:0;
+    }
     h2 { font-weight: bold; margin-bottom: 20px; }
 
     /* Impact Cards */
