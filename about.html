@@ -47,8 +47,22 @@
     section { padding: 80px 20px; }
     h2 { font-weight: bold; margin-bottom: 20px; }
 
-    /* Growth & Impact */
-    .growth-impact ul li { margin-bottom: 12px; }
+    /* Impact Cards */
+    .impact-cards .card {
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .impact-cards .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .impact-cards .card i {
+      font-size: 2rem;
+      color: #dc3545;
+      margin-bottom: 12px;
+    }
 
     /* Timeline */
     .timeline {
@@ -166,29 +180,49 @@
           Universiti Tun Hussein Onn Malaysia, in conjunction with <strong>Hari TVET Negara</strong> — a national celebration of technical 
           and vocational excellence. The event reflects FPTV’s commitment to producing graduates who are <em>job-ready, adaptable, and innovative</em>.
         </p>
-        <p>
-          Through competitions judged by industry experts, students demonstrate technical knowledge, creativity, and collaboration that directly mirror workplace demands. 
-          The challenge strengthens industry–academia ties and promotes TVET as a premier pathway to success.
-        </p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Growth & Impact -->
-<section class="growth-impact bg-light">
-  <div class="container" data-aos="fade-up">
-    <h2 class="text-center">Growth & Impact</h2>
-    <ul class="mt-4">
-      <li><strong>Started in 2024:</strong> Hosted by FPTV, UTHM, with sponsors steadily growing alongside the event.</li>
-      <li><strong>Rising Participation:</strong> Students compete in pre-qualification rounds, with only the best reaching the finals.</li>
-      <li><strong>Expanding Reach:</strong> While currently within FPTV, FPTVSC is set to expand across <strong>MTUN</strong> and beyond.</li>
-      <li><strong>Industry Relevance:</strong> Endorsed by industry experts, ensuring challenges mirror workplace demands.</li>
-    </ul>
+<!-- Growth & Impact (Box Layout) -->
+<section class="impact-cards py-5 bg-light">
+  <div class="container">
+    <h2 class="fw-bold text-center mb-5">Growth & Impact</h2>
+    <div class="row g-4">
+      <div class="col-md-3" data-aos="zoom-in">
+        <div class="card p-4 text-center h-100">
+          <i class="bi bi-calendar-event"></i>
+          <h5 class="fw-bold">Started in 2024</h5>
+          <p>Launched in FPTV, UTHM alongside <strong>Hari TVET Negara</strong>, marking the foundation of FPTVSC.</p>
+        </div>
+      </div>
+      <div class="col-md-3" data-aos="zoom-in" data-aos-delay="100">
+        <div class="card p-4 text-center h-100">
+          <i class="bi bi-people"></i>
+          <h5 class="fw-bold">Rising Participation</h5>
+          <p>Pre-qualification rounds introduced with only selected participants reaching the final stage.</p>
+        </div>
+      </div>
+      <div class="col-md-3" data-aos="zoom-in" data-aos-delay="200">
+        <div class="card p-4 text-center h-100">
+          <i class="bi bi-building"></i>
+          <h5 class="fw-bold">Expanding Reach</h5>
+          <p>Currently FPTV-focused, but expanding into other faculties within <strong>UTHM</strong> and <strong>MTUN</strong>.</p>
+        </div>
+      </div>
+      <div class="col-md-3" data-aos="zoom-in" data-aos-delay="300">
+        <div class="card p-4 text-center h-100">
+          <i class="bi bi-award"></i>
+          <h5 class="fw-bold">Industry Relevance</h5>
+          <p>Endorsed by experts, ensuring competitions mirror real workplace skills and industry demands.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- Journey Timeline -->
+<!-- Timeline -->
 <section>
   <div class="container">
     <h2 class="text-center mb-5">Our Journey</h2>
@@ -202,7 +236,7 @@
       <div class="timeline-item right" data-aos="fade-left">
         <div class="timeline-card">
           <h5>2026 – Towards Expansion</h5>
-          <p>Pre-qualification rounds introduced, expanding participants beyond FPTV into other faculties within UTHM.</p>
+          <p>Expanding to include other faculties within UTHM, setting the stage for national-level participation.</p>
         </div>
       </div>
       <div class="timeline-item left" data-aos="fade-right">
@@ -259,8 +293,8 @@
 <section class="bg-light">
   <div class="container text-center" data-aos="fade-up">
     <h2>Future Outlook</h2>
-    <p>Looking ahead, FPTVSC is committed to expanding its reach, integrating more advanced technologies, 
-    and building strong collaborations with both national and international partners to elevate TVET to global standards.</p>
+    <p>Looking ahead, FPTVSC is committed to expanding its reach, integrating advanced technologies, 
+    and building collaborations with national and international partners to elevate TVET to global standards.</p>
   </div>
 </section>
 
