@@ -214,13 +214,18 @@
       color: #333;
     }
     /* Mobile-specific fix */
-    @media (max-width: 768px) {
+       @media (max-width: 768px) {
       .hero {
-        padding-top: 90px;   /* kasi ruang sikit bawah navbar */
-        padding-bottom: 20px; /* rapatkan sikit dengan gambar bawah */
-        height: auto;        /* biar tinggi ikut content */
+        padding-top: 90px;     /* space bawah navbar */
+        padding-bottom: 0px;   /* rapatkan subtitle dengan section bawah */
+        height: auto;
+      }
+    
+      .hero p {
+        margin-bottom: 10px;   /* rapatkan subtitle */
       }
     }
+
   </style>
 </head>
 <body>
