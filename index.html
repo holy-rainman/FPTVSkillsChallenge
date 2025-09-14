@@ -13,10 +13,11 @@
       font-family: Arial, sans-serif;
       margin:0;
       padding:0;
-      overflow-y: scroll;
-      overflow-x: hidden;
+      overflow-y: scroll; /* Always show vertical scrollbar */
+      overflow-x: hidden; /* Prevent horizontal scrolling */
     }
 
+    /* Navbar with glass effect */
     .navbar { 
       background: rgba(255, 255, 255, 0.85); 
       backdrop-filter: blur(10px); 
@@ -41,6 +42,7 @@
     }
     .nav-link:hover::after { width: 100%; }
 
+    /* Hero Section with Background Image + Overlay */
     .hero {
       position: relative;
       background: url("pic1.png") no-repeat center center/cover;
@@ -66,12 +68,14 @@
     .hero h2 { font-size: 1rem; font-weight: normal; margin-bottom: 10px; }
     .event-date, .event-venue { font-size: 0.9rem; margin-bottom: 4px; }
 
+    /* Mobile version background */
     @media (max-width: 768px) {
       .hero {
         background: url("pic6.png") no-repeat center center/cover;
       }
     }
 
+    /* UTHM logo with white transparent box */
     .uthm-logo {
       margin: 6px auto 10px;
       max-height: 36px;
@@ -81,19 +85,13 @@
       display: inline-block;
     }
 
-    .countdown-logo-wrapper {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 40px; /* spacing between countdown and logo */
-      margin-top: 10px;
-      flex-wrap: nowrap;
-    }
-
+    /* Countdown */
     .countdown { 
       display: flex; 
+      justify-content: center; 
       gap: 12px; 
       flex-wrap: wrap; 
+      margin-top: 10px; 
     }
     .count-box {
       background: rgba(255, 255, 255, 0.3);
@@ -120,6 +118,7 @@
       box-shadow: 0 4px 15px rgba(255,255,255,0.5);
     }
 
+    /* Buttons */
     .btn-custom {
       margin: 8px; 
       padding: 8px 16px; 
@@ -131,6 +130,7 @@
       box-shadow: 0 6px 18px rgba(0,0,0,0.3);
     }
 
+    /* Stats */
     .stats {
       display: flex;
       justify-content: center;
@@ -148,7 +148,11 @@
       max-width: 150px;
       transition: transform 0.3s, box-shadow 0.3s;
     }
-    .stats .card i { font-size: 1.5rem; margin-bottom: 6px; color: #fff; }
+    .stats .card i { 
+      font-size: 1.5rem; 
+      margin-bottom: 6px; 
+      color: #fff;
+    }
     .stats .card h4 { font-size: 1.2rem; font-weight: 600; margin: 5px 0; color: #fff; }
     .stats .card p { font-size: 0.9rem; margin: 0; color: #fff; }
     .stats .card:hover {
@@ -156,6 +160,7 @@
       box-shadow: 0 6px 18px rgba(0,0,0,0.3);
     }
 
+    /* Desktop adjustments */
     @media (min-width: 769px) {
       .hero h1 { font-size: 3.2rem; }
       .hero h2 { font-size: 1.3rem; }
@@ -166,6 +171,7 @@
       .uthm-logo { display:none; }
     }
 
+    /* Mobile adjustments */
     @media (max-width: 768px) {
       .hero { padding-top: 25px; }
       .hero h1 { font-size: 1.8rem; margin-bottom: 6px; }
@@ -181,21 +187,15 @@
       .count-box span { font-size: 1.8rem; color: #fff; text-shadow: 1px 1px 4px rgba(0,0,0,0.8); }
       .time-label { font-size: 0.8rem; }
       .stats { margin-top: 10px; }
-      .stats .card { max-width: 95px; padding: 6px; }
+      .stats .card { max-width: 95px; padding: 6px; background: rgba(255,255,255,0.2); border-radius: 12px; }
       .stats .card i { color: #fff; }
       .uthm-logo { display:block; }
-      .hero-logo-right { display: none; }
-    }
-
-    .hero-logo-right img {
-      max-height: 180px;
-      width: auto;
-      opacity: 0.95;
     }
   </style>
 </head>
 <body>
 
+<!-- Navbar -->
 <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
   <div class="container">
     <a class="navbar-brand" href="index.html">
@@ -219,28 +219,24 @@
   </div>
 </nav>
 
+<!-- Hero -->
 <section class="hero" id="home">
   <h1>FPTV Skills Challenge</h1>
   <h2>Membangunkan Kecemerlangan TVET</h2>
   <p class="event-date"><i class="bi bi-calendar-event"></i> Event Date: 29 – 31 May 2026</p>
   <p class="event-venue"><i class="bi bi-geo-alt"></i> UTHM</p>
 
+  <!-- UTHM logo for mobile -->
   <div class="uthm-logo d-lg-none">
     <img src="logo-uthm-web.png" alt="UTHM Logo" style="max-height:28px;">
   </div>
 
   <h3>Event Countdown</h3>
-  <div class="countdown-logo-wrapper">
-    <div class="countdown">
-      <div class="count-box"><span id="days">0</span><div class="time-label days-label">Days</div></div>
-      <div class="count-box"><span id="hours">0</span><div class="time-label hours-label">Hours</div></div>
-      <div class="count-box"><span id="minutes">0</span><div class="time-label minutes-label">Minutes</div></div>
-      <div class="count-box"><span id="seconds">0</span><div class="time-label seconds-label">Seconds</div></div>
-    </div>
-
-    <div class="hero-logo-right d-none d-lg-block">
-      <img src="logo.png" alt="FPTV Skills Challenge Logo">
-    </div>
+  <div class="countdown">
+    <div class="count-box"><span id="days">0</span><div class="time-label days-label">Days</div></div>
+    <div class="count-box"><span id="hours">0</span><div class="time-label hours-label">Hours</div></div>
+    <div class="count-box"><span id="minutes">0</span><div class="time-label minutes-label">Minutes</div></div>
+    <div class="count-box"><span id="seconds">0</span><div class="time-label seconds-label">Seconds</div></div>
   </div>
 
   <div class="mt-3">
@@ -265,13 +261,15 @@
 </section>
 
 <style>
+  /* Mobile adjustment */
   @media (max-width: 768px) {
     .stats .card p {
-      font-size: 0.7rem;
+      font-size: 0.7rem;  /* smaller label on mobile */
     }
   }
 </style>
 
+<!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
   const eventDate = new Date("May 29, 2026 09:00:00").getTime();
@@ -302,6 +300,7 @@
   updateCountdown();
 </script>
 
+<!-- Bottom elements -->
 <div class="bottom-right-logo">
   <img src="pic3.png" alt="Reduced Logo">
 </div>
@@ -311,6 +310,7 @@
 </div>
 
 <style>
+  /* bottom-right logo */
   .bottom-right-logo {
     position: fixed;
     bottom: 10px;
@@ -318,11 +318,12 @@
     z-index: 1000;
   }
   .bottom-right-logo img {
-    height: 40px;
+    height: 40px;  /* default size for desktop */
     width: auto;
     opacity: 0.9;
   }
 
+  /* visitor counter */
   .visitor-counter {
     position: fixed;
     bottom: 10px;
@@ -338,14 +339,16 @@
     gap: 4px;
   }
 
+  /* Mobile adjustment */
   @media (max-width: 768px) {
     .bottom-right-logo img {
-      height: 28px;
+      height: 28px; /* smaller logo size on mobile */
     }
   }
 </style>
 
 <script>
+  // simple visitor counter simulation (increments when page reloads)
   let count = localStorage.getItem("visitorCount") || 1200;
   count++;
   localStorage.setItem("visitorCount", count);
