@@ -27,9 +27,17 @@
       background-size: cover;
       color: #fff;
     }
-    /* Apply black glow to all text that is white */
-    .text-white, 
-    h1, h2, h3, h4, h5, h6, p, li {
+   /* Black glow for white text, excluding navbar */
+    .hero h1, 
+    .hero p,
+    .glass-section h2,
+    .glass-section p,
+    .glass-section li,
+    .timeline-card h5,
+    .timeline-card p,
+    .testimonial p,
+    .testimonial h6,
+    .visitor-counter {
       text-shadow: 0 0 4px rgba(0,0,0,0.9), 0 0 6px rgba(0,0,0,0.7);
     }
     /* Navbar */
