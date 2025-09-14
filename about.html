@@ -222,6 +222,30 @@
     .carousel-control-next-icon {
       filter: invert(100%) sepia(50%) saturate(200%) hue-rotate(10deg);
     }
+    /* Mobile-specific card size */
+    @media (max-width: 768px) {
+      .impact-cards .card {
+        padding: 15px;        /* kurangkan padding dalam card */
+        font-size: 0.9rem;    /* kecilkan font sikit */
+        min-height: auto;     /* buang fixed height */
+      }
+    
+      .impact-cards .card i {
+        font-size: 2rem;      /* icon lebih kecil */
+        margin-bottom: 8px;   /* kurang gap bawah icon */
+      }
+    
+      .impact-cards .card h5 {
+        font-size: 1rem;      /* kecilkan tajuk */
+        margin-bottom: 6px;
+      }
+    
+      .impact-cards .card p {
+        font-size: 0.8rem;    /* kecilkan ayat */
+        margin-bottom: 0;
+      }
+    }
+    
   </style>
 </head>
 <body>
