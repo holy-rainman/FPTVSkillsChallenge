@@ -222,15 +222,18 @@
     /* Mobile-specific fix */
        @media (max-width: 768px) {
       .hero {
-        padding-top: 90px;     /* space bawah navbar */
+        padding-top: 120px;     /* space bawah navbar 90*/
         padding-bottom: 0px;   /* rapatkan subtitle dengan section bawah */
       }
     
       .hero p {
-        margin-bottom: 10px;   /* rapatkan subtitle */
+        margin-bottom: 0px;   /* rapatkan subtitle 10*/
       }
+      /* Hide UTHM logo on mobile */
+      .navbar img[alt="UTHM Logo"] {
+        display: none;
+      }  
     }
-
   </style>
 </head>
 <body>
