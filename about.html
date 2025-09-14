@@ -39,9 +39,9 @@
     /* Hero Section (background, gradient, overlay) */
     .hero {
       position: relative;
-      background: url("pic4.png") no-repeat top center/cover;
-      background-attachment: fixed;
-      height: 100vh;
+      background: url("pic4.png") no-repeat center center/contain; /* fit whole image */
+      background-color: #000; /* fill the rest with black (or any color) */
+      height: 100vh; /* full screen height */
       color: white;
       text-align: center;
       display: flex;
