@@ -247,7 +247,17 @@
       /* Hide UTHM logo on mobile */
       .navbar img[alt="UTHM Logo"] {
         display: none;
-      }  
+      } 
+       /* Pull first-section image upwards */
+      .glass-section:first-of-type img {
+        margin-top: -20px;   /* tarik gambar ke atas */
+        margin-bottom: 10px; /* rapatkan bawah */
+      }
+    
+      .glass-section:first-of-type {
+        padding-top: 20px;   /* tighter padding for mobile */
+        padding-bottom: 20px;
+      } 
     }
   </style>
 </head>
