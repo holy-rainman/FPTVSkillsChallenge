@@ -284,10 +284,11 @@
 </div>
 
 <div class="visitor-counter">
-  <span id="visitorCount">1200</span> Visitors
+  👀 <span id="visitorCount">1200</span> Visitors
 </div>
 
 <style>
+  /* bottom-right logo */
   .bottom-right-logo {
     position: fixed;
     bottom: 10px;
@@ -295,10 +296,12 @@
     z-index: 1000;
   }
   .bottom-right-logo img {
-    width: 50%; /* 50% reduced */
-    max-width: 100px; /* optional limit */
+    height: 40px;  /* about 50% reduced */
+    width: auto;
     opacity: 0.9;
   }
+
+  /* visitor counter */
   .visitor-counter {
     position: fixed;
     bottom: 10px;
@@ -309,6 +312,9 @@
     font-size: 0.8rem;
     color: #333;
     z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 4px;
   }
 </style>
 
@@ -319,6 +325,7 @@
   localStorage.setItem("visitorCount", count);
   document.getElementById("visitorCount").innerText = count;
 </script>
+
 
 
 </body>
