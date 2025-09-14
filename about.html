@@ -28,6 +28,24 @@
       color: white;
     }
 
+    /* Global text styling */
+    body, p, span, h1, h2, h3, h4, h5, h6 {
+      color: #fff !important; /* force white text */
+      text-shadow: 0 0 6px rgba(0,0,0,0.9); /* black glow */
+    }
+
+    /* Navbar links stay dark */
+    .navbar .nav-link {
+      color: #000 !important;
+      text-shadow: none !important;
+    }
+
+    /* Navbar brand also dark */
+    .navbar-brand, .navbar-brand img {
+      color: #000 !important;
+      text-shadow: none !important;
+    }
+
     /* Navbar */
     .navbar {
       background: rgba(255, 255, 255, 0.9);
