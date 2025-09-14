@@ -24,7 +24,7 @@
       color:#fff;
     }
 
-    /* Mobile-specific (Android & small screens) */
+    /* Mobile-specific background (Android pakai pic6.png) */
     @media (max-width: 768px) {
       body {
         background:
@@ -32,9 +32,9 @@
           url("pic6.png") center center / cover no-repeat fixed;
         background-size: cover;
       }
+    }
 
     html, body { max-width:100%; overflow-x:hidden; }
-    }
 
     /* Navbar */
     .navbar {
@@ -62,12 +62,14 @@
     }
     .hero h1 {
       font-weight:bold;
-      font-size:2rem;
+      font-size:2.2rem;
       margin-bottom:5px;
+      text-shadow: 0 0 6px rgba(0,0,0,0.9);
     }
     .hero p {
-      font-size:0.9rem;
+      font-size:1rem;
       margin-bottom:0;
+      text-shadow: 0 0 4px rgba(0,0,0,0.7);
     }
 
     /* Glass section */
@@ -75,10 +77,11 @@
       background:rgba(255,255,255,0.1);
       backdrop-filter:blur(12px);
       border-radius:16px;
-      margin:10px auto;
+      margin:20px auto;
       max-width:1200px;
       color:#fff;
-      padding:20px 15px;
+      padding:40px 25px;
+      box-shadow:0 8px 24px rgba(0,0,0,0.2);
     }
     section.glass-section h2 {
       font-weight:bold;
@@ -93,23 +96,33 @@
       width:60px; height:3px;
       background:#ffd700; border-radius:2px;
     }
-
-    /* Special: tighten first section image */
-    .glass-section:first-of-type { margin-top:5px; padding-top:10px; }
-    .glass-section:first-of-type img { margin-top:0; margin-bottom:10px; }
     .glass-section p {
       text-align: center;
     }
 
-    /* Cards */
+    /* Impact + Growth Cards */
     .impact-cards .card {
       background:rgba(255,255,255,0.1);
       backdrop-filter:blur(6px);
       border:none; border-radius:12px;
       padding:30px; color:#fff;
       height:100%;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
-    .impact-cards .card i { font-size:2rem; color:#ffd700; margin-bottom:10px; }
+    .impact-cards .card i {
+      font-size:3rem;
+      color:#ffd700;
+      margin-bottom:15px;
+      transition: transform 0.3s, text-shadow 0.3s;
+    }
+    .impact-cards .card:hover {
+      transform: translateY(-6px) scale(1.05);
+      box-shadow: 0 10px 25px rgba(255,215,0,0.4);
+    }
+    .impact-cards .card:hover i {
+      transform: scale(1.3) rotate(8deg);
+      text-shadow: 0 0 15px rgba(255, 215, 0, 0.9);
+    }
 
     /* Timeline */
     .timeline { position:relative; max-width:900px; margin:auto; }
@@ -161,6 +174,8 @@
       .hero h1{ font-size:1.6rem; }
       .hero p{ font-size:0.8rem; }
       .glass-section{ padding:15px 10px; }
+      .impact-cards .card { padding:20px; }
+      .impact-cards .card i { font-size:2rem; }
     }
   </style>
 </head>
