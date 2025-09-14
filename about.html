@@ -46,17 +46,23 @@
       justify-content: center;
       text-align: center;
     }
+    
     .hero .container {
       position: relative;
       z-index: 2;
       padding: 40px;
       border-radius: 16px;
-      background: rgba(30,60,150,0.6);
       background: linear-gradient(135deg, rgba(30,60,150,0.7), rgba(200,0,80,0.7));
-      color: white;
       max-width: 1000px;
+      margin: auto;
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
+    }
+    
+    /* Force white text */
+    .hero h1, 
+    .hero p {
+      color: #fff !important;
     }
     .hero > * { position: relative; z-index: 1; }
 
