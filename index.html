@@ -191,6 +191,20 @@
       .stats .card i { color: #fff; }
       .uthm-logo { display:block; }
     }
+
+    /* Hero Right Logo */
+    .hero-logo-right {
+      position: absolute;
+      right: 40px;        /* distance from right */
+      top: 50%;           /* center vertically */
+      transform: translateY(-50%);
+      z-index: 2;
+    }
+    .hero-logo-right img {
+      max-height: 200px;  /* adjust size */
+      width: auto;
+      opacity: 0.95;
+    }
   </style>
 </head>
 <body>
@@ -221,42 +235,49 @@
 
 <!-- Hero -->
 <section class="hero" id="home">
-  <h1>FPTV Skills Challenge</h1>
-  <h2>Membangunkan Kecemerlangan TVET</h2>
-  <p class="event-date"><i class="bi bi-calendar-event"></i> Event Date: 29 – 31 May 2026</p>
-  <p class="event-venue"><i class="bi bi-geo-alt"></i> UTHM</p>
+  <div class="hero-content">
+    <h1>FPTV Skills Challenge</h1>
+    <h2>Membangunkan Kecemerlangan TVET</h2>
+    <p class="event-date"><i class="bi bi-calendar-event"></i> Event Date: 29 – 31 May 2026</p>
+    <p class="event-venue"><i class="bi bi-geo-alt"></i> UTHM</p>
 
-  <!-- UTHM logo for mobile -->
-  <div class="uthm-logo d-lg-none">
-    <img src="logo-uthm-web.png" alt="UTHM Logo" style="max-height:28px;">
+    <!-- UTHM logo for mobile -->
+    <div class="uthm-logo d-lg-none">
+      <img src="logo-uthm-web.png" alt="UTHM Logo" style="max-height:28px;">
+    </div>
+
+    <h3>Event Countdown</h3>
+    <div class="countdown">
+      <div class="count-box"><span id="days">0</span><div class="time-label days-label">Days</div></div>
+      <div class="count-box"><span id="hours">0</span><div class="time-label hours-label">Hours</div></div>
+      <div class="count-box"><span id="minutes">0</span><div class="time-label minutes-label">Minutes</div></div>
+      <div class="count-box"><span id="seconds">0</span><div class="time-label seconds-label">Seconds</div></div>
+    </div>
+
+    <div class="mt-3">
+      <a href="#register" class="btn btn-danger btn-custom">Register Now</a>
+      <a href="categories.html" class="btn btn-primary btn-custom">View Categories</a>
+    </div>
+
+    <div class="stats">
+      <div class="card">
+        <i class="bi bi-people"></i>
+        <h4>70</h4><p>Participants</p>
+      </div>
+      <div class="card">
+        <i class="bi bi-trophy"></i>
+        <h4>7</h4><p>Skills</p>
+      </div>
+      <div class="card">
+        <i class="bi bi-calendar-event"></i>
+        <h4>3</h4><p>Days</p>
+      </div>
+    </div>
   </div>
 
-  <h3>Event Countdown</h3>
-  <div class="countdown">
-    <div class="count-box"><span id="days">0</span><div class="time-label days-label">Days</div></div>
-    <div class="count-box"><span id="hours">0</span><div class="time-label hours-label">Hours</div></div>
-    <div class="count-box"><span id="minutes">0</span><div class="time-label minutes-label">Minutes</div></div>
-    <div class="count-box"><span id="seconds">0</span><div class="time-label seconds-label">Seconds</div></div>
-  </div>
-
-  <div class="mt-3">
-    <a href="#register" class="btn btn-danger btn-custom">Register Now</a>
-    <a href="categories.html" class="btn btn-primary btn-custom">View Categories</a>
-  </div>
-
-  <div class="stats">
-    <div class="card">
-      <i class="bi bi-people"></i>
-      <h4>70</h4><p>Participants</p>
-    </div>
-    <div class="card">
-      <i class="bi bi-trophy"></i>
-      <h4>7</h4><p>Skills</p>
-    </div>
-    <div class="card">
-      <i class="bi bi-calendar-event"></i>
-      <h4>3</h4><p>Days</p>
-    </div>
+  <!-- FPTV Skills Challenge Logo on Right -->
+  <div class="hero-logo-right d-none d-lg-block">
+    <img src="logo.png" alt="FPTV Skills Challenge Logo">
   </div>
 </section>
 
