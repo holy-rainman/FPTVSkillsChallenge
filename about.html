@@ -253,28 +253,28 @@
     <div class="row g-4">
       <div class="col-md-3" data-aos="zoom-in">
         <div class="card p-4 text-center h-100 bg-danger text-white">
-          <i class="bi bi-calendar-event"></i>
+          <i class="bi bi-calendar-event text-black"></i>
           <h5 class="fw-bold">Started in 2024</h5>
           <p>Launched in FPTV, UTHM alongside <strong>Hari TVET Negara</strong>, marking the foundation of FPTVSC.</p>
         </div>
       </div>
       <div class="col-md-3" data-aos="zoom-in" data-aos-delay="100">
         <div class="card p-4 text-center h-100 bg-primary text-white">
-          <i class="bi bi-people"></i>
+          <i class="bi bi-people text-black"></i>
           <h5 class="fw-bold">Rising Participation</h5>
           <p>Pre-qualification rounds introduced with only selected participants reaching the final stage.</p>
         </div>
       </div>
       <div class="col-md-3" data-aos="zoom-in" data-aos-delay="200">
         <div class="card p-4 text-center h-100 bg-success text-white">
-          <i class="bi bi-building"></i>
+          <i class="bi bi-building text-black"></i>
           <h5 class="fw-bold">Expanding Reach</h5>
           <p>Currently FPTV-focused, but expanding into other faculties within <strong>UTHM</strong> and <strong>MTUN</strong>.</p>
         </div>
       </div>
       <div class="col-md-3" data-aos="zoom-in" data-aos-delay="300">
         <div class="card p-4 text-center h-100 bg-warning text-dark">
-          <i class="bi bi-award"></i>
+          <i class="bi bi-award text-black"></i>
           <h5 class="fw-bold">Industry Relevance</h5>
           <p>Endorsed by experts, ensuring competitions mirror real workplace skills and industry demands.</p>
         </div>
@@ -329,66 +329,71 @@
 <section>
   <div class="container">
     <h2 class="text-center mb-5">Testimonials</h2>
-    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div id="testimonialCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
       <div class="carousel-inner">
-
         <div class="carousel-item active">
-          <div class="testimonial mx-auto col-md-6">
+          <div class="testimonial mx-auto col-md-8">
             <img src="person1.jpg" alt="Student">
             <p>"FPTVSC gave me the confidence to apply my skills in real industry-like challenges."</p>
             <h6>- Student Participant</h6>
           </div>
         </div>
-
         <div class="carousel-item">
-          <div class="testimonial mx-auto col-md-6">
+          <div class="testimonial mx-auto col-md-8">
             <img src="person2.jpg" alt="Industry Expert">
             <p>"This event reflects the true potential of Malaysian TVET graduates."</p>
             <h6>- Industry Judge</h6>
           </div>
         </div>
-
         <div class="carousel-item">
-          <div class="testimonial mx-auto col-md-6">
+          <div class="testimonial mx-auto col-md-8">
             <img src="person3.jpg" alt="Sponsor">
             <p>"As sponsors, we see this as an investment in the future workforce of Malaysia."</p>
             <h6>- Event Sponsor</h6>
           </div>
         </div>
-
         <div class="carousel-item">
-          <div class="testimonial mx-auto col-md-6">
+          <div class="testimonial mx-auto col-md-8">
             <img src="person4.jpg" alt="Lecturer">
-            <p>"The challenge motivates students to go beyond theory and embrace practical excellence."</p>
-            <h6>- FPTV Lecturer</h6>
+            <p>"The challenge inspires students to think critically and collaborate effectively."</p>
+            <h6>- Lecturer Mentor</h6>
           </div>
         </div>
-
         <div class="carousel-item">
-          <div class="testimonial mx-auto col-md-6">
-            <img src="person5.jpg" alt="Participant">
-            <p>"It was tough but rewarding. I learned teamwork, problem-solving, and industry-relevant skills."</p>
-            <h6>- Competition Finalist</h6>
+          <div class="testimonial mx-auto col-md-8">
+            <img src="person5.jpg" alt="Alumni">
+            <p>"Being part of FPTVSC opened doors to career opportunities for me."</p>
+            <h6>- Alumni</h6>
           </div>
         </div>
-
         <div class="carousel-item">
-          <div class="testimonial mx-auto col-md-6">
-            <img src="person6.jpg" alt="Alumni">
-            <p>"Joining FPTVSC was the highlight of my studies — it helped me secure my first job."</p>
-            <h6>- Alumni Winner</h6>
+          <div class="testimonial mx-auto col-md-8">
+            <img src="person6.jpg" alt="Dean">
+            <p>"This initiative strengthens the faculty’s role in advancing TVET education."</p>
+            <h6>- Dean, FPTV</h6>
           </div>
         </div>
-
       </div>
-
+      
       <!-- Controls -->
       <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
+        <span class="carousel-control-prev-icon bg-dark rounded-circle" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
       </button>
       <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
+        <span class="carousel-control-next-icon bg-dark rounded-circle" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
       </button>
+
+      <!-- Indicators -->
+      <div class="carousel-indicators mt-3">
+        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active bg-dark"></button>
+        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" class="bg-dark"></button>
+        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" class="bg-dark"></button>
+        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="3" class="bg-dark"></button>
+        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="4" class="bg-dark"></button>
+        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="5" class="bg-dark"></button>
+      </div>
     </div>
   </div>
 </section>
