@@ -33,7 +33,6 @@
         background-size: cover;
       }
     }
-
     html, body { max-width:100%; overflow-x:hidden; }
 
     /* Navbar */
@@ -187,6 +186,42 @@
       .impact-cards .card { padding:20px; }
       .impact-cards .card i { font-size:2rem; }
     }
+    /* Testimonials styling */
+    .testimonial {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(8px);
+      border-radius: 12px;
+      padding: 30px;
+      text-align: center;
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: transform 0.4s ease, opacity 0.4s ease;
+    }
+    .testimonial img {
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      border: 3px solid #ffd700;
+    }
+
+    /* Carousel indicators */
+    .carousel-indicators [data-bs-target] {
+      background-color: #ffd700;
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      opacity: 0.5;
+      transition: opacity 0.3s, transform 0.3s;
+    }
+    .carousel-indicators .active {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+
+    /* Arrow controls */
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      filter: invert(100%) sepia(50%) saturate(200%) hue-rotate(10deg);
+    }
   </style>
 </head>
 <body>
@@ -277,15 +312,49 @@
 <section class="glass-section" data-aos="fade-up">
   <div class="container">
     <h2>Testimonials</h2>
-    <div id="testimonialCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+    <div id="testimonialCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
+      
+      <!-- Indicators -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2"></button>
+      </div>
+
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <div class="testimonial"><img src="person1.jpg" alt="Student"><p>"FPTVSC gave me confidence."</p><h6>- Student</h6></div>
+          <div class="testimonial mx-auto col-md-8">
+            <img src="person1.jpg" alt="Student">
+            <p>"FPTVSC gave me the confidence to apply my skills in real industry-like challenges."</p>
+            <h6>- Student Participant</h6>
+          </div>
         </div>
         <div class="carousel-item">
-          <div class="testimonial"><img src="person2.jpg" alt="Judge"><p>"This event reflects TVET talent."</p><h6>- Judge</h6></div>
+          <div class="testimonial mx-auto col-md-8">
+            <img src="person2.jpg" alt="Industry Expert">
+            <p>"This event reflects the true potential of Malaysian TVET graduates."</p>
+            <h6>- Industry Judge</h6>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="testimonial mx-auto col-md-8">
+            <img src="person3.jpg" alt="Lecturer">
+            <p>"It’s an excellent platform for students to showcase their creativity and teamwork."</p>
+            <h6>- Lecturer</h6>
+          </div>
         </div>
       </div>
+
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+
     </div>
   </div>
 </section>
