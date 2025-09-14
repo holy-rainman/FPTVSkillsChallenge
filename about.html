@@ -130,6 +130,18 @@
       margin-bottom: 15px;
     }
 
+    /* Fade effect for carousel */
+    .carousel.carousel-fade .carousel-item {
+      opacity: 0;
+      transition: opacity .75s ease-in-out;
+      position: absolute;
+      width: 100%;
+    }
+    .carousel.carousel-fade .carousel-item.active {
+      opacity: 1;
+      position: relative;
+    }
+
     /* Bottom elements */
     .bottom-right-logo {
       position: fixed; bottom: 10px; right: 10px; z-index: 1000;
@@ -215,21 +227,21 @@
     <div class="row g-4">
       <div class="col-md-4" data-aos="zoom-in">
         <div class="card p-4 text-center h-100">
-          <i class="bi bi-lightbulb animate__animated"></i>
+          <i class="bi bi-lightbulb"></i>
           <h5 class="fw-bold">Innovation in Action</h5>
           <p>Students bring fresh solutions to technical challenges, showing the power of creativity in TVET fields.</p>
         </div>
       </div>
       <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
         <div class="card p-4 text-center h-100">
-          <i class="bi bi-people animate__animated"></i>
+          <i class="bi bi-people"></i>
           <h5 class="fw-bold">Collaboration & Teamwork</h5>
           <p>Competitions encourage teamwork, communication, and leadership — essential workplace skills.</p>
         </div>
       </div>
       <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
         <div class="card p-4 text-center h-100">
-          <i class="bi bi-award animate__animated"></i>
+          <i class="bi bi-award"></i>
           <h5 class="fw-bold">Excellence Recognized</h5>
           <p>Performance is evaluated by professionals, giving students recognition and exposure to industry standards.</p>
         </div>
@@ -321,17 +333,17 @@
 <section>
   <div class="container">
     <h2 class="text-center mb-5">Testimonials</h2>
-    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div id="testimonialCarousel" class="carousel carousel-fade slide" data-bs-ride="carousel" data-bs-interval="6000">
       <div class="carousel-inner">
         <div class="carousel-item active" data-aos="fade-up">
-          <div class="testimonial mx-auto col-md-6 animate__animated animate__fadeInUp">
+          <div class="testimonial mx-auto col-md-6">
             <img src="person1.jpg" alt="Student">
             <p>"FPTVSC gave me the confidence to apply my skills in real industry-like challenges."</p>
             <h6>- Student Participant</h6>
           </div>
         </div>
         <div class="carousel-item" data-aos="fade-up" data-aos-delay="200">
-          <div class="testimonial mx-auto col-md-6 animate__animated animate__fadeInUp">
+          <div class="testimonial mx-auto col-md-6">
             <img src="person2.jpg" alt="Industry Expert">
             <p>"This event reflects the true potential of Malaysian TVET graduates."</p>
             <h6>- Industry Judge</h6>
