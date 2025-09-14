@@ -70,7 +70,7 @@
     .hero {
       height: 35vh;
       padding-top: 80px;
-      padding-bottom: 10px;  /* tighten space before next section */
+      padding-bottom: 0;  /* tighten space before next section */
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -214,6 +214,10 @@
       font-size: 0.8rem;
       color: #333;
     }
+     /* 🔧 Reduce first section gap */
+      .glass-section:first-of-type {
+        margin-top: 10px;   /* reduce top margin of first section */
+      }
     /* Mobile-specific fix */
        @media (max-width: 768px) {
       .hero {
