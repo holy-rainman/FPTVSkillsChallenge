@@ -43,25 +43,36 @@
     .hero > * { position: relative; z-index: 1; }
 
     /* Countdown */
-    .countdown { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 10px; }
+    .countdown { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
     .count-box {
       background: rgba(255, 255, 255, 0.3);
-      padding: 15px;
-      border-radius: 12px;
-      min-width: 80px;
+      padding: 12px;
+      border-radius: 10px;
+      min-width: 70px;
       text-align: center;
     }
-    .count-box span { font-size: 1.8rem; font-weight: bold; }
-
-    /* Stats Section */
-    .stats { display: flex; justify-content: center; gap: 12px; margin-top: 20px; flex-wrap: wrap; }
-    .stats .card {
-      flex: 1 1 25%; max-width: 150px;
-      text-align: center; padding: 10px;
-      border-radius: 12px; background: rgba(255,255,255,0.2);
+    .count-box span {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #fff;
+    }
+    .time-label {
+      font-size: 0.8rem;
+      color: #fff;
     }
 
-    /* Floating logo (smaller, 50% reduced) */
+    /* Stats Section (white font/icons always) */
+    .stats { display: flex; justify-content: center; gap: 10px; margin-top: 15px; flex-wrap: wrap; }
+    .stats .card {
+      flex: 1 1 25%; max-width: 150px;
+      text-align: center; padding: 8px;
+      border-radius: 10px; background: rgba(255,255,255,0.2);
+    }
+    .stats .card i { font-size: 1.4rem; margin-bottom: 4px; color: #fff; }
+    .stats .card h4 { font-size: 1.1rem; font-weight: 600; margin: 3px 0; color: #fff; }
+    .stats .card p { font-size: 0.8rem; margin: 0; color: #fff; }
+
+    /* Floating logo */
     .floating-logo {
       position: fixed;
       bottom: 15px;
@@ -69,12 +80,12 @@
       z-index: 1000;
     }
     .floating-logo img {
-      height: 30px; /* reduced size */
+      height: 30px; /* reduced 50% */
       width: auto;
       opacity: 0.9;
     }
 
-    /* Visitor Counter (bottom-left corner) */
+    /* Visitor Counter */
     .visitor-counter {
       position: fixed;
       bottom: 15px;
@@ -85,6 +96,19 @@
       padding: 4px 8px;
       border-radius: 6px;
       z-index: 1000;
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+      .count-box { min-width: 60px; padding: 10px; }
+      .count-box span { font-size: 1.2rem; }
+      .time-label { font-size: 0.7rem; }
+
+      .stats { margin-top: 10px; }
+      .stats .card { max-width: 85px; padding: 5px; }
+      .stats .card i { font-size: 1.1rem; }
+      .stats .card h4 { font-size: 0.9rem; }
+      .stats .card p { font-size: 0.65rem; }
     }
   </style>
 </head>
