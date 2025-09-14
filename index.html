@@ -296,7 +296,7 @@
     z-index: 1000;
   }
   .bottom-right-logo img {
-    height: 40px;  /* about 50% reduced */
+    height: 40px;  /* default size for desktop */
     width: auto;
     opacity: 0.9;
   }
@@ -316,6 +316,13 @@
     align-items: center;
     gap: 4px;
   }
+
+  /* Mobile adjustment */
+  @media (max-width: 768px) {
+    .bottom-right-logo img {
+      height: 28px; /* smaller logo size on mobile */
+    }
+  }
 </style>
 
 <script>
@@ -325,8 +332,6 @@
   localStorage.setItem("visitorCount", count);
   document.getElementById("visitorCount").innerText = count;
 </script>
-
-
 
 </body>
 </html>
