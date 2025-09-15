@@ -144,8 +144,11 @@
       color: #000 !important;                /* black text when active */
       border-radius: 20px;
     }
-
-    
+    .carousel-caption h5 {
+      color: #000;  /* black font */
+      text-shadow: 0 0 3px #fff, 0 0 6px #fff; /* white glow */
+      font-weight: bold;
+    }    
   </style>
 </head>
 <body>
@@ -396,25 +399,18 @@
   localStorage.setItem("visitorCount", count);
   document.getElementById("visitorCount").innerText = count;
 
-  // lightbox functionality - load all images from same category
+  // lightbox functionality with captions from alt
   const lightboxCarouselInner = document.getElementById("lightboxCarouselInner");
-
-  document.querySelectorAll(".gallery-grid img").forEach((img) => {
+  document.querySelectorAll(".gallery-grid img").forEach((img, idx) => {
     img.addEventListener("click", () => {
-      const parentGrid = img.closest(".gallery-grid");   // find the category container
-      const allImgs = parentGrid.querySelectorAll("img"); // all images in this grid
-
-      // build carousel slides
-      let slides = "";
-      allImgs.forEach((pic, i) => {
-        slides += `
-          <div class="carousel-item ${pic === img ? 'active' : ''}">
-            <img src="${pic.src}" class="d-block w-100 rounded">
+      lightboxCarouselInner.innerHTML = `
+        <div class="carousel-item active">
+          <img src="${img.src}" class="d-block w-100 rounded">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>${img.alt}</h5>
           </div>
-        `;
-      });
-
-      lightboxCarouselInner.innerHTML = slides;
+        </div>
+      `;
     });
   });
 </script>
