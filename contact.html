@@ -134,6 +134,19 @@
       .hero-text { max-width:60%; }
       .hero-logo img { height:120px; }
     }
+    .accordion-button {
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      font-weight: 600;
+    }
+    .accordion-button:not(.collapsed) {
+      background: rgba(255,215,0,0.2);
+      color: #ffd700;
+    }
+    .accordion-body {
+      background: rgba(0,0,0,0.3);
+      color: #f1f1f1;
+    }
   </style>
 </head>
 <body>
@@ -186,7 +199,7 @@
         <i class="bi bi-person-badge"></i>
         <h5>Administration & Sponsorship</h5>
         <p><strong>Ts. Dr. Reyanhealme Bin Rohanai</strong></p>
-        <p>Lecturer (DS11)</p>
+        <p>Senior Lecturer (DS11)</p>
         <p>Faculty of Technical and Vocational Education, UTHM</p>
         <p><a href="tel:+60197717020"><i class="bi bi-telephone"></i> +6019-771 7020</a></p>
         <p><a href="mailto:reyan@uthm.edu.my"><i class="bi bi-envelope"></i> reyan@uthm.edu.my</a></p>
@@ -264,63 +277,166 @@
   </div>
 </section>
 
-<!-- FAQ -->
-<section class="glass-section">
-  <h2>Frequently Asked Questions</h2>
-  <div class="accordion" id="faqAccordion">
-    <div class="accordion-item">
-      <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq1">Who can participate?</button></h2>
-      <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-        <div class="accordion-body">Currently, participation is open to undergraduate students from FPTV and invited participants from other faculties within UTHM.</div>
+<!-- ===== FAQ Section ===== -->
+<section class="glass-section" data-aos="fade-up">
+  <div class="container">
+    <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+    <div class="accordion accordion-flush" id="faqAccordion">
+
+      <!-- Q1 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faq1">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer1">
+            Who can participate in FPTV Skills Challenge?
+          </button>
+        </h2>
+        <div id="answer1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Currently, the competition is open to undergraduate students from FPTV and invited participants from other UTHM faculties.
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq2">Is it open to participants outside UTHM?</button></h2>
-      <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-        <div class="accordion-body">At this time, the competition is only open to UTHM participants.</div>
+
+      <!-- Q2 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faq2">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer2">
+            Is participation open to outsiders?
+          </button>
+        </h2>
+        <div id="answer2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            For now, participation is not open to those outside of UTHM.
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq3">Is there any registration fee?</button></h2>
-      <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-        <div class="accordion-body">No. Participation in the competition is free of charge.</div>
+
+      <!-- Q3 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faq3">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer3">
+            What is the registration fee?
+          </button>
+        </h2>
+        <div id="answer3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Participation is completely free of charge.
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq4">When and where will the event be held?</button></h2>
-      <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-        <div class="accordion-body">The competition will be held in the labs of FPTV, and the prize ceremony will take place at Studio Pendidikan, FPTV. Please check the <a href="schedule.html">event schedule</a> regularly and save the dates.</div>
+
+      <!-- Q4 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faq4">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer4">
+            How do I keep track of the competition schedule?
+          </button>
+        </h2>
+        <div id="answer4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Please check the <strong>Schedule</strong> page regularly and save the event dates in your calendar.
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq5">Who should I contact for administration or sponsorship?</button></h2>
-      <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-        <div class="accordion-body">Please reach out to <strong>Ts. Dr. Reyanhealme</strong> for all administrative matters, sponsorship enquiries, and official correspondence.</div>
+
+      <!-- Q5 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faq5">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer5">
+            Who should I contact for administrative or sponsorship enquiries?
+          </button>
+        </h2>
+        <div id="answer5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Please contact <strong>Ts. Dr. Reyanhealme Bin Rohanai</strong> for all administrative, meeting, and sponsorship enquiries.
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq6">What facilities are provided?</button></h2>
-      <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-        <div class="accordion-body">Meals will be provided during the competition. Participants should refer to the trade skill requirements for tools to bring and those provided by the organizers.</div>
+
+      <!-- Q6 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faq6">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer6">
+            Are meals and accommodations provided?
+          </button>
+        </h2>
+        <div id="answer6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Only meals will be provided during the competition. Participants should manage their own accommodation.
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq7">How will participants be evaluated?</button></h2>
-      <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-        <div class="accordion-body">Participants will be evaluated based on the completion of each task. Assessments are conducted by academic experts and invited industrial professionals.</div>
+
+      <!-- Q7 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faq7">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer7">
+            How are participants evaluated?
+          </button>
+        </h2>
+        <div id="answer7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Evaluation is based on task completion and performance, assessed by academic experts and industry professionals.
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq8">How can organizations sponsor this event?</button></h2>
-      <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-        <div class="accordion-body">Details of sponsorship packages can be found on the <a href="sponsors.html">Sponsorship Page</a>. Kindly review the packages and contact the organizing committee for further discussion.</div>
+
+      <!-- Q8 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faq8">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer8">
+            Where can I find sponsorship packages?
+          </button>
+        </h2>
+        <div id="answer8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Sponsorship details are available on our <a href="sponsors.html" class="link-warning">Sponsors</a> page.
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq9">Will participants receive certificates?</button></h2>
-      <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-        <div class="accordion-body">Yes. All participants will receive physical certificates upon completion of the competition.</div>
+
+      <!-- Q9 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faq9">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer9">
+            Where will the competition and prize ceremony take place?
+          </button>
+        </h2>
+        <div id="answer9" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            The competition will be held in the <strong>labs of FPTV</strong>, while the prize ceremony will be conducted at <strong>Studio Pendidikan, FPTV</strong>.
+          </div>
+        </div>
       </div>
+
+      <!-- Q10 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faq10">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer10">
+            Do participants need to bring their own tools?
+          </button>
+        </h2>
+        <div id="answer10" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Yes. Participants should review the list of required trade skill tools. Some tools will be provided by the organizers, others must be brought by participants.
+          </div>
+        </div>
+      </div>
+
+      <!-- Q11 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faq11">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer11">
+            Will participants receive certificates?
+          </button>
+        </h2>
+        <div id="answer11" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Yes, all participants will receive official physical certificates after the competition.
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
