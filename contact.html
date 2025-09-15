@@ -64,11 +64,12 @@
 
     /* Contact Cards */
     .contact-card {
-      background: rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
       border-radius: 12px;
-      padding: 25px; color:#fff;
-      text-align:center;
-      transition: transform 0.3s, box-shadow 0.3s;
+      padding: 20px;
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
     .contact-card:hover {
       transform: translateY(-6px);
@@ -77,11 +78,28 @@
     .contact-card i {
       font-size: 2.2rem; color:#ffd700; margin-bottom:12px;
     }
-    .contact-card h5 { margin-bottom:5px; font-weight:bold; }
+    .contact-section h2 {
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    .contact-card h5 { margin-bottom:10px; font-weight:bold; color: #ffd700; }
     .contact-card p { margin:2px 0; font-size:0.9rem; }
     .contact-card a { color:#ffd700; text-decoration:none; }
 
     /* Form */
+    .enquiry-form .form-control {
+      background: rgba(255,255,255,0.15);
+      border: none;
+      color: #fff;
+    }
+    .enquiry-form .form-control::placeholder {
+      color: #ddd;
+    }
+    
+    .enquiry-form textarea {
+      resize: none;
+    }
     .contact-form input, .contact-form textarea {
       background: rgba(255,255,255,0.1); border: none; color:#fff;
     }
@@ -147,6 +165,7 @@
       background: rgba(0,0,0,0.3);
       color: #f1f1f1;
     }
+    
   </style>
 </head>
 <body>
