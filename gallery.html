@@ -191,30 +191,38 @@
       }
     }
     
-    /* ===== Mobile (≤768px) ===== */
+    /* ===== Mobile Fix: Year Tabs Scroll & Arrow ===== */
     @media (max-width:768px){
-      #yearTabs::after {
-        content: "⇆";
+      /* Pastikan tahun maintain 1 line & boleh scroll */
+      #yearTabs {
+        display: flex;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        white-space: nowrap !important;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+      #yearTabs::-webkit-scrollbar { display: none; }
+      #yearTabs .nav-item {
+        flex: 0 0 auto;   /* tahun tak wrap */
+      }
+      /* Arrow indicator attach dekat tahun */
+      .year-tabs-wrapper {
+        position: relative;
+      }
+      .year-tabs-wrapper::after {
+        content: "⇆";               /* simbol arrow */
         position: absolute;
         right: 5px;
         top: 50%;
         transform: translateY(-50%);
+        font-size: 1.2rem;
         color: #fff;
-        font-size: 0.9rem;
-        opacity: 0.7;
-        animation: bounceLeftRight 1.5s infinite;
-        pointer-events: none;
+        animation: bounceX 1s infinite;
       }
-      @keyframes bounceLeftRight {
-        0%, 100% { transform: translateY(-50%) translateX(0); }
-        50% { transform: translateY(-50%) translateX(-5px); }
-      }
-      /* ===== Year Tabs Fix (Mobile) ===== */
-      #yearTabs {
-        white-space: nowrap;   /* tahun maintain 1 baris */
-      }
-      #yearTabs .nav-item {
-        flex: 0 0 auto;        /* tak mengecil, tak wrap */
+      @keyframes bounceX {
+        0%,100% { transform: translateY(-50%) translateX(0); }
+        50%     { transform: translateY(-50%) translateX(-6px); }
       }
     }
   </style>
