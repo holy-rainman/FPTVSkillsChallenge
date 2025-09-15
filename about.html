@@ -169,6 +169,32 @@
       .about-text p{ white-space:normal; word-break:break-word; }
       .bottom-right-logo img{ height:28px; }
     }
+
+    /* Carousel Controls - make smaller */
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      width: 24px;   /* default ~40px */
+      height: 24px;
+      filter: invert(100%) sepia(50%) saturate(200%) hue-rotate(10deg);
+    }
+    
+    /* Carousel Indicators (dots) - make smaller */
+    .carousel-indicators [data-bs-target] {
+      width: 8px;    /* default ~12px */
+      height: 8px;
+    }
+    
+    @media (max-width: 768px) {
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon {
+        width: 18px;
+        height: 18px;
+      }
+      .carousel-indicators [data-bs-target] {
+        width: 6px;
+        height: 6px;
+      }
+    }
   </style>
 </head>
 <body>
