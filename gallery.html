@@ -144,11 +144,19 @@
       color: #000 !important;                /* black text when active */
       border-radius: 20px;
     }
+    .carousel-caption {
+      bottom: 15px;              /* closer to bottom */
+      text-align: center;
+    }
     .carousel-caption h5 {
-      color: #000;  /* black font */
-      text-shadow: 0 0 3px #fff, 0 0 6px #fff; /* white glow */
+      color: #000;               /* black font */
       font-weight: bold;
-    }    
+      font-size: 1rem;           /* smaller for mobile */
+      text-shadow: 
+        0 0 3px #fff,
+        0 0 6px #fff,
+        0 0 12px #fff;           /* stronger glow */
+    }  
   </style>
 </head>
 <body>
@@ -416,7 +424,7 @@
         if (gImg === img) item.classList.add("active");
         item.innerHTML = `
           <img src="${gImg.src}" class="d-block w-100 rounded">
-          <div class="carousel-caption d-none d-md-block">
+          <div class="carousel-caption">
             <h5>${gImg.alt}</h5>
           </div>
         `;
