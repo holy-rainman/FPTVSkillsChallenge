@@ -70,6 +70,7 @@
       backdrop-filter: blur(10px);
       border-radius: 12px;
       padding: 20px;
+      margin-bottom: 20px;  /* tambah jarak bawah */
       color: #fff;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
@@ -78,7 +79,7 @@
       box-shadow: 0 6px 18px rgba(255,215,0,0.4);
     }
     .contact-card i {
-      font-size: 1.2rem; color:#ffd700; margin-bottom:6px;
+      font-size: 0.9rem; color:#ffd700; margin-bottom:6px;
     }
     /* Bring contact section closer */
     .contact-section {
@@ -95,10 +96,15 @@
 
     .contact-links {
       display: flex;
+      justify-content: space-between;
+      align-items: center;
+      /*
+      display: flex;
       flex-wrap: wrap;
       gap: 10px;
       align-items: center;
       margin-top: 10px;
+      */
     }
     .contact-links span, 
     .contact-links a {
@@ -268,20 +274,22 @@
       <!-- LEFT: Key Contacts (col-5) -->
       <div class="col-lg-5 equal-height">
         <!-- Card 1 -->
-        <div class="contact-card h-100">
+        <div class="contact-card">
           <h5>Administration & Sponsorship</h5>
           <p><strong>Ts. Dr. Reyanhealme Bin Rohanai</strong><br>
           Pensyarah (DS11)<br>
           Fakulti Pendidikan Teknikal & Vokasional, UTHM</p>
-        
-          <div>
-            <p class="mb-1">
-              <i class="bi bi-telephone"></i> +60197717020
-            </p>
-            <p class="mb-0">
-              <i class="bi bi-envelope"></i>
-              <a href="mailto:reyan@uthm.edu.my">reyan@uthm.edu.my</a>
-            </p>
+
+          <div class="contact-links">
+            <div>
+              <p class="mb-1">
+                <i class="bi bi-telephone"></i> +60197717020
+              </p>
+              <p class="mb-0">
+                <i class="bi bi-envelope"></i>
+                <a href="mailto:reyan@uthm.edu.my">reyan@uthm.edu.my</a>
+              </p>
+            <div>
             <a href="https://wa.me/60197717020" target="_blank" class="whatsapp-inline">
               <i class="bi bi-whatsapp"></i> WhatsApp
             </a>
@@ -289,20 +297,22 @@
         </div>
 
         <!-- Card 2 -->
-        <div class="contact-card h-100">
+        <div class="contact-card">
           <h5>Technical Enquiries</h5>
           <p><strong>Ts. Abd Rahim Bin Kasiman</strong><br>
           Jurutera Pengajar (DV10)<br>
           Fakulti Pendidikan Teknikal & Vokasional, UTHM</p>
-        
-          <div>
-            <p class="mb-1">
-              <i class="bi bi-telephone"></i> +60177002044
-            </p>
-            <p class="mb-0">
-              <i class="bi bi-envelope"></i>
-              <a href="mailto:arahim@uthm.edu.my">arahim@uthm.edu.my</a>
-            </p>
+
+          <div class="contact-links">
+            <div>
+              <p class="mb-1">
+                <i class="bi bi-telephone"></i> +60177002044
+              </p>
+              <p class="mb-0">
+                <i class="bi bi-envelope"></i>
+                <a href="mailto:arahim@uthm.edu.my">arahim@uthm.edu.my</a>
+              </p>
+            <div>
             <a href="https://wa.me/60177002044" target="_blank" class="whatsapp-inline">
               <i class="bi bi-whatsapp"></i> WhatsApp
             </a>
