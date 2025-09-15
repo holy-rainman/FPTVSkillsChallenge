@@ -329,22 +329,16 @@
         </form>
 
         <script>
-        document.getElementById("enquiryForm").addEventListener("submit", function(e){
+       document.getElementById("enquiryForm").addEventListener("submit", function(e){
           e.preventDefault();
         
-          const formData = {
-            name: this.name.value,
-            email: this.email.value,
-            category: this.category.value,
-            message: this.message.value
-          };
+          const formData = new FormData(this);
         
           fetch("https://script.google.com/macros/s/AKfycbyFC8UR-N9ee6Ynq44Cu_yG5UI2IrTg_ckLNifYAi9qbZWsWz5EPuugfQ-bZI6gDSensA/exec", {
             method: "POST",
-            body: JSON.stringify(formData),
-            headers: { "Content-Type": "application/json" }
+            body: formData
           })
-          .then(res => res.json())
+          .then(res => res.text())
           .then(data => {
             alert("✅ Enquiry sent successfully!");
             this.reset();
@@ -354,6 +348,7 @@
             console.error(err);
           });
         });
+
         </script>
       </div> <!-- END col-7 -->
     </div> <!-- END row -->
