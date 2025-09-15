@@ -399,18 +399,29 @@
   localStorage.setItem("visitorCount", count);
   document.getElementById("visitorCount").innerText = count;
 
-  // lightbox functionality with captions from alt
+  // lightbox functionality with full carousel
   const lightboxCarouselInner = document.getElementById("lightboxCarouselInner");
-  document.querySelectorAll(".gallery-grid img").forEach((img, idx) => {
+
+  document.querySelectorAll(".gallery-grid img").forEach((img, idx, allImgs) => {
     img.addEventListener("click", () => {
-      lightboxCarouselInner.innerHTML = `
-        <div class="carousel-item active">
-          <img src="${img.src}" class="d-block w-100 rounded">
+      // find the parent .gallery-grid (so each tab is independent)
+      const grid = img.closest(".gallery-grid");
+      const imgs = grid.querySelectorAll("img");
+
+      // build carousel items
+      lightboxCarouselInner.innerHTML = "";
+      imgs.forEach((gImg, i) => {
+        const item = document.createElement("div");
+        item.classList.add("carousel-item");
+        if (gImg === img) item.classList.add("active");
+        item.innerHTML = `
+          <img src="${gImg.src}" class="d-block w-100 rounded">
           <div class="carousel-caption d-none d-md-block">
-            <h5>${img.alt}</h5>
+            <h5>${gImg.alt}</h5>
           </div>
-        </div>
-      `;
+        `;
+        lightboxCarouselInner.appendChild(item);
+      });
     });
   });
 </script>
