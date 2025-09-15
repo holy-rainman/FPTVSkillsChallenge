@@ -4,136 +4,99 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>FPTV Skills Challenge 2026</title>
-  <!-- Bootstrap -->
+
+  <!-- Bootstrap & Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin:0;
-      padding:0;
-      overflow-y: scroll; /* Always show vertical scrollbar */
-      overflow-x: hidden; /* Prevent horizontal scrolling */
+      margin: 0; padding: 0;
+      overflow-y: scroll; 
+      overflow-x: hidden;
     }
 
-    /* Navbar with glass effect */
+    /* ================= NAVBAR ================= */
     .navbar {
       background: rgba(255, 255, 255, 0.85);
       backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
     }
     .navbar-brand {
       font-weight: bold;
       color: #333 !important;
-      display: flex;
-      align-items: center;
+      display: flex; align-items: center;
     }
     .navbar-brand img { height: 40px; margin-right: 8px; }
-    .navbar-nav img { height: 36px; margin-left: 15px; }
     .nav-link {
       position: relative;
-      transition: color 0.3s;
     }
     .nav-link::after {
-      content: "";
-      position: absolute;
-      bottom: -3px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: #333;
+      content: ""; position: absolute;
+      bottom: -3px; left: 0; width: 0;
+      height: 2px; background: #333;
       transition: width 0.3s;
     }
     .nav-link:hover::after { width: 100%; }
 
-    /* Hero Section with Background Image + Overlay */
+    /* ================= HERO ================= */
     .hero {
       position: relative;
       background: url("pic1.png") no-repeat center center/cover;
       height: 100vh;
-      color: white;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
+      color: white; text-align: center;
+      display: flex; flex-direction: column;
       justify-content: center;
       padding: 60px 15px 20px;
     }
     .hero::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: linear-gradient(135deg, rgba(30, 60, 150, 0.8), rgba(200, 0, 80, 0.8));
+      content: ""; position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: linear-gradient(135deg, rgba(30,60,150,0.8), rgba(200,0,80,0.8));
       z-index: 0;
     }
     .hero > * { position: relative; z-index: 1; }
-
     .hero h1 { font-size: 2.5rem; font-weight: bold; margin-bottom: 10px; }
-    .hero h2 { font-size: 1rem; font-weight: normal; margin-bottom: 10px; }
+    .hero h2 { font-size: 1rem; margin-bottom: 10px; }
     .event-date, .event-venue { font-size: 0.9rem; margin-bottom: 4px; }
 
-    /* Mobile version background */
-    @media (max-width: 768px) {
-      .hero {
-        background: url("pic6.png") no-repeat center center/cover;
-      }
-    }
-
-    /* UTHM logo with white transparent box */
+    /* UTHM logo box */
     .uthm-logo {
       margin: 8px auto 12px;
-      max-height: 70px;
       background: rgba(255,255,255,0.4);
-      backdrop-filter: blur(6px);          /* blur effect */
-      -webkit-backdrop-filter: blur(6px);  /* Safari support */
-      padding: 12px 22px;
+      backdrop-filter: blur(6px);
+      padding: 10px 20px;
       border-radius: 14px;
       display: inline-block;
     }
-    .uthm-logo img {
-      height: 28px;             /* keep logo height */
-      width: auto;
-      display: block;
-    }
+    .uthm-logo img { height: 28px; width: auto; display: block; }
 
-    /* Countdown */
+    /* ================= COUNTDOWN ================= */
     .countdown {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
+      display: flex; justify-content: center;
+      gap: 12px; flex-wrap: wrap;
       margin-top: 10px;
     }
     .count-box {
-      background: rgba(255, 255, 255, 0.3);
-      padding: 15px;
-      border-radius: 12px;
-      min-width: 80px;
-      text-align: center;
+      background: rgba(255,255,255,0.3);
+      padding: 15px; border-radius: 12px;
+      min-width: 80px; text-align: center;
       transition: transform 0.3s, box-shadow 0.3s;
     }
     .count-box span {
       display: block;
-      font-size: 1.8rem;
-      font-weight: bold;
-      color: #ffffff;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+      font-size: 1.8rem; font-weight: bold;
+      color: #fff; text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
     }
-    .time-label {
-      font-size: 0.9rem;
-      font-weight: normal;
-      color: #eee;
-    }
+    .time-label { font-size: 0.9rem; color: #eee; }
     .count-box:hover {
       transform: scale(1.05);
       box-shadow: 0 4px 15px rgba(255,255,255,0.5);
     }
 
-    /* Buttons */
+    /* ================= BUTTONS ================= */
     .btn-custom {
-      margin: 8px;
-      padding: 8px 16px;
+      margin: 8px; padding: 8px 16px;
       font-size: 1rem;
       transition: transform 0.3s, box-shadow 0.3s;
     }
@@ -142,90 +105,70 @@
       box-shadow: 0 6px 18px rgba(0,0,0,0.3);
     }
 
-    /* Stats */
+    /* ================= STATS ================= */
     .stats {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      margin-top: 20px;
+      display: flex; justify-content: center;
+      gap: 12px; margin-top: 20px;
       flex-wrap: wrap;
     }
     .stats .card {
-      flex: 1 1 25%;
-      text-align: center;
-      padding: 10px;
-      border-radius: 12px;
+      flex: 1 1 25%; text-align: center;
+      padding: 10px; border-radius: 12px;
       background: rgba(255,255,255,0.2);
       box-shadow: 0 2px 6px rgba(0,0,0,0.08);
       max-width: 150px;
       transition: transform 0.3s, box-shadow 0.3s;
     }
-    .stats .card i {
-      font-size: 1.5rem;
-      margin-bottom: 6px;
-      color: #fff;
-    }
-    .stats .card h4 {
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin: 5px 0;
-      color: #fff;
-    }
-    .stats .card p {
-      font-size: 0.9rem;
-      margin: 0;
-      color: #fff;
-    }
+    .stats .card i { font-size: 1.5rem; margin-bottom: 6px; color: #fff; }
+    .stats .card h4 { font-size: 1.2rem; font-weight: 600; color: #fff; }
+    .stats .card p { font-size: 0.9rem; margin: 0; color: #fff; }
     .stats .card:hover {
       transform: translateY(-5px);
       box-shadow: 0 6px 18px rgba(0,0,0,0.3);
     }
 
-    /* Desktop adjustments */
+    /* ================= BOTTOM FLOATING ITEMS ================= */
+    .bottom-right-logo {
+      position: fixed; bottom: 10px; right: 10px; z-index: 1000;
+    }
+    .bottom-right-logo img { height: 40px; opacity: 0.9; }
+    .visitor-counter {
+      position: fixed; bottom: 10px; left: 10px;
+      background: rgba(255,255,255,0.7);
+      padding: 4px 10px; border-radius: 8px;
+      font-size: 0.8rem; color: #333;
+      display: flex; align-items: center; gap: 4px;
+      z-index: 1000;
+    }
+
+    /* ================= RESPONSIVE ================= */
+    @media (max-width: 768px) {
+      .hero { background: url("pic6.png") no-repeat center center/cover; padding-top: 25px; }
+      .hero h1 { font-size: 1.8rem; }
+      .hero h2 { font-size: 0.9rem; }
+      .count-box { padding: 14px; min-width: 70px; }
+      .count-box span { font-size: 1.8rem; }
+      .time-label { font-size: 0.8rem; }
+      .stats { margin-top: 10px; }
+      .stats .card { max-width: 95px; padding: 6px; }
+      .stats .card p { font-size: 0.7rem; }
+      .uthm-logo { display: block; }
+      .bottom-right-logo img { height: 28px; }
+    }
     @media (min-width: 769px) {
       .hero h1 { font-size: 3.2rem; }
       .hero h2 { font-size: 1.3rem; }
       .count-box { padding: 20px; min-width: 120px; }
       .count-box span { font-size: 2.8rem; }
       .time-label { font-size: 1.2rem; }
-      .stats .card { max-width: 160px; padding: 10px; }
-      .uthm-logo { display:none; }
-    }
-
-    /* Mobile adjustments */
-    @media (max-width: 768px) {
-      .hero { padding-top: 25px; }
-      .hero h1 { font-size: 1.8rem; margin-bottom: 6px; }
-      .hero h3 { font-size: 1rem; margin-top: 8px; }
-      .hero h2 { font-size: 0.9rem; margin-bottom: 6px; }
-      .countdown { margin-top: 6px; }
-      .count-box {
-        background: rgba(255, 255, 255, 0.5);
-        border-radius: 12px;
-        padding: 14px;
-        min-width: 70px;
-      }
-      .count-box span {
-        font-size: 1.8rem;
-        color: #fff;
-        text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
-      }
-      .time-label { font-size: 0.8rem; }
-      .stats { margin-top: 10px; }
-      .stats .card {
-        max-width: 95px;
-        padding: 6px;
-        background: rgba(255,255,255,0.2);
-        border-radius: 12px;
-      }
-      .stats .card i { color: #fff; }
-      .uthm-logo { display:block; }
+      .stats .card { max-width: 160px; }
+      .uthm-logo { display: none; }
     }
   </style>
 </head>
 <body>
 
-<!-- Navbar -->
+<!-- ================ NAVBAR ================ -->
 <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
   <div class="container">
     <a class="navbar-brand" href="index.html">
@@ -234,7 +177,6 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
-    
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
@@ -245,28 +187,28 @@
         <li class="nav-item"><a class="nav-link" href="sponsors.html">Sponsors</a></li>
         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
       </ul>
-      
       <a href="https://www.uthm.edu.my" target="_blank" class="d-none d-lg-block">
-        <img src="logo-uthm-web.png" alt="UTHM Logo" style="height:40px; margin-left:15px;">
+        <img src="logo-uthm-web.png" alt="UTHM Logo" style="height:40px;">
       </a>
     </div>
   </div>
 </nav>
 
-<!-- Hero -->
+<!-- ================ HERO SECTION ================ -->
 <section class="hero" id="home">
   <h1>FPTV Skills Challenge</h1>
   <h2>Membangunkan Kecemerlangan TVET</h2>
   <p class="event-date"><i class="bi bi-calendar-event"></i> Event Date: 29 – 31 May 2026</p>
   <p class="event-venue"><i class="bi bi-geo-alt"></i> UTHM</p>
 
-  <!-- UTHM logo for mobile -->
+  <!-- UTHM logo (mobile only) -->
   <div class="uthm-logo d-lg-none">
     <a href="https://www.uthm.edu.my" target="_blank">
-      <img src="logo-uthm-web.png" alt="UTHM Logo" style="height:36px;">
+      <img src="logo-uthm-web.png" alt="UTHM Logo">
     </a>
   </div>
 
+  <!-- Countdown -->
   <h3>Event Countdown</h3>
   <div class="countdown">
     <div class="count-box"><span id="days">0</span><div class="time-label days-label">Days</div></div>
@@ -275,55 +217,41 @@
     <div class="count-box"><span id="seconds">0</span><div class="time-label seconds-label">Seconds</div></div>
   </div>
 
+  <!-- Buttons -->
   <div class="mt-3">
     <a href="register.html" class="btn btn-danger btn-custom">Register Now</a>
     <a href="categories.html" class="btn btn-primary btn-custom">View Categories</a>
   </div>
 
+  <!-- Stats -->
   <div class="stats">
-    <div class="card">
-      <i class="bi bi-people"></i>
-      <h4>70</h4><p>Participants</p>
-    </div>
-    <div class="card">
-      <i class="bi bi-trophy"></i>
-      <h4>7</h4><p>Skills</p>
-    </div>
-    <div class="card">
-      <i class="bi bi-calendar-event"></i>
-      <h4>3</h4><p>Days</p>
-    </div>
+    <div class="card"><i class="bi bi-people"></i><h4>70</h4><p>Participants</p></div>
+    <div class="card"><i class="bi bi-trophy"></i><h4>7</h4><p>Skills</p></div>
+    <div class="card"><i class="bi bi-calendar-event"></i><h4>3</h4><p>Days</p></div>
   </div>
 </section>
 
-<style>
-  /* Mobile adjustment */
-  @media (max-width: 768px) {
-    .stats .card p {
-      font-size: 0.7rem;  /* smaller label on mobile */
-    }
-  }
-</style>
+<!-- ================ FLOATING ITEMS ================ -->
+<div class="bottom-right-logo"><img src="pic3.png" alt="Reduced Logo"></div>
+<div class="visitor-counter">👀 <span id="visitorCount">1200</span> Visitors</div>
 
-<!-- Scripts -->
+<!-- ================ SCRIPTS ================ -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
+  // Countdown
   const eventDate = new Date("May 29, 2026 09:00:00").getTime();
   function updateCountdown() {
     const now = new Date().getTime();
     const diff = eventDate - now;
     if (diff <= 0) return;
-
-    const days = Math.floor(diff / (1000*60*60*24));
-    const hours = Math.floor((diff % (1000*60*60*24))/(1000*60*60));
-    const minutes = Math.floor((diff % (1000*60*60))/(1000*60));
-    const seconds = Math.floor((diff % (1000*60))/1000);
-
-    document.getElementById("days").innerText = days;
-    document.getElementById("hours").innerText = hours;
-    document.getElementById("minutes").innerText = minutes;
-    document.getElementById("seconds").innerText = seconds;
-
+    const d = Math.floor(diff / (1000*60*60*24));
+    const h = Math.floor((diff % (1000*60*60*24))/(1000*60*60));
+    const m = Math.floor((diff % (1000*60*60))/(1000*60));
+    const s = Math.floor((diff % (1000*60))/1000);
+    document.getElementById("days").innerText = d;
+    document.getElementById("hours").innerText = h;
+    document.getElementById("minutes").innerText = m;
+    document.getElementById("seconds").innerText = s;
     if (window.innerWidth <= 768) {
       document.querySelector(".minutes-label").innerText = "Min";
       document.querySelector(".seconds-label").innerText = "Sec";
@@ -332,64 +260,12 @@
       document.querySelector(".seconds-label").innerText = "Seconds";
     }
   }
-  setInterval(updateCountdown, 1000);
-  updateCountdown();
-</script>
+  setInterval(updateCountdown, 1000); updateCountdown();
 
-<!-- Bottom elements -->
-<div class="bottom-right-logo">
-  <img src="pic3.png" alt="Reduced Logo">
-</div>
-
-<div class="visitor-counter">
-  👀 <span id="visitorCount">1200</span> Visitors
-</div>
-
-<style>
-  /* bottom-right logo */
-  .bottom-right-logo {
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    z-index: 1000;
-  }
-  .bottom-right-logo img {
-    height: 40px;  /* default size for desktop */
-    width: auto;
-    opacity: 0.9;
-  }
-
-  /* visitor counter */
-  .visitor-counter {
-    position: fixed;
-    bottom: 10px;
-    left: 10px;
-    background: rgba(255,255,255,0.7);
-    padding: 4px 10px;
-    border-radius: 8px;
-    font-size: 0.8rem;
-    color: #333;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-  }
-
-  /* Mobile adjustment */
-  @media (max-width: 768px) {
-    .bottom-right-logo img {
-      height: 28px; /* smaller logo size on mobile */
-    }
-  }
-</style>
-
-<script>
-  // simple visitor counter simulation (increments when page reloads)
+  // Visitor Counter
   let count = localStorage.getItem("visitorCount") || 1200;
-  count++;
-  localStorage.setItem("visitorCount", count);
+  count++; localStorage.setItem("visitorCount", count);
   document.getElementById("visitorCount").innerText = count;
 </script>
-
 </body>
 </html>
