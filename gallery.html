@@ -167,18 +167,22 @@
     .year-tabs-wrapper {
       position: relative;
       overflow: hidden;
+      height: 36px; /* ikut tinggi tab bar lebih kurang */
     }
     
     /* Left & right fade indicator */
       .year-tabs-wrapper::before,
       .year-tabs-wrapper::after {
-      content: "";
-      position: absolute;
-      top: 0; bottom: 0;
-      width: 30px;
-      pointer-events: none;
-      z-index: 2;
-    }
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;       /* align tengah */
+        height: 100%;       /* sama tinggi dengan wrapper */
+        width: 25px;        /* panjang fade */
+        pointer-events: none;
+        z-index: 2;
+      }
     
     .year-tabs-wrapper::before, {
       left: 0;
