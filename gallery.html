@@ -214,13 +214,13 @@
       /* Gallery images di mobile */
       .gallery-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));  
+        grid-template-columns: repeat(4, 1fr));  
         gap: 30px;   /* jarak vertical + horizontal */
         padding: 10px;
       }
       .gallery-grid img {
         width: 100% !important;   /* ikut cell, bukan fixed % */
-        height: auto !important;
+        height: auto;
         border-radius: 12px;
         object-fit: cover;
       }
