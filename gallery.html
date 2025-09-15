@@ -362,15 +362,25 @@
   localStorage.setItem("visitorCount", count);
   document.getElementById("visitorCount").innerText = count;
 
-  // lightbox functionality
+  // lightbox functionality - load all images from same category
   const lightboxCarouselInner = document.getElementById("lightboxCarouselInner");
+
   document.querySelectorAll(".gallery-grid img").forEach((img) => {
     img.addEventListener("click", () => {
-      lightboxCarouselInner.innerHTML = `
-        <div class="carousel-item active">
-          <img src="${img.src}" class="d-block w-100 rounded">
-        </div>
-      `;
+      const parentGrid = img.closest(".gallery-grid");   // find the category container
+      const allImgs = parentGrid.querySelectorAll("img"); // all images in this grid
+
+      // build carousel slides
+      let slides = "";
+      allImgs.forEach((pic, i) => {
+        slides += `
+          <div class="carousel-item ${pic === img ? 'active' : ''}">
+            <img src="${pic.src}" class="d-block w-100 rounded">
+          </div>
+        `;
+      });
+
+      lightboxCarouselInner.innerHTML = slides;
     });
   });
 </script>
