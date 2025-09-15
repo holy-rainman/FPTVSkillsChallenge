@@ -157,81 +157,53 @@
     }
     /* ===== Desktop (≥769px) ===== */
     @media (min-width:769px){
-      /* Year Tabs - center & besar */
+      .year-tabs-wrapper {
+        overflow: visible !important;   /* jangan scroll kat desktop */
+        height: auto !important;        /* ikut content */
+      }
       #yearTabs {
         display: flex !important;
         flex-wrap: wrap !important;
-        overflow: hidden !important;      /* buang scrollbar */
-        justify-content: center !important;
+        justify-content: center !important; /* center betul2 */
+        overflow: visible !important;       /* buang scrollbar */
         margin-bottom: 30px;
       }
       #yearTabs .nav-link {
-        font-size: 1.6rem;   /* cukup besar tapi tak overlap */
-        padding: 8px 20px;   /* spacing */
-        margin: 0 10px;      /* jarak antara tahun */
+        font-size: 1.6rem;
+        padding: 8px 18px;
+        margin: 0 12px;
       }
     
       /* Folder Tabs */
       .tab-pane > .nav-tabs {
         justify-content: center !important;
-        margin-top: 25px;   /* tambah jarak dari tahun */
+        margin-top: 35px;   /* tambah jarak supaya tak overlap */
         margin-bottom: 20px;
       }
       .tab-pane > .nav-tabs .nav-link {
         font-size: 1rem;
         padding: 6px 14px;
-        margin: 0 6px;
+        margin: 0 8px;
       }
     }
-
+    
     /* ===== Mobile (≤768px) ===== */
     @media (max-width:768px){
-      body { background: url("pic6.png") center center/cover no-repeat fixed; }
-      .glass-section { margin: 30px 10px; padding: 25px 15px; }
-      .gallery-grid img { width: 45%; }
-      .bottom-right-logo img { height: 28px; }
-    }
-    /* ===== Year Tabs Horizontal Scroll (Mobile) ===== */
-    .year-tabs-wrapper {
-      position: relative;
-      overflow: hidden;
-      height: 36px; /* ikut tinggi tab bar lebih kurang */
-    }
-    
-    /* Left & right fade indicator */
-      .year-tabs-wrapper::before,
-      .year-tabs-wrapper::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        margin: auto;       /* align tengah */
-        height: 100%;       /* sama tinggi dengan wrapper */
-        width: 25px;        /* panjang fade */
-        pointer-events: none;
-        z-index: 2;
+      .year-tabs-wrapper {
+        position: relative;
+        overflow: hidden;
+        height: 40px; /* tinggi untuk mobile scroll bar */
       }
-    
-    .year-tabs-wrapper::before, {
-      left: 0;
-      background: linear-gradient(to right, rgba(0,0,0,0.4), transparent);
+      #yearTabs {
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;    /* scrollable untuk mobile */
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        justify-content: flex-start !important;
+      }
+      #yearTabs::-webkit-scrollbar { display: none; }
+      #yearTabs .nav-item { flex: 0 0 auto; }
     }
-    
-    .year-tabs-wrapper::after {
-      right: 0;
-      background: linear-gradient(to left, rgba(0,0,0,0.4), transparent);
-    }
-    
-    /* Tabs scroll */
-    #yearTabs {
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-      justify-content: flex-start !important; /* mula dari kiri */
-    }
-    #yearTabs::-webkit-scrollbar { display: none; }
-    #yearTabs .nav-item { flex: 0 0 auto; }    
   </style>
 </head>
 <body>
