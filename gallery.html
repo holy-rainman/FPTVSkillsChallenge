@@ -163,6 +163,16 @@
       .gallery-grid img { width: 45%; }
       .bottom-right-logo img { height: 28px; }
     }
+    /* ===== Year Tabs Horizontal Scroll (Mobile) ===== */
+    #yearTabs {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch; /* smooth scroll iOS */
+      scrollbar-width: none; /* hide scrollbar Firefox */
+    }
+    #yearTabs::-webkit-scrollbar { display: none; } /* hide scrollbar Chrome/Safari */
+    #yearTabs .nav-item { flex: 0 0 auto; } /* prevent shrinking */
+    
   </style>
 </head>
 <body>
