@@ -4,45 +4,46 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Register | FPTV Skills Challenge 2026</title>
-  <!-- Bootstrap -->
+
+  <!-- Bootstrap & Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
   <style>
+    /* ===== Base ===== */
     body {
       font-family: Arial, sans-serif;
-      margin:0; padding:0;
-      overflow-y: scroll;
+      margin: 0;
+      padding: 0;
       overflow-x: hidden;
-      color:#fff;
-      background: url("pic1.png") no-repeat center center/cover fixed;
+      overflow-y: scroll;
+      color: #fff;
+      background: url("pic1.png") center center/cover no-repeat fixed;
     }
-
     body::before {
-      content:"";
-      position: fixed;   /* from absolute → fixed */
-      top:0; left:0; 
-      width:100%; 
-      height:100%;
-      background:linear-gradient(135deg, rgba(30,60,150,0.85), rgba(200,0,80,0.85));
-      z-index:-1;
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(135deg, rgba(30,60,150,0.85), rgba(200,0,80,0.85));
+      z-index: -1;
     }
-    /* Navbar with glass effect */
+    html, body { max-width: 100%; }
+
+    /* ===== Navbar ===== */
     .navbar {
       background: rgba(255,255,255,0.85);
       backdrop-filter: blur(10px);
     }
     .navbar-brand {
       font-weight: bold;
+      display: flex; align-items: center;
       color: #333 !important;
-      display: flex;
-      align-items: center;
     }
     .navbar-brand img { height: 40px; margin-right: 8px; }
     .nav-link {
+      color: #333 !important;
       position: relative;
-      color:#333 !important;
     }
     .nav-link::after {
       content: "";
@@ -54,7 +55,7 @@
     }
     .nav-link:hover::after { width: 100%; }
 
-    /* Glass form container */
+    /* ===== Glass Section (Form Container) ===== */
     .glass-section {
       background: rgba(255,255,255,0.1);
       backdrop-filter: blur(12px);
@@ -62,17 +63,15 @@
       padding: 40px 20px;
       margin: 100px auto 40px;
       max-width: 900px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
       color: #fff;
-    }
-
-    .glass-section h2 {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
       text-align: center;
+    }
+    .glass-section h2 {
       font-weight: bold;
       margin-bottom: 20px;
       position: relative;
     }
-
     .glass-section h2::after {
       content: "";
       position: absolute;
@@ -82,7 +81,6 @@
       background: #ffd700;
       border-radius: 2px;
     }
-
     .form-container iframe {
       width: 100%;
       height: 850px;
@@ -91,23 +89,16 @@
       filter: drop-shadow(0 0 8px rgba(0,0,0,0.3));
     }
 
-    /* Bottom floating logo */
+    /* ===== Bottom Floating Elements ===== */
     .bottom-right-logo {
       position: fixed;
-      bottom: 10px;
-      right: 10px;
+      bottom: 10px; right: 10px;
       z-index: 1000;
     }
-    .bottom-right-logo img {
-      height: 40px;
-      opacity: 0.9;
-    }
-
-    /* Visitor counter */
+    .bottom-right-logo img { height: 40px; opacity: 0.9; }
     .visitor-counter {
       position: fixed;
-      bottom: 10px;
-      left: 10px;
+      bottom: 10px; left: 10px;
       background: rgba(255,255,255,0.7);
       padding: 4px 10px;
       border-radius: 8px;
@@ -115,12 +106,15 @@
       color: #333;
     }
 
-    /* Mobile adjustments */
+    /* ===== Mobile (≤768px) ===== */
     @media (max-width:768px){
       body {
-        background: url("pic6.png") no-repeat center center/cover fixed;
+        background: url("pic6.png") center center/cover no-repeat fixed;
       }
-      .glass-section { margin: 80px 10px 30px; padding: 25px 15px; }
+      .glass-section {
+        margin: 80px 10px 30px;
+        padding: 25px 15px;
+      }
       .form-container iframe { height: 700px; }
       .bottom-right-logo img { height: 28px; }
     }
@@ -128,7 +122,7 @@
 </head>
 <body>
 
-<!-- Navbar -->
+<!-- ===== Navbar ===== -->
 <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
   <div class="container">
     <a class="navbar-brand" href="index.html">
@@ -147,7 +141,6 @@
         <li class="nav-item"><a class="nav-link" href="sponsors.html">Sponsors</a></li>
         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
       </ul>
-      
       <a href="https://www.uthm.edu.my" target="_blank" class="d-none d-lg-block">
         <img src="logo-uthm-web.png" alt="UTHM Logo" style="height:40px;">
       </a>
@@ -155,26 +148,25 @@
   </div>
 </nav>
 
-<!-- Registration form -->
+<!-- ===== Registration Form ===== -->
 <section class="glass-section">
   <h2>Register Now</h2>
-  <p class="text-center">Fill in the form below to secure your spot in FPTV Skills Challenge 2026.</p>
+  <p>Fill in the form below to secure your spot in FPTV Skills Challenge 2026.</p>
   <div class="form-container">
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScGGm1c1XhcdQ2hmXQIW3oH52WCL_UO4FCDcjTud_nr1AZ7vA/viewform?embedded=true" width="640" height="772" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScGGm1c1XhcdQ2hmXQIW3oH52WCL_UO4FCDcjTud_nr1AZ7vA/viewform?embedded=true">
+      Loading…
     </iframe>
   </div>
 </section>
 
-<!-- Bottom floating items -->
-<div class="bottom-right-logo">
-  <img src="pic3.png" alt="Reduced Logo">
-</div>
+<!-- ===== Bottom Floating Items ===== -->
+<div class="bottom-right-logo"><img src="pic3.png" alt="Reduced Logo"></div>
 <div class="visitor-counter">👀 <span id="visitorCount">1200</span> Visitors</div>
 
-<!-- Scripts -->
+<!-- ===== Scripts ===== -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-  // Visitor counter simulation
+  // Simple Visitor Counter
   let count = localStorage.getItem("visitorCount") || 1200;
   count++;
   localStorage.setItem("visitorCount", count);
