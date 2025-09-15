@@ -315,35 +315,47 @@
       <!-- RIGHT: Enquiry Form (col-7) -->
       <div class="col-lg-7">
         <h2>Send Us Your Enquiry</h2>
-        <form>
-          <div class="row g-3">
-            <div class="col-md-6">
-              <input type="text" class="form-control" placeholder="Your Name" required>
-            </div>
-            <div class="col-md-6">
-              <input type="text" class="form-control" placeholder="Designation">
-            </div>
-            <div class="col-md-6">
-              <input type="text" class="form-control" placeholder="Company/Institution">
-            </div>
-            <div class="col-md-6">
-              <input type="email" class="form-control" placeholder="Your Email" required>
-            </div>
-            <div class="col-12">
-              <select class="form-select" required>
-                <option value="">Select Category</option>
-                <option value="admin">Administration / Sponsorship</option>
-                <option value="technical">Technical / Competition</option>
-              </select>
-            </div>
-            <div class="col-12">
-              <textarea class="form-control" rows="6" placeholder="Your Enquiry" required></textarea>
-            </div>
-          </div>
-          <button type="submit" class="btn btn-warning mt-3 px-4">Submit</button>
+        <form id="enquiryForm">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <select name="category" required>
+            <option value="admin">Administration</option>
+            <option value="sponsor">Sponsorship</option>
+            <option value="technical">Technical</option>
+            <option value="competition">Competition</option>
+          </select>
+          <textarea name="message" placeholder="Your Enquiry" required></textarea>
+          <button type="submit">Submit</button>
         </form>
-      </div> <!-- END col-7 -->
 
+        <script>
+        document.getElementById("enquiryForm").addEventListener("submit", function(e){
+          e.preventDefault();
+        
+          const formData = {
+            name: this.name.value,
+            email: this.email.value,
+            category: this.category.value,
+            message: this.message.value
+          };
+        
+          fetch("https://script.google.com/macros/s/AKfycbyFC8UR-N9ee6Ynq44Cu_yG5UI2IrTg_ckLNifYAi9qbZWsWz5EPuugfQ-bZI6gDSensA/exec", {
+            method: "POST",
+            body: JSON.stringify(formData),
+            headers: { "Content-Type": "application/json" }
+          })
+          .then(res => res.json())
+          .then(data => {
+            alert("✅ Enquiry sent successfully!");
+            this.reset();
+          })
+          .catch(err => {
+            alert("❌ Error sending enquiry. Try again later.");
+            console.error(err);
+          });
+        });
+        </script>
+      </div> <!-- END col-7 -->
     </div> <!-- END row -->
   </div> <!-- END container -->
 </section>
