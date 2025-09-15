@@ -193,21 +193,22 @@
     
     /* ===== Mobile (≤768px) ===== */
     @media (max-width:768px){
-      .year-tabs-wrapper {
-        position: relative;
-        overflow: hidden;
-        height: 40px; /* tinggi untuk mobile scroll bar */
+      .year-tabs-wrapper::after {
+        content: "⇆";
+        position: absolute;
+        right: 8px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #fff;
+        font-size: 1rem;
+        opacity: 0.7;
+        animation: bounceLeftRight 1.5s infinite;
+        pointer-events: none;
       }
-      #yearTabs {
-        flex-wrap: nowrap !important;
-        overflow-x: auto !important;    /* scrollable untuk mobile */
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        justify-content: flex-start !important;
+      @keyframes bounceLeftRight {
+        0%, 100% { transform: translateY(-50%) translateX(0); }
+        50% { transform: translateY(-50%) translateX(-5px); }
       }
-      #yearTabs::-webkit-scrollbar { display: none; }
-      #yearTabs .nav-item { flex: 0 0 auto; }
-    }
   </style>
 </head>
 <body>
