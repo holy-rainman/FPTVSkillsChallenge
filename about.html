@@ -260,7 +260,13 @@
         margin-bottom: 16px; /* more space below the image */
       }
       .about-text {
-        margin-top: 20px;  /* bigger gap before "Empowering TVET..." */
+        text-align: center;   /* center the text on mobile */
+        margin: 0 10px;       /* add side margin so text isn’t cramped */
+      }
+      .about-text p {
+        display: block;       /* ensure full width */
+        white-space: normal;  /* allow wrapping properly */
+        word-break: break-word; /* break long words if needed */
       }
     }
     
@@ -309,7 +315,15 @@
       </div>
       <div class="col-md-6 about-text">
         <h2>Empowering TVET, Shaping the Future</h2>
-        <p>The <strong>FPTV Skills Challenge (FPTVSC)</strong> is proudly organized...</p>
+        <p>
+          The <strong>FPTV Skills Challenge (FPTVSC)</strong> is an annual competition organized by 
+          the Faculty of Technical and Vocational Education (FPTV), Universiti Tun Hussein Onn Malaysia (UTHM), 
+          in conjunction with <strong>Hari TVET Negara</strong>.  
+          This event serves as a premier platform for students to demonstrate technical expertise, 
+          creativity, and problem-solving skills through industry-relevant challenges.  
+          It reflects FPTV’s commitment to nurturing future-ready graduates who are 
+          <em>innovative, collaborative, and competitive</em> in the global workforce.
+        </p>
       </div>
     </div>
   </div>
