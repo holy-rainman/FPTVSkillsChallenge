@@ -170,17 +170,17 @@
     }
     
     /* Left & right fade indicator */
-    .year-tabs-wrapper::before,
-    .year-tabs-wrapper::after {
+      .year-tabs-wrapper::before,
+      .year-tabs-wrapper::after {
       content: "";
       position: absolute;
       top: 0; bottom: 0;
       width: 30px;
-      pointer-events: none; /* supaya boleh klik tab */
+      pointer-events: none;
       z-index: 2;
     }
     
-    .year-tabs-wrapper::before {
+    .year-tabs-wrapper::before, {
       left: 0;
       background: linear-gradient(to right, rgba(0,0,0,0.5), transparent);
     }
@@ -293,7 +293,7 @@
     </div>
 
     <!-- 2025 -->
-    <div class="tab-pane fade show active" id="y2025">
+    <div class="tab-pane fade" id="y2025">
       <ul class="nav nav-tabs justify-content-center mb-3">
         <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#y2025-event">Event</button></li>
         <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#y2025-ceremony">Ceremony</button></li>
