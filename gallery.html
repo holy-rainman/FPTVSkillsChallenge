@@ -159,25 +159,26 @@
     @media (min-width:769px){
       /* Year Tabs - center & besar */
       #yearTabs {
+        display: flex !important;
         flex-wrap: wrap !important;
-        overflow: visible !important;   /* buang scrollbar */
+        overflow: hidden !important;      /* buang scrollbar */
         justify-content: center !important;
-        margin-bottom: 25px;
+        margin-bottom: 30px;
       }
       #yearTabs .nav-link {
-        font-size: 1.8rem;   /* besar */
-        padding: 10px 25px;  /* spacing */
-        margin: 0 12px;      /* jarak antara tahun */
+        font-size: 1.6rem;   /* cukup besar tapi tak overlap */
+        padding: 8px 20px;   /* spacing */
+        margin: 0 10px;      /* jarak antara tahun */
       }
     
       /* Folder Tabs */
-      .tab-content > .nav-tabs {
+      .tab-pane > .nav-tabs {
         justify-content: center !important;
-        margin-top: 20px;
+        margin-top: 25px;   /* tambah jarak dari tahun */
         margin-bottom: 20px;
       }
-      .tab-content > .nav-tabs .nav-link {
-        font-size: 1rem;   /* kecil sikit dari tahun */
+      .tab-pane > .nav-tabs .nav-link {
+        font-size: 1rem;
         padding: 6px 14px;
         margin: 0 6px;
       }
