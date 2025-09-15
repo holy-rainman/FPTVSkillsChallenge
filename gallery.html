@@ -166,7 +166,7 @@
         flex-wrap: wrap !important;
         justify-content: center !important; /* center betul2 */
         overflow: visible !important;       /* buang scrollbar */
-        margin-bottom: 1px;
+        margin-bottom: 0px !important;  /* buang gap bawah tahun */
       }
       #yearTabs .nav-link {
         font-size: 1.6rem;
@@ -181,8 +181,8 @@
       /* Folder Tabs */
       .tab-pane > .nav-tabs {
         justify-content: center !important;
-        margin-top: 35px;   /* tambah jarak supaya tak overlap */
-        margin-bottom: 20px;
+        margin-top: 5px !important;     /* asal 20px → jadi rapat */
+        margin-bottom: 5px !important;  /* optional */
       }
       .tab-pane > .nav-tabs .nav-link {
         font-size: 1rem;
