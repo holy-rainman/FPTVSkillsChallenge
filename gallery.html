@@ -113,16 +113,13 @@
       grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
       gap: 40px;              /* jarak vertical + horizontal */
       padding: 20px;
-      justify-items: center;  /* centerkan gambar dalam grid cell */
     }
     .gallery-grid img {
-      width: 15%;           /* kawal fixed width gambar */
-      height: 15%;
+      width: 100%;           /* kawal fixed width gambar */
+      height: auto;
       border-radius: 12px;
       object-fit: cover;
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      cursor: pointer;
-      transition: transform 0.3s, box-shadow 0.3s;
     }
     .gallery-grid img:hover {
       transform: scale(1.05);
@@ -220,9 +217,7 @@
       }
       .gallery-grid img {
         width: 100% !important;   /* ikut cell, bukan fixed % */
-        height: auto;
-        border-radius: 12px;
-        object-fit: cover;
+        height: auto !important;
       }
     }
   </style>
