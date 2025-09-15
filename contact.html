@@ -112,21 +112,18 @@
       color: #ffd700;
     }
     
-    .whatsapp-inline {
+    .whatsapp-small {
       background: #25D366;
-      color: white !important;
-      font-weight: bold;
-      padding: 6px 12px;
-      border-radius: 6px;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      white-space: nowrap;
-      margin-left: 10px;   /* move left */
-      margin-top: 8px;     /* move down */
-      font-size: 0.9rem;
+      color: white;
+      font-size: 0.75rem;   /* kecil */
+      padding: 2px 8px;     /* kecil */
+      border-radius: 4px;
+      text-decoration: none;
+      display: inline-block;
     }
-    .whatsapp-inline i { font-size: 1rem; }
+    .whatsapp-small:hover {
+      background: #1ebe5d;
+    }
 
     /* Equal height for cards + form */
     .equal-height {
@@ -274,45 +271,40 @@
           Pensyarah (DS11)<br>
           Fakulti Pendidikan Teknikal & Vokasional, UTHM</p>
 
-          <div class="contact-links">
-            <!-- Phone + WhatsApp same row -->
-            <div class="d-flex justify-content-between align-items-center mb-2">
-              <span><i class="bi bi-telephone me-2"></i> +60197717020</span>
-              <a href="https://wa.me/60197717020" target="_blank" class="whatsapp-inline">
-                <i class="bi bi-whatsapp"></i> WhatsApp
-              </a>
-            </div>
-            <!-- Email row BELOW -->
-            <div class="d-flex align-items-center">
-              <i class="bi bi-envelope me-2"></i>
-              <a href="mailto:reyan@uthm.edu.my">reyan@uthm.edu.my</a>
-            </div>
+          <!-- Phone row with WhatsApp small box -->
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <span><i class="bi bi-telephone me-2"></i> +60197717020</span>
+            <a href="https://wa.me/60197717020" target="_blank" class="whatsapp-small">
+              WhatsApp
+            </a>
           </div>
-        </div> <!-- END Card 1 -->
+          <!-- Email row -->
+          <div>
+            <i class="bi bi-envelope me-2"></i>
+            <a href="mailto:reyan@uthm.edu.my">reyan@uthm.edu.my</a>
+          </div>
+        </div>
 
-        <!-- Card 2 -->
+        <!-- Card 1 -->
         <div class="contact-card">
-          <h5>Technical Enquiries</h5>
+          <h5>Tehnical Enquiries</h5>
           <p><strong>Ts. Abd Rahim Bin Kasiman</strong><br>
           Jurutera Pengajar (DV10)<br>
           Fakulti Pendidikan Teknikal & Vokasional, UTHM</p>
 
-          <div class="contact-links">
-            <!-- Phone + WhatsApp same row -->
-            <div class="d-flex justify-content-between align-items-center mb-2">
-              <span><i class="bi bi-telephone me-2"></i> +60177002044</span>
-              <a href="https://wa.me/60177002044" target="_blank" class="whatsapp-inline">
-                <i class="bi bi-whatsapp"></i> WhatsApp
-              </a>
-            </div>
-            <!-- Email row BELOW -->
-            <div class="d-flex align-items-center">
-              <i class="bi bi-envelope me-2"></i>
-              <a href="mailto:arahim@uthm.edu.my">arahim@uthm.edu.my</a>
-            </div>
+          <!-- Phone row with WhatsApp small box -->
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <span><i class="bi bi-telephone me-2"></i> +60177002044</span>
+            <a href="https://wa.me/60177002044" target="_blank" class="whatsapp-small">
+              WhatsApp
+            </a>
           </div>
-        </div> <!-- END Card 2 -->
-
+          <!-- Email row -->
+          <div>
+            <i class="bi bi-envelope me-2"></i>
+            <a href="mailto:arahim@uthm.edu.my">arahim@uthm.edu.my</a>
+          </div>
+        </div>
       </div> <!-- END col-5 -->
 
       <!-- RIGHT: Enquiry Form (col-7) -->
