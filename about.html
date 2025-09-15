@@ -183,15 +183,18 @@
       }
     }
     
-   /* Carousel Indicators - Universal Reset */
+   /* Force Reset Bootstrap Indicators */
     .carousel-indicators [data-bs-target] {
-      width: 8px !important;    /* bulat kecik */
-      height: 8px !important;
+      flex: 0 0 auto !important;   /* hentikan dia stretch */
+      width: 10px !important;      /* bulat */
+      height: 10px !important;
       border-radius: 50% !important;
-      margin: 4px !important;   /* jarak normal */
+      margin: 4px !important;      /* jarak sama rata */
       background-color: #ffd700 !important;
       opacity: 0.5 !important;
     }
+    
+    /* Active dot */
     .carousel-indicators .active {
       opacity: 1 !important;
       transform: scale(1.3) !important;
