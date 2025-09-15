@@ -129,6 +129,11 @@
       padding:4px 10px; border-radius:8px;
       font-size:0.8rem; color:#333;
     }
+    @media(min-width:992px){
+      .hero-content { display:flex; justify-content:space-between; align-items:center; }
+      .hero-text { max-width:60%; }
+      .hero-logo img { height:120px; }
+    }
   </style>
 </head>
 <body>
@@ -161,9 +166,15 @@
 
 <!-- Hero -->
 <section class="hero">
-  <img src="logo.png" alt="FPTV Skills Challenge Logo">
-  <h1>Contact Us</h1>
-  <p>Get in touch with the organizing team for enquiries, sponsorships, or technical assistance.</p>
+  <div class="container hero-content">
+    <div class="hero-text">
+      <h1>Contact FPTV Skills Challenge 2026</h1>
+      <p>Get in touch with us for administration, sponsorships, or technical enquiries.</p>
+    </div>
+    <div class="hero-logo d-none d-lg-block">
+      <img src="logo.png" alt="FPTVSC Logo">
+    </div>
+  </div>
 </section>
 
 <!-- Contacts -->
@@ -179,7 +190,11 @@
         <p>Faculty of Technical and Vocational Education, UTHM</p>
         <p><a href="tel:+60197717020"><i class="bi bi-telephone"></i> +6019-771 7020</a></p>
         <p><a href="mailto:reyan@uthm.edu.my"><i class="bi bi-envelope"></i> reyan@uthm.edu.my</a></p>
-        <a href="https://wa.me/60197717020" target="_blank" class="btn btn-sm btn-warning mt-2">WhatsApp</a>
+        <a href="https://wa.me/60197717020" target="_blank" 
+           class="btn btn-success d-flex align-items-center justify-content-center"
+           style="font-size:1rem; font-weight:600; border-radius:10px; padding:10px;">
+           <i class="bi bi-whatsapp" style="font-size:1.5rem; margin-right:8px;"></i> WhatsApp Dr Reyanhealme
+        </a>
       </div>
     </div>
     <div class="col-md-6">
@@ -191,7 +206,11 @@
         <p>Faculty of Technical and Vocational Education, UTHM</p>
         <p><a href="tel:+60177002044"><i class="bi bi-telephone"></i> +6017-700 2044</a></p>
         <p><a href="mailto:arahim@uthm.edu.my"><i class="bi bi-envelope"></i> arahim@uthm.edu.my</a></p>
-        <a href="https://wa.me/60177002044" target="_blank" class="btn btn-sm btn-warning mt-2">WhatsApp</a>
+        <a href="https://wa.me/60177002044" target="_blank" 
+           class="btn btn-success d-flex align-items-center justify-content-center"
+           style="font-size:1rem; font-weight:600; border-radius:10px; padding:10px;">
+           <i class="bi bi-whatsapp" style="font-size:1.5rem; margin-right:8px;"></i> WhatsApp Ts.Abd Rahim
+        </a>
       </div>
     </div>
   </div>
@@ -200,15 +219,22 @@
 <!-- Contact Form -->
 <section class="glass-section">
   <h2>Send Us Your Enquiry</h2>
-  <form class="contact-form">
+  <form>
     <div class="row g-3">
       <div class="col-md-6"><input type="text" class="form-control" placeholder="Your Name" required></div>
-      <div class="col-md-6"><input type="text" class="form-control" placeholder="Designation" required></div>
+      <div class="col-md-6"><input type="text" class="form-control" placeholder="Designation"></div>
       <div class="col-md-6"><input type="text" class="form-control" placeholder="Company/Institution"></div>
       <div class="col-md-6"><input type="email" class="form-control" placeholder="Your Email" required></div>
-      <div class="col-12"><textarea class="form-control" rows="4" placeholder="Your Enquiry" required></textarea></div>
+      <div class="col-12">
+        <select class="form-select" required>
+          <option value="">Select Category</option>
+          <option value="admin">Administration / Sponsorship</option>
+          <option value="technical">Technical / Competition</option>
+        </select>
+      </div>
+      <div class="col-12"><textarea class="form-control" rows="5" placeholder="Your Enquiry" required></textarea></div>
     </div>
-    <button type="submit" class="btn mt-3">Submit</button>
+    <button type="submit" class="btn btn-warning mt-3 px-4">Submit</button>
   </form>
 </section>
 
@@ -216,7 +242,7 @@
 <section class="glass-section">
   <h2>Our Location</h2>
   <div class="map-container">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.279981399201!2d103.080609!3d1.853521!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da0f93f57eacbf%3A0x4a5ddf1a25f0d8f4!2sFaculty%20of%20Technical%20and%20Vocational%20Education%20(FPTV)%20UTHM!5e0!3m2!1sen!2smy!4v1695577390854!5m2!1sen!2smy" allowfullscreen="" loading="lazy"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.7103058798525!2d103.0798606745737!3d1.862588798120407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d05eac3fffffff%3A0x643c3c58e5280384!2sFaculty%20of%20Technical%20and%20Vocational%20Education%20(FPTV)%20-%20Universiti%20Tun%20Hussein%20Onn%20Malaysia!5e0!3m2!1sen!2smy!4v1757945445630!5m2!1sen!2smy" allowfullscreen="" loading="lazy"></iframe>
   </div>
 </section>
 
