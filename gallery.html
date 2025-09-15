@@ -197,6 +197,7 @@
       #yearTabs {
         display: flex;
         flex-wrap: nowrap !important;
+        justify-content: flex-start !important;  /* start dari kiri */
         overflow-x: auto !important;
         white-space: nowrap !important;
         -webkit-overflow-scrolling: touch;
@@ -213,16 +214,16 @@
       .year-tabs-wrapper::after {
         content: "⇆";               /* simbol arrow */
         position: absolute;
-        right: 5px;
-        top: 50%;
+        right: 10px;
+        top: -18px;
         transform: translateY(-50%);
         font-size: 1.2rem;
         color: #fff;
         animation: bounceX 1s infinite;
       }
       @keyframes bounceX {
-        0%,100% { transform: translateY(-50%) translateX(0); }
-        50%     { transform: translateY(-50%) translateX(-6px); }
+        0%,100% { transform: translateX(0); }
+        50%     { transform: translateX(-6px); }
       }
     }
   </style>
