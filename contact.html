@@ -130,9 +130,9 @@
       font-size:0.8rem; color:#333;
     }
     @media(min-width:992px){
-      .hero-content { display:flex; justify-content:space-between; align-items:center; }
-      .hero-text { max-width:60%; }
-      .hero-logo img { height:120px; }
+      .hero-content { display:flex; justify-content:center; align-items:center; gap:40px; }
+      .hero-text { max-width:40%; }
+      .hero-logo img { height:180px; } 
     }
     .accordion-button {
       background: rgba(255,255,255,0.1);
@@ -190,7 +190,69 @@
   </div>
 </section>
 
-<!-- Contacts -->
+<section class="glass-section contact-section">
+  <div class="container">
+    <div class="row g-4">
+      
+      <!-- Key Contact -->
+      <div class="col-lg-5">
+        <h2>Key Contact</h2>
+        <div class="contact-card">
+          <h5>Administration & Sponsorship</h5>
+          <p><strong>Ts. Dr. Reyanhealme Bin Rohanai</strong><br>
+          Pensyarah (DS11)<br>
+          Fakulti Pendidikan Teknikal & Vokasional, UTHM</p>
+          <p><i class="bi bi-telephone"></i> +60197717020</p>
+          <p><i class="bi bi-envelope"></i> 
+            <a href="mailto:reyan@uthm.edu.my">reyan@uthm.edu.my</a>
+          </p>
+          <a href="https://wa.me/60197717020" target="_blank" class="btn btn-success w-100">
+            <i class="bi bi-whatsapp"></i> WhatsApp
+          </a>
+        </div>
+
+        <div class="contact-card mt-4">
+          <h5>Technical Enquiries</h5>
+          <p><strong>Ts. Abd Rahim Bin Kasiman</strong><br>
+          Jurutera Pengajar (DV10)<br>
+          Fakulti Pendidikan Teknikal & Vokasional, UTHM</p>
+          <p><i class="bi bi-telephone"></i> +60177002044</p>
+          <p><i class="bi bi-envelope"></i> 
+            <a href="mailto:arahim@uthm.edu.my">arahim@uthm.edu.my</a>
+          </p>
+          <a href="https://wa.me/60177002044" target="_blank" class="btn btn-success w-100">
+            <i class="bi bi-whatsapp"></i> WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Enquiry Form -->
+      <div class="col-lg-7">
+        <h2>Send Us Your Enquiry</h2>
+        <form>
+          <div class="row g-3">
+            <div class="col-md-6"><input type="text" class="form-control" placeholder="Your Name" required></div>
+            <div class="col-md-6"><input type="text" class="form-control" placeholder="Designation"></div>
+            <div class="col-md-6"><input type="text" class="form-control" placeholder="Company/Institution"></div>
+            <div class="col-md-6"><input type="email" class="form-control" placeholder="Your Email" required></div>
+            <div class="col-12">
+              <select class="form-select" required>
+                <option value="">Select Category</option>
+                <option value="admin">Administration / Sponsorship</option>
+                <option value="technical">Technical / Competition</option>
+              </select>
+            </div>
+            <div class="col-12"><textarea class="form-control" rows="5" placeholder="Your Enquiry" required></textarea></div>
+          </div>
+          <button type="submit" class="btn btn-warning mt-3 px-4">Submit</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+  
+<!-- Contacts
 <section class="glass-section">
   <h2>Key Contacts</h2>
   <div class="row g-4">
@@ -230,6 +292,7 @@
 </section>
 
 <!-- Contact Form -->
+<!-- 
 <section class="glass-section">
   <h2>Send Us Your Enquiry</h2>
   <form>
