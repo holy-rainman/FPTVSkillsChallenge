@@ -157,27 +157,27 @@
     }
     /* ===== Desktop (≥769px) ===== */
     @media (min-width:769px){
-      #yearTabs .nav-link,
-      .tab-content .nav-link {
-        font-size: 1.4rem;      /* besar sikit */
-        padding: 10px 20px;     /* spacing lebih luas */
-      }
+      /* Year Tabs - Center, no scroll */
       #yearTabs {
-        justify-content: center !important; /* center tahun */
-        overflow: visible !important;   /* buang scroll style */
+        flex-wrap: wrap !important;      /* allow wrap if needed */
+        overflow: visible !important;    /* buang horizontal scroll */
+        justify-content: center !important; /* center years */
+        margin-bottom: 20px;             /* jarak bawah */
       }
       #yearTabs .nav-link {
-        font-size: 1.6rem;              /* lebih besar */
-        padding: 12px 28px;             /* lebih luas */
+        font-size: 1.8rem;                /* besar sikit untuk desktop */
+        padding: 8px 18px;                /* spacing seimbang */
       }
-      /* Center the folder tabs & add spacing */
+    
+      /* Folder Tabs (Event, Ceremony, Misc) */
       .tab-content > .nav-tabs {
         justify-content: center !important;
-        margin-top: 25px;               /* jarak bawah tahun */
+        margin-top: 15px;                 /* jarak antara year dan folder */
+        margin-bottom: 15px;
       }
       .tab-content > .nav-tabs .nav-link {
-        font-size: 1.3rem;
-        padding: 10px 22px;
+        font-size: 1.2rem;
+        padding: 6px 16px;
       }
     }
 
