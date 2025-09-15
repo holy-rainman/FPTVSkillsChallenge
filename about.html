@@ -168,9 +168,22 @@
       .about-text{ text-align:center; margin:0 10px; }
       .about-text p{ white-space:normal; word-break:break-word; }
       .bottom-right-logo img{ height:28px; }
+    
+      /* Mobile-specific carousel controls smaller */
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon {
+        width: 18px;
+        height: 18px;
+      }
+    
+      /* Mobile-specific carousel indicators smaller */
+      .carousel-indicators [data-bs-target] {
+        width: 6px !important;
+        height: 6px !important;
+      }
     }
-
-    /* Carousel Controls - make smaller */
+    
+    /* Carousel Controls - default (desktop) */
     .carousel-control-prev-icon,
     .carousel-control-next-icon {
       width: 24px;   /* default ~40px */
@@ -178,31 +191,20 @@
       filter: invert(100%) sepia(50%) saturate(200%) hue-rotate(10deg);
     }
     
-    /* Carousel Indicators (dots) - make smaller */
+    /* Carousel Indicators (dots) - default */
     .carousel-indicators [data-bs-target] {
-      width: 10px !important;   /* sama width & height */
+      flex: 0 0 auto !important;   /* elak jadi panjang */
+      width: 10px !important;
       height: 10px !important;
-      border-radius: 50% !important;  /* force bulat */
-      margin: 4px;              /* jarak antara dot */
+      border-radius: 50% !important;
+      margin: 4px;
       opacity: 0.5;
-      background-color: #ffd700; /* gold */
+      background-color: #ffd700;
     }
     
     .carousel-indicators .active {
       opacity: 1;
-      transform: scale(1.3);   /* active dot slightly bigger */
-    }
-    
-    @media (max-width: 768px) {
-      .carousel-control-prev-icon,
-      .carousel-control-next-icon {
-        width: 18px;
-        height: 18px;
-      }
-      .carousel-indicators [data-bs-target] {
-        width: 6px;
-        height: 6px;
-      }
+      transform: scale(1.3);
     }
   </style>
 </head>
