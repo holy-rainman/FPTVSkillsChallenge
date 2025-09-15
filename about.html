@@ -180,8 +180,17 @@
     
     /* Carousel Indicators (dots) - make smaller */
     .carousel-indicators [data-bs-target] {
-      width: 8px;    /* default ~12px */
-      height: 8px;
+      width: 10px !important;   /* sama width & height */
+      height: 10px !important;
+      border-radius: 50% !important;  /* force bulat */
+      margin: 4px;              /* jarak antara dot */
+      opacity: 0.5;
+      background-color: #ffd700; /* gold */
+    }
+    
+    .carousel-indicators .active {
+      opacity: 1;
+      transform: scale(1.3);   /* active dot slightly bigger */
     }
     
     @media (max-width: 768px) {
