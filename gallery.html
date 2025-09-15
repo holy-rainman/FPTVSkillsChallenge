@@ -110,16 +110,18 @@
     /* ===== Gallery Grid ===== */
     .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-      gap: 40px;              /* jarak vertical + horizontal */
+      grid-template-columns: repeat(6, 1fr);   /* desktop default = 6 column */
+      gap: 20px;
       padding: 20px;
     }
     .gallery-grid img {
-      width: 100%;           /* kawal fixed width gambar */
+      width: 100%;          /* ikut cell grid penuh */
       height: auto;
       border-radius: 12px;
       object-fit: cover;
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
     .gallery-grid img:hover {
       transform: scale(1.05);
@@ -214,10 +216,6 @@
         grid-template-columns: repeat(4, 1fr);  
         gap: 30px;   /* jarak vertical + horizontal */
         padding: 10px;
-      }
-      .gallery-grid img {
-        width: 100% !important;   /* ikut cell, bukan fixed % */
-        height: auto !important;
       }
     }
   </style>
