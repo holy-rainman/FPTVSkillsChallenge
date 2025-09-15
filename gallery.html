@@ -109,15 +109,15 @@
 
     /* ===== Gallery Grid ===== */
     .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);   /* desktop default */
-      gap: 20px;
+      display: flex;            /* guna flex bukan grid */
+      flex-wrap: wrap;          /* bagi auto turun line */
+      gap: 20px;                /* jarak horizontal + vertical */
       padding: 20px;
+      justify-content: center;  /* gambar center */
     }
     .gallery-grid img {
-      width: 100%;
+      width: 25% !important;    /* desktop = 4 column */
       height: auto;
-      max-width: 100%;
       border-radius: 12px;
       object-fit: cover;
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
