@@ -193,14 +193,14 @@
     
     /* ===== Mobile (≤768px) ===== */
     @media (max-width:768px){
-      .year-tabs-wrapper::after {
+      #yearTabs::after {
         content: "⇆";
         position: absolute;
-        right: 8px;
+        right: 5px;
         top: 50%;
         transform: translateY(-50%);
         color: #fff;
-        font-size: 1rem;
+        font-size: 0.9rem;
         opacity: 0.7;
         animation: bounceLeftRight 1.5s infinite;
         pointer-events: none;
@@ -208,6 +208,13 @@
       @keyframes bounceLeftRight {
         0%, 100% { transform: translateY(-50%) translateX(0); }
         50% { transform: translateY(-50%) translateX(-5px); }
+      }
+      /* ===== Year Tabs Fix (Mobile) ===== */
+      #yearTabs {
+        white-space: nowrap;   /* tahun maintain 1 baris */
+      }
+      #yearTabs .nav-item {
+        flex: 0 0 auto;        /* tak mengecil, tak wrap */
       }
   </style>
 </head>
