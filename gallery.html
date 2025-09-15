@@ -213,11 +213,14 @@
       }
       /* Gallery images di mobile */
       .gallery-grid {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));  
-        gap: 20px;   /* kasi ruang cukup */
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));  
+        gap: 20px;   /* jarak vertical + horizontal */
+        padding: 10px;
       }
       .gallery-grid img {
-        width: 22% !important;     /* ubah dari 15% → 25% */
+        width: 100% !important;   /* penuh ikut cell */
+        height: auto;
         max-width: none !important;
       }
     }
