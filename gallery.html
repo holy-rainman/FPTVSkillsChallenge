@@ -1,4 +1,4 @@
-G<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -21,8 +21,7 @@ G<!DOCTYPE html>
     body::before {
       content: "";
       position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
+      inset: 0;
       background: linear-gradient(135deg, rgba(30,60,150,0.85), rgba(200,0,80,0.85));
       z-index: -1;
     }
@@ -94,17 +93,31 @@ G<!DOCTYPE html>
       border-radius: 2px;
     }
 
+    /* ===== Tabs ===== */
+    .nav-pills .nav-link, 
+    .nav-tabs .nav-link {
+      font-size: 0.85rem;
+      padding: 6px 10px;
+      color: #fff !important;
+    }
+    .nav-pills .nav-link.active, 
+    .nav-tabs .nav-link.active {
+      background-color: #ffd700 !important;
+      color: #000 !important;
+      border-radius: 20px;
+    }
+
     /* ===== Gallery Grid ===== */
     .gallery-grid {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-evenly; /* seimbang left-right */
-      gap: 25px 20px;  /* gap vertical 25px, horizontal 20px */
-      padding: 10px 0; /* extra spacing atas-bawah */
+      justify-content: space-evenly;
+      gap: 25px 20px;
+      padding: 10px 0;
     }
     .gallery-grid img {
-      width: 20%;                      /* scale ~20% */
-      max-width: 200px;                /* lock max */
+      width: 20%;
+      max-width: 200px;
       border-radius: 12px;
       object-fit: cover;
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
@@ -116,20 +129,6 @@ G<!DOCTYPE html>
       box-shadow: 0 8px 20px rgba(0,0,0,0.5);
     }
 
-    /* ===== Tabs ===== */
-    .nav-pills .nav-link, 
-    .nav-tabs .nav-link {
-      font-size: 0.8rem;
-      padding: 6px 10px;
-      color: #fff !important;
-    }
-    .nav-pills .nav-link.active, 
-    .nav-tabs .nav-link.active {
-      background-color: #ffd700 !important;
-      color: #000 !important;
-      border-radius: 20px;
-    }
-
     /* ===== Lightbox Caption ===== */
     .carousel-caption {
       bottom: 15px;
@@ -139,10 +138,7 @@ G<!DOCTYPE html>
       color: #000;
       font-weight: bold;
       font-size: 1rem;
-      text-shadow:
-        0 0 3px #fff,
-        0 0 6px #fff,
-        0 0 12px #fff;
+      text-shadow: 0 0 3px #fff, 0 0 6px #fff, 0 0 12px #fff;
     }
 
     /* ===== Bottom Floating ===== */
@@ -156,78 +152,52 @@ G<!DOCTYPE html>
       font-size: 0.8rem;
       color: #333;
     }
+
     /* ===== Desktop (≥769px) ===== */
     @media (min-width:769px){
-      .year-tabs-wrapper {
-        overflow: visible !important;   /* jangan scroll kat desktop */
-        height: auto !important;        /* ikut content */
-      }
       #yearTabs {
         display: flex !important;
         flex-wrap: wrap !important;
-        justify-content: center !important; /* center betul2 */
-        overflow: visible !important;       /* buang scrollbar */
-        margin-bottom: 0px !important;  /* buang gap bawah tahun */
+        justify-content: center !important;
+        overflow: visible !important;
+        margin-bottom: 5px !important;
       }
       #yearTabs .nav-link {
         font-size: 1.6rem;
         padding: 8px 18px;
         margin: 0 12px;
       }
-      .tab-content > .nav-tabs {
-        margin-top: 0;      /* asal 20px → rapatkan */
-        margin-bottom: 5px;  /* boleh kekal / kecilkan lagi */
-      }
-    
-      /* Folder Tabs */
       .tab-pane > .nav-tabs {
         justify-content: center !important;
-        margin-top: 5px !important;     /* asal 20px → jadi rapat */
-        margin-bottom: 5px !important;  /* optional */
+        margin: 5px 0 !important;
       }
       .tab-pane > .nav-tabs .nav-link {
         font-size: 1rem;
         padding: 6px 14px;
         margin: 0 8px;
       }
-      /* Desktop gallery - distribute evenly */
-      @media (min-width: 769px) {
-      .gallery-grid {
-        justify-content: space-evenly;  /* distribute gambar rata */
-        gap: 25px 20px;                 /* horizontal & vertical gap */
-      }
-      .gallery-grid img {
-        width: 20%;                     /* scale down ~20% */
-        max-width: 200px;               /* tak besar sangat */
-      }
     }
-    
-    /* ===== Mobile Fix: Year Tabs Scroll & Arrow ===== */
+
+    /* ===== Mobile (≤768px) ===== */
     @media (max-width:768px){
-      /* Pastikan tahun maintain 1 line & boleh scroll */
       #yearTabs {
         display: flex;
         flex-wrap: nowrap !important;
-        justify-content: flex-start !important;  /* start dari kiri */
+        justify-content: flex-start !important;
         overflow-x: auto !important;
         white-space: nowrap !important;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
       }
       #yearTabs::-webkit-scrollbar { display: none; }
-      #yearTabs .nav-item {
-        flex: 0 0 auto;   /* tahun tak wrap */
-      }
-      /* Arrow indicator attach dekat tahun */
-      .year-tabs-wrapper {
-        position: relative;
-      }
+      #yearTabs .nav-item { flex: 0 0 auto; }
+
+      .year-tabs-wrapper { position: relative; }
       .year-tabs-wrapper::after {
-        content: "⇆";               /* simbol arrow */
+        content: "⇆";
         position: absolute;
         right: 10px;
-        top: -18px;
-        transform: translateY(-50%);
+        top: -10px;
         font-size: 1.2rem;
         color: #fff;
         animation: bounceX 1s infinite;
@@ -236,15 +206,14 @@ G<!DOCTYPE html>
         0%,100% { transform: translateX(0); }
         50%     { transform: translateX(-6px); }
       }
-      /* Mobile gallery - small scaling */
-      @media (max-width: 768px) {
+
       .gallery-grid {
-        gap: 15px 10px;                 /* jarak lebih kecil */
-        justify-content: center;        /* tengah bila mobile */
+        justify-content: center;
+        gap: 15px 10px;
       }
       .gallery-grid img {
-        width: 40% !important;          /* paksa scale down 20% */
-        max-width: 120px;               /* lock max size */
+        width: 40% !important;
+        max-width: 120px !important;
       }
     }
   </style>
@@ -299,6 +268,7 @@ G<!DOCTYPE html>
       <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#y2030">2030</button></li>
     </ul>
   </div>
+
   <!-- Tab Contents (Years) -->
   <div class="tab-content" id="yearTabsContent">
     <!-- 2024 -->
@@ -320,21 +290,9 @@ G<!DOCTYPE html>
         </div>
         <div class="tab-pane fade gallery-grid" id="y2024-ceremony">
           <img src="gallery/2024/ceremony/ceremony1.jpg" alt="2024 Ceremony 1" data-bs-toggle="modal" data-bs-target="#lightboxModal">
-          <img src="gallery/2024/ceremony/ceremony2.jpg" alt="2024 Ceremony 2" data-bs-toggle="modal" data-bs-target="#lightboxModal">
-          <img src="gallery/2024/ceremony/ceremony3.jpg" alt="2024 Ceremony 3" data-bs-toggle="modal" data-bs-target="#lightboxModal">
-          <img src="gallery/2024/ceremony/ceremony4.jpg" alt="2024 Ceremony 4" data-bs-toggle="modal" data-bs-target="#lightboxModal">
-          <img src="gallery/2024/ceremony/ceremony5.jpg" alt="2024 Ceremony 5" data-bs-toggle="modal" data-bs-target="#lightboxModal">
         </div>
         <div class="tab-pane fade gallery-grid" id="y2024-misc">
           <img src="gallery/2024/misc/misc1.jpg" alt="2024 Misc 1" data-bs-toggle="modal" data-bs-target="#lightboxModal">
-          <img src="gallery/2024/misc/misc2.jpg" alt="2024 Misc 2" data-bs-toggle="modal" data-bs-target="#lightboxModal">
-          <img src="gallery/2024/misc/misc3.jpg" alt="2024 Misc 3" data-bs-toggle="modal" data-bs-target="#lightboxModal">
-          <img src="gallery/2024/misc/misc4.jpg" alt="2024 Misc 4" data-bs-toggle="modal" data-bs-target="#lightboxModal">
-          <img src="gallery/2024/misc/misc5.jpg" alt="2024 Misc 5" data-bs-toggle="modal" data-bs-target="#lightboxModal">
-          <img src="gallery/2024/misc/misc6.jpg" alt="2024 Misc 6" data-bs-toggle="modal" data-bs-target="#lightboxModal">
-          <img src="gallery/2024/misc/misc7.jpg" alt="2024 Misc 7" data-bs-toggle="modal" data-bs-target="#lightboxModal">
-          <img src="gallery/2024/misc/misc8.jpg" alt="2024 Misc 8" data-bs-toggle="modal" data-bs-target="#lightboxModal">
-          <img src="gallery/2024/misc/misc9.jpg" alt="2024 Misc 9" data-bs-toggle="modal" data-bs-target="#lightboxModal">
         </div>
       </div>
     </div>
@@ -388,13 +346,10 @@ G<!DOCTYPE html>
       </ul>
       <div class="tab-content">
         <div class="tab-pane fade show active gallery-grid" id="y2027-event">
-          <!-- <img src="gallery/2027/event/event1.jpg" alt="2027 Event 1" data-bs-toggle="modal" data-bs-target="#lightboxModal"> -->
         </div>
         <div class="tab-pane fade gallery-grid" id="y2027-ceremony">
-          <!-- <img src="gallery/2027/ceremony/ceremony1.jpg" alt="2027 Ceremony 1" data-bs-toggle="modal" data-bs-target="#lightboxModal"> -->
         </div>
         <div class="tab-pane fade gallery-grid" id="y2027-misc">
-          <!-- <img src="gallery/2027/misc/misc1.jpg" alt="2027 Misc 1" data-bs-toggle="modal" data-bs-target="#lightboxModal"> -->
         </div>
       </div>
     </div>
@@ -408,13 +363,10 @@ G<!DOCTYPE html>
       </ul>
       <div class="tab-content">
         <div class="tab-pane fade show active gallery-grid" id="y2028-event">
-          <!-- <img src="gallery/2028/event/event1.jpg" alt="2028 Event 1" data-bs-toggle="modal" data-bs-target="#lightboxModal"> -->
         </div>
         <div class="tab-pane fade gallery-grid" id="y2028-ceremony">
-          <!-- <img src="gallery/2028/ceremony/ceremony1.jpg" alt="2028 Ceremony 1" data-bs-toggle="modal" data-bs-target="#lightboxModal"> -->
         </div>
         <div class="tab-pane fade gallery-grid" id="y2028-misc">
-          <!-- <img src="gallery/2028/misc/misc1.jpg" alt="2028 Misc 1" data-bs-toggle="modal" data-bs-target="#lightboxModal"> -->
         </div>
       </div>
     </div>
@@ -428,13 +380,10 @@ G<!DOCTYPE html>
       </ul>
       <div class="tab-content">
         <div class="tab-pane fade show active gallery-grid" id="y2029-event">
-          <!-- <img src="gallery/2029/event/event1.jpg" alt="2029 Event 1" data-bs-toggle="modal" data-bs-target="#lightboxModal"> -->
         </div>
         <div class="tab-pane fade gallery-grid" id="y2029-ceremony">
-          <!-- <img src="gallery/2029/ceremony/ceremony1.jpg" alt="2029 Ceremony 1" data-bs-toggle="modal" data-bs-target="#lightboxModal"> -->
         </div>
         <div class="tab-pane fade gallery-grid" id="y2029-misc">
-          <!-- <img src="gallery/2029/misc/misc1.jpg" alt="2029 Misc 1" data-bs-toggle="modal" data-bs-target="#lightboxModal"> -->
         </div>
       </div>
     </div>
@@ -448,18 +397,13 @@ G<!DOCTYPE html>
       </ul>
       <div class="tab-content">
         <div class="tab-pane fade show active gallery-grid" id="y2030-event">
-          <!-- <img src="gallery/2030/event/event1.jpg" alt="2030 Event 1" data-bs-toggle="modal" data-bs-target="#lightboxModal"> -->
         </div>
         <div class="tab-pane fade gallery-grid" id="y2030-ceremony">
-          <!-- <img src="gallery/2030/ceremony/ceremony1.jpg" alt="2030 Ceremony 1" data-bs-toggle="modal" data-bs-target="#lightboxModal"> -->
         </div>
         <div class="tab-pane fade gallery-grid" id="y2030-misc">
-          <!-- <img src="gallery/2030/misc/misc1.jpg" alt="2030 Misc 1" data-bs-toggle="modal" data-bs-target="#lightboxModal"> -->
         </div>
       </div>
     </div>
-    
-    <!-- Repeat similar for 2025–2030 -->
   </div>
 </section>
 
@@ -493,7 +437,7 @@ G<!DOCTYPE html>
   localStorage.setItem("visitorCount", count);
   document.getElementById("visitorCount").innerText = count;
 
-  // Lightbox functionality with carousel + captions
+  // Lightbox functionality
   const lightboxCarouselInner = document.getElementById("lightboxCarouselInner");
   document.querySelectorAll(".gallery-grid img").forEach(img => {
     img.addEventListener("click", () => {
