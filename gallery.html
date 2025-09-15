@@ -188,16 +188,21 @@
         white-space: nowrap !important;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
+        margin-bottom: 5px !important;   /* kecilkan gap bawah tahun */
       }
       #yearTabs::-webkit-scrollbar { display: none; }
       #yearTabs .nav-item { flex: 0 0 auto; }
 
-      .year-tabs-wrapper { position: relative; }
+      /* Arrow indicator - letak atas sikit supaya tak overlap */
+      .year-tabs-wrapper {
+        position: relative;
+        margin-bottom: 5px;  /* rapat dengan folder tab */
+      }
       .year-tabs-wrapper::after {
         content: "⇆";
         position: absolute;
         right: 10px;
-        top: -10px;
+        top: -25px;
         font-size: 1.2rem;
         color: #fff;
         animation: bounceX 1s infinite;
@@ -209,11 +214,11 @@
 
       .gallery-grid {
         justify-content: center;
-        gap: 15px 10px;
+        gap: 12px 8px;
       }
       .gallery-grid img {
-        width: 40% !important;
-        max-width: 120px !important;
+        width: 20% !important;
+        max-width: 100px !important;
       }
     }
   </style>
