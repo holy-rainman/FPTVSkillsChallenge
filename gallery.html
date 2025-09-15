@@ -190,6 +190,16 @@
         padding: 6px 14px;
         margin: 0 8px;
       }
+      /* Desktop gallery - distribute evenly */
+      @media (min-width: 769px) {
+      .gallery-grid {
+        justify-content: space-evenly;  /* distribute gambar rata */
+        gap: 25px 20px;                 /* horizontal & vertical gap */
+      }
+      .gallery-grid img {
+        width: 20%;                     /* scale down ~20% */
+        max-width: 200px;               /* tak besar sangat */
+      }
     }
     
     /* ===== Mobile Fix: Year Tabs Scroll & Arrow ===== */
@@ -225,6 +235,16 @@
       @keyframes bounceX {
         0%,100% { transform: translateX(0); }
         50%     { transform: translateX(-6px); }
+      }
+      /* Mobile gallery - small scaling */
+      @media (max-width: 768px) {
+      .gallery-grid {
+        gap: 15px 10px;                 /* jarak lebih kecil */
+        justify-content: center;        /* tengah bila mobile */
+      }
+      .gallery-grid img {
+        width: 20% !important;          /* paksa scale down 20% */
+        max-width: 120px;               /* lock max size */
       }
     }
   </style>
