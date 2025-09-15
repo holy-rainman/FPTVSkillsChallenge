@@ -164,15 +164,42 @@
       .bottom-right-logo img { height: 28px; }
     }
     /* ===== Year Tabs Horizontal Scroll (Mobile) ===== */
+    .year-tabs-wrapper {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    /* Left & right fade indicator */
+    .year-tabs-wrapper::before,
+    .year-tabs-wrapper::after {
+      content: "";
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 30px;
+      pointer-events: none; /* supaya boleh klik tab */
+      z-index: 2;
+    }
+    
+    .year-tabs-wrapper::before {
+      left: 0;
+      background: linear-gradient(to right, rgba(0,0,0,0.5), transparent);
+    }
+    
+    .year-tabs-wrapper::after {
+      right: 0;
+      background: linear-gradient(to left, rgba(0,0,0,0.5), transparent);
+    }
+    
+    /* Tabs scroll */
     #yearTabs {
       flex-wrap: nowrap;
       overflow-x: auto;
-      -webkit-overflow-scrolling: touch; /* smooth scroll iOS */
-      scrollbar-width: none; /* hide scrollbar Firefox */
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      justify-content: flex-start !important; /* mula dari kiri */
     }
-    #yearTabs::-webkit-scrollbar { display: none; } /* hide scrollbar Chrome/Safari */
-    #yearTabs .nav-item { flex: 0 0 auto; } /* prevent shrinking */
-    
+    #yearTabs::-webkit-scrollbar { display: none; }
+    #yearTabs .nav-item { flex: 0 0 auto; }    
   </style>
 </head>
 <body>
@@ -214,16 +241,17 @@
   <h2>Event Highlights</h2>
 
   <!-- Year Tabs -->
-  <ul class="nav nav-pills justify-content-center mb-4" id="yearTabs" role="tablist">
-    <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#y2024">2024</button></li>
-    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#y2025">2025</button></li>
-    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#y2026">2026</button></li>
-    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#y2027">2027</button></li>
-    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#y2028">2028</button></li>
-    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#y2029">2029</button></li>
-    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#y2030">2030</button></li>
-  </ul>
-
+  <div class="year-tabs-wrapper">
+    <ul class="nav nav-pills justify-content-center mb-4" id="yearTabs" role="tablist">
+      <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#y2024">2024</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#y2025">2025</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#y2026">2026</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#y2027">2027</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#y2028">2028</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#y2029">2029</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#y2030">2030</button></li>
+    </ul>
+  </div>
   <!-- Tab Contents (Years) -->
   <div class="tab-content" id="yearTabsContent">
     <!-- 2024 -->
