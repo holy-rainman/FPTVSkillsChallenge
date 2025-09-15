@@ -93,6 +93,41 @@
     .contact-card p { margin:2px 0; font-size:0.9rem; }
     .contact-card a { color:#ffd700; text-decoration:none; }
 
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-top: 10px;
+    }
+    .contact-links span, 
+    .contact-links a {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.95rem;
+    }
+    
+    .contact-links a {
+      text-decoration: none;
+      color: #ffd700;
+    }
+    
+    .whatsapp-inline {
+      background: #25D366;
+      color: white !important;
+      font-weight: bold;
+      padding: 4px 10px;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: 0.3s;
+    }
+    .whatsapp-inline:hover {
+      background: #1ebe5d;
+    }
+
     /* Form */
     .enquiry-form .form-control {
       background: rgba(255,255,255,0.15);
@@ -220,32 +255,36 @@
     <div class="row g-4">
       
       <!-- Key Contact -->
-      <div class="col-lg-5">
-        <h2>Key Contact</h2>
-        <div class="contact-card">
-          <h5>Administration & Sponsorship</h5>
-          <p><strong>Ts. Dr. Reyanhealme Bin Rohanai</strong><br>
-          Pensyarah (DS11)<br>
-          Fakulti Pendidikan Teknikal & Vokasional, UTHM</p>
-          <p><i class="bi bi-telephone"></i> +60197717020</p>
-          <p><i class="bi bi-envelope"></i> 
+      <div class="contact-card">
+        <h5>Administration & Sponsorship</h5>
+        <p><strong>Ts. Dr. Reyanhealme Bin Rohanai</strong><br>
+        Pensyarah (DS11)<br>
+        Fakulti Pendidikan Teknikal & Vokasional, UTHM</p>
+      
+        <div class="contact-links">
+          <span><i class="bi bi-telephone"></i> +60197717020</span>
+          <span><i class="bi bi-envelope"></i> 
             <a href="mailto:reyan@uthm.edu.my">reyan@uthm.edu.my</a>
-          </p>
-          <a href="https://wa.me/60197717020" target="_blank" class="btn btn-success w-100">
+          </span>
+          <a href="https://wa.me/60197717020" target="_blank" class="whatsapp-inline">
             <i class="bi bi-whatsapp"></i> WhatsApp
           </a>
         </div>
+      </div>
 
-        <div class="contact-card mt-4">
-          <h5>Technical Enquiries</h5>
-          <p><strong>Ts. Abd Rahim Bin Kasiman</strong><br>
-          Jurutera Pengajar (DV10)<br>
-          Fakulti Pendidikan Teknikal & Vokasional, UTHM</p>
-          <p><i class="bi bi-telephone"></i> +60177002044</p>
-          <p><i class="bi bi-envelope"></i> 
+
+      <div class="contact-card">
+        <h5>Administration & Sponsorship</h5>
+        <p><strong>Ts. Abd Rahim Bin Kasiman</strong><br>
+        Jurutera Pengajar (DV10)<br>
+        Fakulti Pendidikan Teknikal & Vokasional, UTHM</p>
+      
+        <div class="contact-links">
+          <span><i class="bi bi-telephone"></i> +60177002044</span>
+          <span><i class="bi bi-envelope"></i> 
             <a href="mailto:arahim@uthm.edu.my">arahim@uthm.edu.my</a>
-          </p>
-          <a href="https://wa.me/60177002044" target="_blank" class="btn btn-success w-100">
+          </span>
+          <a href="https://wa.me/60177002044" target="_blank" class="whatsapp-inline">
             <i class="bi bi-whatsapp"></i> WhatsApp
           </a>
         </div>
