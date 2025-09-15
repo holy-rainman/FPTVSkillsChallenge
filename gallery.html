@@ -111,12 +111,12 @@
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 60px;              /* jarak vertical + horizontal */
+      gap: 30px;              /* jarak vertical + horizontal */
       padding: 20px;
       justify-items: center;  /* centerkan gambar dalam grid cell */
     }
     .gallery-grid img {
-      width: 100%;
+      width: 20%;
       max-width: 200px;
       border-radius: 12px;
       object-fit: cover;
@@ -175,10 +175,6 @@
         font-size: 1rem;
         padding: 6px 14px;
         margin: 0 8px;
-      }
-      .gallery-grid img {
-        width: 18%;          /* ~5 gambar/row */
-        max-width: 220px;    /* ada limit */
       }
     }
 
