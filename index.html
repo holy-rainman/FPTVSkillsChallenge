@@ -262,10 +262,17 @@
   }
   setInterval(updateCountdown, 1000); updateCountdown();
 
-  // Visitor Counter
-  let count = localStorage.getItem("visitorCount") || 1200;
-  count++; localStorage.setItem("visitorCount", count);
-  document.getElementById("visitorCount").innerText = count;
+  // Visitor Counter - sync across all devices
+  async function updateVisitorCounter() {
+    try {
+      const res = await fetch("https://script.google.com/macros/s/AKfycbxOiBaww5t8U48lUwWHR2QN36f-ajWZfK0i4UxDXVioJy4UxJhTIHOcqAirYrRSdnZlDw/exec"); // URL dari Apps Script
+      const count = await res.text();
+      document.getElementById("visitorCount").innerText = count;
+    } catch (e) {
+      console.error("Counter error:", e);
+    }
+  }
+  updateVisitorCounter();
 </script>
 </body>
 </html>
