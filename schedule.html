@@ -133,21 +133,34 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
   <div class="container">
+    <!-- Left Logo + Title -->
     <a class="navbar-brand" href="index.html">
-      <img src="logo.png" alt="Logo"> FPTVSC 2026
+      <img src="logo.png" alt="FPTVSC Logo" style="height:40px; margin-right:8px;">
+      FPTVSC 2026
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+
+    <!-- Toggler for mobile -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
+    <!-- Nav Items -->
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link active" href="schedule.html">Schedule</a></li>
+        <li class="nav-item"><a class="nav-link" href="categories.html">Categories</a></li>
+        <li class="nav-item"><a class="nav-link" href="schedule.html">Schedule</a></li>
         <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
         <li class="nav-item"><a class="nav-link" href="sponsors.html">Sponsors</a></li>
         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
       </ul>
+
+      <!-- Right Logo -->
+      <a href="https://www.uthm.edu.my" target="_blank" class="d-none d-lg-block ms-3">
+        <img src="logo-uthm-web.png" alt="UTHM Logo" style="height:40px;">
+      </a>
     </div>
   </div>
 </nav>
