@@ -76,10 +76,14 @@
       width: 6px;
       background: linear-gradient(to bottom, #007bff, #dc3545);
       top: 0;
-      bottom: 0;
       left: 50%;
       margin-left: -3px;
+      height: 0; 
       z-index: 1;
+      transition: height 3s linear; /* smooth draw */
+    }
+    .timeline.revealed::after {
+      height: 100%; /* draw full height */
     }
     .timeline-item {
       position: relative;
@@ -141,6 +145,10 @@
       transform: translateX(-50%);
     }
     .timeline-item.visible .timeline-card {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .timeline-card.visible {
       opacity: 1;
       transform: translateY(0);
     }
@@ -270,13 +278,19 @@
 
 <script>
 document.addEventListener("scroll", () => {
-  const items = document.querySelectorAll(".timeline-item");
-  items.forEach(item => {
-    const rect = item.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 100) {
-      item.classList.add("visible");
-    }
-  });
+  const timeline = document.querySelector(".timeline");
+  const rect = timeline.getBoundingClientRect();
+
+  if (rect.top < window.innerHeight - 100) {
+    timeline.classList.add("revealed");
+
+    const items = document.querySelectorAll(".timeline-item .timeline-card");
+    items.forEach((card, i) => {
+      setTimeout(() => {
+        card.classList.add("visible");
+      }, i * 800); // 800ms delay between each
+    });
+  }
 });
 </script>
 
