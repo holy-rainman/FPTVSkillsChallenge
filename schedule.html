@@ -330,21 +330,98 @@ document.addEventListener("scroll", () => {
     <h2>Pre-qualification Schedule</h2>
     <p>Select a trade to view its schedule</p>
 
-    <!-- Trade Icons -->
+    <!-- Trade Icons (sorted order) -->
     <div class="trade-icons">
-      <img src="icon_Civil.png" alt="Civil" onclick="showSchedule('civil')">
-      <img src="icon_Cooking.png" alt="Cooking" onclick="showSchedule('cooking')">
-      <img src="icon_Creative.png" alt="Creative" onclick="showSchedule('creative')">
-      <img src="icon_Electrical.png" alt="Electrical" onclick="showSchedule('electrical')">
       <img src="icon_Electronics.png" alt="Electronics" onclick="showSchedule('electronics')">
+      <img src="icon_Cooking.png" alt="Culinary Arts" onclick="showSchedule('cooking')">
+      <img src="icon_Machining.png" alt="CAM Machining" onclick="showSchedule('machining')">
+      <img src="icon_Civil.png" alt="Civil Technology" onclick="showSchedule('civil')">
+      <img src="icon_Electrical.png" alt="Electrical Control" onclick="showSchedule('electrical')">
+      <img src="icon_Creative.png" alt="Creative Multimedia" onclick="showSchedule('creative')">
+      <img src="icon_Welding.png" alt="Welding & Metal Fabrication" onclick="showSchedule('welding')">
       <img src="icon_HVAC.png" alt="HVAC" onclick="showSchedule('hvac')">
-      <img src="icon_Machining.png" alt="Machining" onclick="showSchedule('machining')">
-      <img src="icon_Welding.png" alt="Welding" onclick="showSchedule('welding')">
     </div>
-
-    <!-- Example Schedule for Civil -->
+    
+    <!-- Example Schedule for Electronics -->
+    <div id="electronics" class="schedule-table trade-schedule">
+      <h5>Electronics – Day 1</h5>
+      <ul>
+        <li>09:00 AM – Registration</li>
+        <li>10:00 AM – Theory Test</li>
+        <li>02:00 PM – Practical Test</li>
+        <li>04:30 PM – Wrap Up</li>
+      </ul>
+    </div>
+    
+    <!-- Example Schedule for Culinary Arts -->
+    <div id="cooking" class="schedule-table trade-schedule">
+      <h5>Culinary Arts – Day 1</h5>
+      <ul>
+        <li>08:30 AM – Registration</li>
+        <li>09:30 AM – Theory Test</li>
+        <li>01:30 PM – Practical Test</li>
+        <li>04:00 PM – Wrap Up</li>
+      </ul>
+    </div>
+    
+    <!-- Example Schedule for CAM Machining -->
+    <div id="machining" class="schedule-table trade-schedule">
+      <h5>CAM Machining – Day 1</h5>
+      <ul>
+        <li>09:00 AM – Registration</li>
+        <li>10:00 AM – Theory Test</li>
+        <li>02:00 PM – Practical Test</li>
+        <li>04:30 PM – Wrap Up</li>
+      </ul>
+    </div>
+    
+    <!-- Example Schedule for Civil Technology -->
     <div id="civil" class="schedule-table trade-schedule">
-      <h5>Civil – Day 1</h5>
+      <h5>Civil Technology – Day 1</h5>
+      <ul>
+        <li>09:00 AM – Registration</li>
+        <li>10:00 AM – Theory Test</li>
+        <li>02:00 PM – Practical Test</li>
+        <li>04:30 PM – Wrap Up</li>
+      </ul>
+    </div>
+    
+    <!-- Example Schedule for Electrical Control -->
+    <div id="electrical" class="schedule-table trade-schedule">
+      <h5>Electrical Control – Day 1</h5>
+      <ul>
+        <li>09:00 AM – Registration</li>
+        <li>10:00 AM – Theory Test</li>
+        <li>02:00 PM – Practical Test</li>
+        <li>04:30 PM – Wrap Up</li>
+      </ul>
+    </div>
+    
+    <!-- Example Schedule for Creative Multimedia -->
+    <div id="creative" class="schedule-table trade-schedule">
+      <h5>Creative Multimedia – Day 1</h5>
+      <ul>
+        <li>09:00 AM – Registration</li>
+        <li>10:00 AM – Theory Test</li>
+        <li>02:00 PM – Practical Test</li>
+        <li>04:30 PM – Wrap Up</li>
+      </ul>
+    </div>
+    
+    <!-- Example Schedule for Welding & Metal Fabrication -->
+    <div id="welding" class="schedule-table trade-schedule">
+      <h5>Welding & Metal Fabrication – Day 1</h5>
+      <ul>
+        <li>09:00 AM – Registration</li>
+        <li>10:00 AM – Theory Test</li>
+        <li>02:00 PM – Practical Test</li>
+        <li>04:30 PM – Wrap Up</li>
+      </ul>
+    </div>
+    
+    <!-- Example Schedule for HVAC -->
+    <div id="hvac" class="schedule-table trade-schedule">
+      <h5>Heating, Ventilation & Air Conditioning – Day 1</h5>
       <ul>
         <li>09:00 AM – Registration</li>
         <li>10:00 AM – Theory Test</li>
@@ -353,16 +430,6 @@ document.addEventListener("scroll", () => {
       </ul>
     </div>
 
-    <!-- Example Schedule for Cooking -->
-    <div id="cooking" class="schedule-table trade-schedule">
-      <h5>Cooking – Day 1</h5>
-      <ul>
-        <li>08:30 AM – Registration</li>
-        <li>09:30 AM – Theory Test</li>
-        <li>01:30 PM – Practical Test</li>
-        <li>04:00 PM – Wrap Up</li>
-      </ul>
-    </div>
 
     <!-- Repeat similar blocks for other trades -->
   </div>
