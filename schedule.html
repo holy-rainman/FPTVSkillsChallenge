@@ -71,13 +71,25 @@
       background:linear-gradient(to bottom,#007bff,#dc3545);
       top:0; bottom:0; left:50%; margin-left:-3px;
     }
-    .timeline-item { padding:20px; position:relative; width:50%; }
+    .timeline-item { padding:15px; position:relative; width:48%; }
     .timeline-item.left { left:0; }
     .timeline-item.right { left:50%; }
     .timeline-card {
       background:rgba(255,255,255,0.15);
       backdrop-filter:blur(8px);
-      padding:20px; border-radius:12px;
+      padding: 15px 20px;
+      border-radius: 12px;
+    }
+    .timeline-card h5 {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    
+    .timeline-card .date {
+      font-size: 0.85rem;
+      font-weight: normal;
+      color: #ffd700;
+      margin-left: 8px;
     }
     .timeline-item::before {
       content:""; position:absolute; top:30px;
@@ -170,15 +182,46 @@
   <div class="container">
     <h2>Program Timeline</h2>
     <div class="timeline">
-      <div class="timeline-item left"><div class="timeline-card"><h5>Registration</h5><p>Participants register for the challenge.</p></div></div>
-      <div class="timeline-item right"><div class="timeline-card"><h5>Initial Briefing</h5><p>Orientation and guidelines for all participants.</p></div></div>
-      <div class="timeline-item left"><div class="timeline-card"><h5>Pre-qualification</h5><p>Theory & practical test sessions.</p></div></div>
-      <div class="timeline-item right"><div class="timeline-card"><h5>Finalist Confirmation</h5><p>Announcement of successful candidates.</p></div></div>
-      <div class="timeline-item left"><div class="timeline-card"><h5>Final Competition</h5><p>Live competition stage across categories.</p></div></div>
-      <div class="timeline-item right"><div class="timeline-card"><h5>Closing & Prize Ceremony</h5><p>Awards presented to winners.</p></div></div>
+      <div class="timeline-item left">
+        <div class="timeline-card">
+          <h5>Registration <span class="date">1 – 15 April 2026</span></h5>
+          <p>Participants register for the challenge.</p>
+        </div>
+      </div>
+      <div class="timeline-item right">
+        <div class="timeline-card">
+          <h5>Initial Briefing <span class="date">20 April 2026</span></h5>
+          <p>Orientation and guidelines for all participants.</p>
+        </div>
+      </div>
+      <div class="timeline-item left">
+        <div class="timeline-card">
+          <h5>Pre-qualification <span class="date">5 – 6 May 2026</span></h5>
+          <p>Theory & practical test sessions.</p>
+        </div>
+      </div>
+      <div class="timeline-item right">
+        <div class="timeline-card">
+          <h5>Finalist Confirmation <span class="date">15 May 2026</span></h5>
+          <p>Announcement of successful candidates.</p>
+        </div>
+      </div>
+      <div class="timeline-item left">
+        <div class="timeline-card">
+          <h5>Final Competition <span class="date">25 – 26 May 2026</span></h5>
+          <p>Live competition stage across categories.</p>
+        </div>
+      </div>
+      <div class="timeline-item right">
+        <div class="timeline-card">
+          <h5>Closing & Prize Ceremony <span class="date">27 May 2026</span></h5>
+          <p>Awards presented to winners.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
+
 
 <!-- Pre-Qualification Schedule -->
 <section class="glass-section" data-aos="fade-up">
