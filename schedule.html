@@ -88,7 +88,7 @@
     .timeline-item {
       position: relative;
       width: 50%;
-      padding: 20px 40px; /* space so text doesn’t overlap dots */
+      padding: 10px 30px; /* space so text doesn’t overlap dots */
     }
     .timeline-item.left {
       left: 0;
@@ -104,14 +104,17 @@
       border-radius: 12px;
       position: relative;
       z-index: 2; /* above line */
+      margin-bottom: 20px; /* reduce space between cards */
 
       opacity: 0;
       transform: translateY(30px);
       transition: all 0.8s ease;
     }
-    .timeline-card h5 {
+    .timeline-card h5,
+    .timeline-card p {
       font-weight: bold;
       margin-bottom: 8px;
+      text-shadow: 0 0 4px rgba(0,0,0,0.9);
     }
     
     .timeline-card .date {
