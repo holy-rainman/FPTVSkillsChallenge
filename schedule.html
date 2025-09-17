@@ -67,9 +67,17 @@
     /* Timeline */
     .timeline { position:relative; max-width:900px; margin:auto; }
     .timeline::after {
-      content:''; position:absolute; width:6px;
-      background:linear-gradient(to bottom,#007bff,#dc3545);
-      top:0; bottom:0; left:50%; margin-left:-3px;
+      content: '';
+      position: absolute;
+      width: 6px;
+      background: linear-gradient(to bottom, #007bff, #dc3545);
+      top: 0;
+      left: 50%;
+      margin-left: -3px;
+    
+      height: 0; /* start hidden */
+      transition: height 2s ease-out;
+      z-index: 1; /* put line behind dots */
     }
     .timeline-item { padding:15px; position:relative; width:48%; }
     .timeline-item.left { left:0; }
@@ -95,14 +103,12 @@
       content: "";
       position: absolute;
       top: 30px;
-      left: 50%;
-      transform: translateX(-50%);
       width: 20px;
       height: 20px;
       border-radius: 50%;
       background: #ffd700;
       border: 4px solid rgba(255,255,255,0.6);
-      z-index: 2;
+      z-index: 2; /* keep dots above the line */
     }
 
     /* Schedule Tables */
