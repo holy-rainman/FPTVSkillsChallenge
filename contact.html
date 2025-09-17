@@ -274,37 +274,29 @@
           <h5>Administration & Sponsorship</h5>
           <p><strong>Ts. Dr. Reyanhealme Bin Rohanai</strong><br>
           <span class="desc">Pensyarah (DS11)<br>
-          Fakulti Pendidikan Teknikal & Vokasional, UTHM</p>
+          Fakulti Pendidikan Teknikal & Vokasional, UTHM</span></p>
 
-          <!-- Phone row with WhatsApp small box -->
           <div class="d-flex align-items-center mb-2 gap-3">
             <span class="contact-text"><i class="bi bi-telephone me-2"></i> +60197717020</span>
-            <a href="https://wa.me/60197717020" target="_blank" class="whatsapp-small ms-3">
-              WhatsApp
-            </a>
+            <a href="https://wa.me/60197717020" target="_blank" class="whatsapp-small ms-3">WhatsApp</a>
           </div>
-          <!-- Email row -->
           <div class="d-flex align-items-center">
             <i class="bi bi-envelope me-2"></i>
             <a href="mailto:reyan@uthm.edu.my">reyan@uthm.edu.my</a>
           </div>
         </div>
 
-        <!-- Card 1 -->
+        <!-- Card 2 -->
         <div class="contact-card">
-          <h5>Tehnical Enquiries</h5>
+          <h5>Technical Enquiries</h5>
           <p><strong>Ts. Abd Rahim Bin Kasiman</strong><br>
           <span class="desc">Jurutera Pengajar (DV10)<br>
-          Fakulti Pendidikan Teknikal & Vokasional, UTHM</p>
+          Fakulti Pendidikan Teknikal & Vokasional, UTHM</span></p>
 
-          <!-- Phone row with WhatsApp small box -->
           <div class="d-flex align-items-center mb-2 gap-3">
             <span class="contact-text"><i class="bi bi-telephone me-2"></i> +60177002044</span>
-            <a href="https://wa.me/60177002044" target="_blank" class="whatsapp-small ms-3">
-              WhatsApp
-            </a>
+            <a href="https://wa.me/60177002044" target="_blank" class="whatsapp-small ms-3">WhatsApp</a>
           </div>
-          <!-- Email row -->
           <div class="d-flex align-items-center">
             <i class="bi bi-envelope me-2"></i>
             <a href="mailto:arahim@uthm.edu.my">arahim@uthm.edu.my</a>
@@ -314,61 +306,96 @@
 
       <!-- RIGHT: Enquiry Form (col-7) -->
       <div class="col-lg-7">
-        <h2>Send Us Your Enquiry</h2>
-        <form id="enquiryForm" action="https://formspree.io/f/mzzalvby" method="POST" class="contact-form">
-          <input type="text" name="name" class="form-control mb-3" placeholder="Your Name" required>
-          <input type="text" name="designation" class="form-control mb-3" placeholder="Your Designation" required>
-          <input type="email" name="_replyto" class="form-control mb-3" placeholder="Your Email" required>
-          <select name="category" class="form-control mb-3" required>
-            <option value="">Select Type of Enquiry</option>
-            <option value="Administration">Administration</option>
-            <option value="Sponsorship">Sponsorship</option>
-            <option value="Technical">Technical</option>
-            <option value="Competition">Competition</option>
-          </select>
-          <textarea name="message" class="form-control mb-3" placeholder="Your Enquiry" rows="5" required></textarea>
-          <button type="submit" class="btn btn-warning w-100">Submit</button>
-        </form>
-        
-        <!-- Bootstrap alert placeholder -->
-        <div id="statusMessage" class="mt-3"></div>
-        
-        <script>
-        document.getElementById("enquiryForm").addEventListener("submit", async function(e){
-          e.preventDefault();
-        
-          const form = this;
-          const status = document.getElementById("statusMessage");
-        
-          try {
-            let response = await fetch(form.action, {
-              method: form.method,
-              body: new FormData(form),
-              headers: { 'Accept': 'application/json' }
-            });
-        
-            if (response.ok) {
-              status.innerHTML = `<div class="alert alert-success" role="alert">
-                ✅ Message sent successfully!
-              </div>`;
-              form.reset();
-            } else {
-              status.innerHTML = `<div class="alert alert-warning" role="alert">
-                ⚠️ Message sent but response not as expected.
-              </div>`;
-            }
-          } catch (err) {
-            status.innerHTML = `<div class="alert alert-danger" role="alert">
-              ❌ Error sending enquiry. Please try again later.
-            </div>`;
-            console.error(err);
-          }
-        });
-        </script>
+        <div class="contact-card">
+          <h5 class="mb-4">Send Us Your Enquiry</h5>
+
+          <form id="enquiryForm" action="https://formspree.io/f/mzzalvby" method="POST" class="contact-form">
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+              </div>
+              <div class="col-md-6">
+                <input type="text" name="designation" class="form-control" placeholder="Your Designation" required>
+              </div>
+            </div>
+            <div class="mb-3">
+              <input type="email" name="_replyto" class="form-control" placeholder="Your Email" required>
+            </div>
+            <div class="mb-3">
+              <select name="category" class="form-control" required>
+                <option value="">Select Type of Enquiry</option>
+                <option value="Administration">Administration</option>
+                <option value="Sponsorship">Sponsorship</option>
+                <option value="Technical">Technical</option>
+                <option value="Competition">Competition</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <textarea name="message" class="form-control" placeholder="Your Enquiry" rows="5" required></textarea>
+            </div>
+            <div class="d-grid">
+              <button type="submit" class="btn btn-warning fw-bold">Submit</button>
+            </div>
+          </form>
+
+          <div id="statusMessage" class="mt-3"></div>
+        </div>
       </div> <!-- END col-7 -->
+
     </div> <!-- END row -->
   </div> <!-- END container -->
 </section>
+
+<!-- ========== STYLE (move outside row) ========== -->
+<style>
+  .glass-alert {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    border-radius: 12px;
+    padding: 15px;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: all 0.3s ease-in-out;
+  }
+  .glass-alert.success { border: 1px solid #28a745; color: #90ee90; }
+  .glass-alert.warning { border: 1px solid #ffc107; color: #ffd966; }
+  .glass-alert.error   { border: 1px solid #dc3545; color: #ff7f7f; }
+  .glass-alert:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(255,215,0,0.4);
+  }
+</style>
+
+<!-- ========== SCRIPT (move outside row) ========== -->
+<script>
+document.getElementById("enquiryForm").addEventListener("submit", async function(e){
+  e.preventDefault();
+
+  const form = this;
+  const status = document.getElementById("statusMessage");
+
+  try {
+    let response = await fetch(form.action, {
+      method: form.method,
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      status.innerHTML = `<div class="glass-alert success">✅ Message sent successfully!</div>`;
+      form.reset();
+      setTimeout(() => { status.innerHTML = ""; }, 5000);
+    } else {
+      status.innerHTML = `<div class="glass-alert warning">⚠️ Message sent but response not as expected.</div>`;
+    }
+  } catch (err) {
+    status.innerHTML = `<div class="glass-alert error">❌ Error sending enquiry. Please try again later.</div>`;
+    console.error(err);
+  }
+});
+</script>
 
 <!-- Map -->
 <section class="glass-section">
