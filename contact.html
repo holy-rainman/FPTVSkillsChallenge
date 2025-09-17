@@ -203,17 +203,18 @@
     }
 
     /* Social */
+    /* Default small (mobile/tablet) */
     .social-icons a {
-      color:#fff; 
-      margin:0 10px; 
+      color:#fff;
+      font-size:1.5rem;
+      margin:0 10px;
       transition:0.3s;
     }
     .social-icons a:hover { color:#ffd700; }
     /* Bigger icons only on desktop */
     @media (min-width: 992px) {
-      .social-icons a {
-        font-size: 3rem !important;   /* force large size */
-        margin: 0 20px;              /* more spacing */
+      .social-icons a i {
+        font-size:4rem !important;   /* paksa besar */
       }
       .follow-card .social-icons a i {
         font-size: 4rem !important;  /* 64px big */
