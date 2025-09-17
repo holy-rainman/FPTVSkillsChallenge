@@ -12,15 +12,16 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin:0; padding:0;
+      margin: 0; padding: 0;
       background: linear-gradient(135deg, rgba(30,60,150,0.9), rgba(200,0,80,0.9)),
                   url("pic1.png") center center/cover no-repeat fixed;
-      color:#fff; overflow-x:hidden;
+      color: #fff; 
+      overflow-x: hidden;
     }
-
-    /* Navbar */
+  
+    /* ================= NAVBAR ================= */
     .navbar { background: rgba(255,255,255,0.85); backdrop-filter: blur(10px); }
-    .navbar-brand { font-weight:bold; display:flex; align-items:center; color:#333 !important; }
+    .navbar-brand { font-weight: bold; display:flex; align-items:center; color:#333 !important; }
     .navbar-brand img { height:45px; margin-right:8px; }
     .nav-link { color:#333 !important; position:relative; }
     .nav-link::after {
@@ -28,23 +29,14 @@
       background:#333; transition:width 0.3s;
     }
     .nav-link:hover::after { width:100%; }
-
-    /* Hero */
-    .hero {
-      padding-top: 80px;   /* keep space for navbar */
-      padding-bottom: 20px; /* reduce gap at bottom */
-      text-align: center;
-    }
-    .hero img {
-      height:120px; margin-bottom:20px; /* Bigger logo */
-    }
-    .hero h1 {
-      font-size:2.5rem; font-weight:bold;
-      text-shadow:0 0 6px rgba(0,0,0,0.8);
-    }
+  
+    /* ================= HERO ================= */
+    .hero { padding-top: 80px; padding-bottom: 20px; text-align: center; }
+    .hero img { height:120px; margin-bottom:20px; }
+    .hero h1 { font-size:2.5rem; font-weight:bold; text-shadow:0 0 6px rgba(0,0,0,0.8); }
     .hero p { font-size:1rem; color:#eee; }
-
-    /* Section wrapper */
+  
+    /* ================= SECTION WRAPPER ================= */
     .glass-section {
       background: rgba(255,255,255,0.1);
       backdrop-filter: blur(12px);
@@ -63,221 +55,122 @@
       transform:translateX(-50%);
       width:60px; height:3px; background:#ffd700; border-radius:2px;
     }
-    /* Semua text sama */
-    .desc, .contact-text, .contact-card a {
-      font-size: 0.9rem;   /* konsisten */
-      color: #fff;         /* default putih */
-    }
-    /* Contact Cards */
+  
+    /* ================= CONTACT CARDS ================= */
+    .desc, .contact-text, .contact-card a { font-size:0.9rem; color:#fff; }
     .contact-card {
       background: rgba(255,255,255,0.1);
       backdrop-filter: blur(10px);
       border-radius: 12px;
       padding: 20px;
-      margin-bottom: 20px;  /* tambah jarak bawah */
+      margin-bottom: 20px;
       color: #fff;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
-    .contact-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 6px 18px rgba(255,215,0,0.4);
-    }
-    .contact-card i {
-      font-size: 1rem; color:#ffd700;
-    }
-    /* Bring contact section closer */
-    .contact-section {
-      margin-top: 10px !important; /* reduce space between hero and contact cards */
-    }
-    .contact-section h2 {
-      font-weight: bold;
-      margin-bottom: 20px;
-      text-align: left;
-    }
-    .contact-section .row {
-      display: flex;
-      align-items: stretch;  /* makes both columns same height */
-    }
-    .contact-card h5 { margin-bottom:10px; font-weight:bold; color: #ffd700; }
+    .contact-card:hover { transform: translateY(-6px); box-shadow: 0 6px 18px rgba(255,215,0,0.4); }
+    .contact-card i { font-size: 1rem; color:#ffd700; }
+    .contact-card h5 { margin-bottom:10px; font-weight:bold; color:#ffd700; }
     .contact-card p { margin:2px 0; font-size:0.9rem; }
-    .contact-card a { color:#ffd700; text-decoration:none; font-size: 0.95rem; }
+    .contact-card a { color:#ffd700; text-decoration:none; font-size:0.95rem; }
     .contact-card a:hover { text-decoration: underline; }
-
-    .contact-links {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .contact-links span, 
-    .contact-links a {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.95rem;
-    }
-    
-    .contact-links a {
-      text-decoration: none;
-      color: #ffd700;
-    }
-    
+  
+    /* Contact section adjustments */
+    .contact-section { margin-top: 10px !important; }
+    .contact-section h2 { font-weight:bold; margin-bottom:20px; text-align:left; }
+    .contact-section .row { display:flex; align-items:stretch; }
+  
+    .contact-links { display:flex; justify-content:space-between; align-items:center; }
+    .contact-links span, .contact-links a { display:flex; align-items:center; gap:6px; font-size:0.95rem; }
+    .contact-links a { text-decoration:none; color:#ffd700; }
+  
     .whatsapp-small {
-      background: #25D366;
-      color: white !important;
-      font-size: 0.75rem;   /* kecil */
-      padding: 2px 8px;     /* kecil */
-      border-radius: 4px;
-      text-decoration: none;
-      display: inline-block;
+      background:#25D366; color:white !important; font-size:0.75rem;
+      padding:2px 8px; border-radius:4px; text-decoration:none; display:inline-block;
     }
-    .whatsapp-small:hover {
-      background: #1ebe5d;
-    }
-
-    /* Equal height for cards + form */
-    .equal-height {
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-    }
-    .equal-row {
-      display: flex;
-      align-items: stretch;
-    }
-    
-    .equal-row > [class*="col-"] {
-      display: flex;
-    }
-    
-    .equal-row .contact-card {
-      flex: 1;  /* makes both cards same height */
-    }
-    .whatsapp-inline:hover {
-      background: #1ebe5d;
-    }
-
-    /* Form */
-    .enquiry-form .form-control {
-      background: rgba(255,255,255,0.15);
-      border: none;
-      color: #fff;
-    }
-    .enquiry-form .form-control::placeholder {
-      color: #ddd;
-    }
-    
-    .enquiry-form textarea {
-      resize: none;
-    }
-    .contact-form input, .contact-form textarea {
-      background: rgba(255,255,255,0.1); border: none; color:#fff;
-    }
+    .whatsapp-small:hover { background:#1ebe5d; }
+  
+    /* Equal height handling */
+    .equal-height { display:flex; flex-direction:column; height:100%; }
+    .equal-row { display:flex; align-items:stretch; }
+    .equal-row > [class*="col-"] { display:flex; }
+    .equal-row .contact-card { flex:1; }
+  
+    /* ================= FORM ================= */
+    .enquiry-form .form-control { background: rgba(255,255,255,0.15); border:none; color:#fff; }
+    .enquiry-form .form-control::placeholder { color:#ddd; }
+    .enquiry-form textarea { resize:none; }
+    .contact-form input, .contact-form textarea { background: rgba(255,255,255,0.1); border:none; color:#fff; }
     .contact-form input::placeholder, .contact-form textarea::placeholder { color:#ccc; }
-    .contact-form button {
-      background:#ffd700; border:none; color:#000; font-weight:bold;
-    }
-
-    /* Map */
-    .map-container {
-      position:relative; overflow:hidden; border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,0.3);
-    }
+    .contact-form button { background:#ffd700; border:none; color:#000; font-weight:bold; }
+  
+    /* ================= MAP ================= */
+    .map-container { position:relative; overflow:hidden; border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,0.3); }
     .map-container iframe { width:100%; height:400px; border:0; }
-
-    /* Download buttons */
+  
+    /* ================= DOWNLOAD BUTTONS ================= */
     .download-btn {
       margin:8px; padding:10px 20px;
       border-radius:8px; font-weight:bold;
       background:rgba(255,255,255,0.2); color:#fff; border:1px solid #ffd700;
       transition: all 0.3s;
     }
-    .download-btn:hover {
-      background:#ffd700; color:#000;
-    }
-    /* Follow Us card adjustments */
-    .follow-card {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;  /* vertical center */
-      align-items: center;      /* horizontal center */
-      height: 100%;
-    }
-
-    /* Social */
-    /* Default small (mobile/tablet) */
+    .download-btn:hover { background:#ffd700; color:#000; }
+  
+    /* ================= FOLLOW CARD ================= */
+    .follow-card { display:flex; flex-direction:column; justify-content:center; align-items:center; height:100%; }
+  
+    /* ================= SOCIAL ICONS ================= */
     .social-icons {
-      display: flex;
-      justify-content: center;   /* center horizontally */
-      align-items: center;       /* center vertically */
-      gap: 40px;                 /* spacing between icons */
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:40px;
     }
-    .social-icons a {
-      color:#fff;
-      font-size:1.5rem;
-      margin:0 10px;
-      transition:0.3s;
-    }
-    /* Social Icons Glow Effect */
-    .social-icons a i {
-      transition: all 0.3s ease-in-out;
-    }
+    .social-icons a { color:#fff; font-size:1.5rem; transition:0.3s; }
+    .social-icons a i { transition:all 0.3s ease-in-out; }
     .social-icons a:hover i {
-      color: #ffd700;
-      text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 40px #ffd700;
-      transform: scale(1.2); /* sedikit zoom bila hover */
+      color:#ffd700;
+      text-shadow:0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 40px #ffd700;
+      transform:scale(1.2);
     }
-
-
-
-    
-    /* Bigger icons only on desktop */
-    @media (min-width: 992px) {
-      .social-icons a i {
-        font-size:4rem !important;   /* paksa besar */
-      }
-      .follow-card .social-icons a i {
-        font-size: 4rem !important;  /* 64px big */
-        margin: 0 25px;
-      }
+    @media (min-width:992px) {
+      .social-icons a i { font-size:4rem !important; margin:0 25px; }
     }
-
-    /* FAQ Accordion */
+  
+    /* ================= FAQ ACCORDION ================= */
     .accordion-item {
       background: rgba(0,0,0,0.3);
-      border: none;
-      margin-bottom: 8px;
-      border-radius: 8px;
-      overflow: hidden;
+      border:none;
+      margin-bottom:8px;
+      border-radius:8px;
+      overflow:hidden;
     }
     .accordion-button {
       background: rgba(255,255,255,0.1);
-      color: #fff;
-      font-weight: 600;
+      color:#fff;
+      font-weight:600;
     }
-    .accordion-button:hover {
-      background: rgba(255,215,0,0.15);
-    }
+    .accordion-button:hover { background: rgba(255,215,0,0.15); }
     .accordion-button:not(.collapsed) {
       background: rgba(255,215,0,0.2);
-      color: #ffd700;
-      box-shadow: 0 0 12px rgba(255, 215, 0, 0.6); /* glow kuning */
+      color:#ffd700;
+      box-shadow:0 0 12px rgba(255,215,0,0.6); /* glow kuning */
     }
-    .accordion-collapse {
-      transition: all 0.4s ease;
-    }
+    .accordion-collapse { transition: all 0.4s ease; }
     .accordion-body {
       background: rgba(0,0,0,0.4);
-      color: #eee;
-      font-size: 0.95rem;
-      opacity: 0;
-      transform: translateY(-5px);
-      transition: opacity 0.4s ease, transform 0.4s ease;
+      color:#eee;
+      font-size:0.95rem;
+      opacity:0;
+      transform:translateY(-5px);
+      transition:opacity 0.4s ease, transform 0.4s ease;
     }
     .accordion-collapse.show .accordion-body {
-      opacity: 1;
-      transform: translateY(0);
+      opacity:1;
+      transform:translateY(0);
     }
-    
-    /* Bottom floating items */
+  
+    /* ================= BOTTOM FLOATING ================= */
     .bottom-right-logo { position:fixed; bottom:10px; right:10px; z-index:1000; }
     .bottom-right-logo img { height:40px; opacity:0.9; }
     .visitor-counter {
@@ -286,39 +179,15 @@
       padding:4px 10px; border-radius:8px;
       font-size:0.8rem; color:#333;
     }
+  
+    /* ================= RESPONSIVE HERO ================= */
     @media(min-width:992px){
       .hero-content { display:flex; justify-content:center; align-items:center; gap:40px; }
       .hero-text { max-width:40%; }
       .hero-logo img { height:180px; } 
     }
-
-    /* Social Icons Override */
-    .social-icons {
-      display: flex;
-      justify-content: center;   /* center horizontally */
-      align-items: center;       /* center vertically */
-      gap: 40px;                 /* spacing between icons */
-    }
-    
-    .social-icons a {
-      color:#fff;
-      font-size:1.5rem;          /* default kecil untuk mobile */
-      transition:0.3s;
-    }
-    
-    .social-icons a:hover { 
-      color:#ffd700; 
-    }
-    
-    /* Desktop view (besar + spacing lebih) */
-    @media (min-width: 992px) {
-      .social-icons a i {
-        font-size: 4rem !important;   /* paksa besar */
-        margin: 0 25px;               /* jarak kiri kanan */
-      }
-    
   </style>
-</head>
+</>
 <body>
 
 <!-- Navbar -->
