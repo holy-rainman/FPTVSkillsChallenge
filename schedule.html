@@ -78,9 +78,9 @@
       top: 0;
       left: 50%;
       margin-left: -3px;
-      height: 0; 
+      height: 0;                 /* start hidden */
+      transition: height 2s ease-out;
       z-index: 1;
-      transition: height 3s linear; /* smooth draw */
     }
     .timeline.revealed::after {
       height: 100%; /* draw full height */
@@ -116,12 +116,14 @@
       margin-bottom: 8px;
       text-shadow: 0 0 4px rgba(0,0,0,0.9);
     }
-    
     .timeline-card .date {
       font-size: 0.85rem;
       font-weight: normal;
       color: #ffd700;
       margin-left: 8px;
+    }
+    .timeline.animate::after {
+      height: 100%;               /* grow downwards */
     }
     /* DOTS PULSE ANIMATION */
     @keyframes pulse {
@@ -571,6 +573,23 @@ document.addEventListener("scroll", () => {
       });
     }
   });
+});
+</script>
+
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const timeline = document.querySelector(".timeline");
+
+  function checkTimelineVisible() {
+    const rect = timeline.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 100) {
+      timeline.classList.add("animate");
+      window.removeEventListener("scroll", checkTimelineVisible);
+    }
+  }
+
+  window.addEventListener("scroll", checkTimelineVisible);
+  checkTimelineVisible(); // run once on load
 });
 </script>
 
