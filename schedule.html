@@ -172,24 +172,38 @@
     .trade-icons {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-      gap: 20px;
+      gap: 15px;
+      justify-items: center;
       margin: 20px 0;
     }
     .trade-icons img {
       width: 80px;
       height: 80px;
-      border-radius: 12px;
       cursor: pointer;
       transition: transform 0.3s, box-shadow 0.3s;
+      opacity: 0;
+      transform: scale(0.8);
     }
     .trade-icons img:hover {
-      transform: scale(1.2);
-      box-shadow: 0 8px 20px rgba(255,215,0,0.6);
+      transform: scale(1.1);
+      box-shadow: 0 0 12px #ffd700;
     }
     .trade-schedule {
       display: none;
       animation: fadeIn 0.6s ease;
       margin-top: 20px;
+    }
+    /* When visible on scroll */
+    .trade-icons img.visible {
+      opacity: 1;
+      transform: scale(1);
+      animation: bounceIn 0.6s ease;
+    }
+    /* Bounce keyframe */
+    @keyframes bounceIn {
+      0% { transform: scale(0.5); opacity: 0; }
+      60% { transform: scale(1.2); opacity: 1; }
+      100% { transform: scale(1); }
     }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
@@ -326,6 +340,21 @@
 
 <script>
 document.addEventListener("scroll", () => {
+  const icons = document.querySelectorAll(".trade-icons img");
+  icons.forEach((icon, index) => {
+    const rect = icon.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 50) {
+      setTimeout(() => {
+        icon.classList.add("visible");
+      }, index * 150); // delay each icon
+    }
+  });
+});
+</script>
+
+<!-- Hero 
+<script>
+document.addEventListener("scroll", () => {
   const timeline = document.querySelector(".timeline");
   const rect = timeline.getBoundingClientRect();
 
@@ -355,13 +384,13 @@ document.addEventListener("scroll", () => {
       <img src="icon_Machining.png" alt="CAM Machining" onclick="showSchedule('machining')">
       <img src="icon_Civil.png" alt="Civil Technology" onclick="showSchedule('civil')">
       <img src="icon_Electrical.png" alt="Electrical Control" onclick="showSchedule('electrical')">
+      <img src="icon_Welding.png" alt="Welding & Fabrication" onclick="showSchedule('welding')">
       <img src="icon_Creative.png" alt="Creative Multimedia" onclick="showSchedule('creative')">
-      <img src="icon_Welding.png" alt="Welding & Metal Fabrication" onclick="showSchedule('welding')">
       <img src="icon_HVAC.png" alt="HVAC" onclick="showSchedule('hvac')">
     </div>
     
     <!-- Example Schedule for Electronics -->
-    <div id="electronics" class="schedule-table trade-schedule">
+    <div id="electronics" class="schedule-table trade-schedule" style="display:block;">
       <h5>Electronics – Day 1</h5>
       <ul>
         <li>09:00 AM – Registration</li>
@@ -372,7 +401,7 @@ document.addEventListener("scroll", () => {
     </div>
     
     <!-- Example Schedule for Culinary Arts -->
-    <div id="cooking" class="schedule-table trade-schedule">
+    <div id="cooking" class="schedule-table trade-schedule" style="display:none;">
       <h5>Culinary Arts – Day 1</h5>
       <ul>
         <li>08:30 AM – Registration</li>
@@ -383,7 +412,7 @@ document.addEventListener("scroll", () => {
     </div>
     
     <!-- Example Schedule for CAM Machining -->
-    <div id="machining" class="schedule-table trade-schedule">
+    <div id="machining" class="schedule-table trade-schedule" style="display:none;">
       <h5>CAM Machining – Day 1</h5>
       <ul>
         <li>09:00 AM – Registration</li>
@@ -394,7 +423,7 @@ document.addEventListener("scroll", () => {
     </div>
     
     <!-- Example Schedule for Civil Technology -->
-    <div id="civil" class="schedule-table trade-schedule">
+    <div id="civil" class="schedule-table trade-schedule" style="display:none;">
       <h5>Civil Technology – Day 1</h5>
       <ul>
         <li>09:00 AM – Registration</li>
@@ -405,7 +434,7 @@ document.addEventListener("scroll", () => {
     </div>
     
     <!-- Example Schedule for Electrical Control -->
-    <div id="electrical" class="schedule-table trade-schedule">
+    <div id="electrical" class="schedule-table trade-schedule" style="display:none;">
       <h5>Electrical Control – Day 1</h5>
       <ul>
         <li>09:00 AM – Registration</li>
@@ -416,7 +445,7 @@ document.addEventListener("scroll", () => {
     </div>
     
     <!-- Example Schedule for Creative Multimedia -->
-    <div id="creative" class="schedule-table trade-schedule">
+    <div id="creative" class="schedule-table trade-schedule" style="display:none;">
       <h5>Creative Multimedia – Day 1</h5>
       <ul>
         <li>09:00 AM – Registration</li>
@@ -427,7 +456,7 @@ document.addEventListener("scroll", () => {
     </div>
     
     <!-- Example Schedule for Welding & Metal Fabrication -->
-    <div id="welding" class="schedule-table trade-schedule">
+    <div id="welding" class="schedule-table trade-schedule" style="display:none;">
       <h5>Welding & Metal Fabrication – Day 1</h5>
       <ul>
         <li>09:00 AM – Registration</li>
@@ -438,7 +467,7 @@ document.addEventListener("scroll", () => {
     </div>
     
     <!-- Example Schedule for HVAC -->
-    <div id="hvac" class="schedule-table trade-schedule">
+    <div id="hvac" class="schedule-table trade-schedule" style="display:none;">
       <h5>Heating, Ventilation & Air Conditioning – Day 1</h5>
       <ul>
         <li>09:00 AM – Registration</li>
@@ -520,17 +549,11 @@ document.addEventListener("scroll", () => {
 
 <script>
 function showSchedule(trade) {
-  // Hide all schedules
-  document.querySelectorAll('.trade-schedule').forEach(el => el.style.display = "none");
-
-  // Show the selected one
+  // hide all schedules
+  document.querySelectorAll(".trade-schedule").forEach(el => el.style.display = "none");
+  // show selected one
   document.getElementById(trade).style.display = "block";
 }
-
-// Optional: show first trade automatically when page loads
-window.onload = () => {
-  showSchedule('civil'); // auto show Civil schedule
-};
 </script>
 
 <script>
