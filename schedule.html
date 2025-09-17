@@ -340,13 +340,13 @@
 
 <script>
 document.addEventListener("scroll", () => {
-  const icons = document.querySelectorAll(".trade-icons img");
-  icons.forEach((icon, index) => {
-    const rect = icon.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 50) {
+  const items = document.querySelectorAll(".timeline-item");
+  items.forEach((item, index) => {
+    const rect = item.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 100) {
       setTimeout(() => {
-        icon.classList.add("visible");
-      }, index * 150); // delay each icon
+        item.classList.add("visible");
+      }, index * 400); // delay each card
     }
   });
 });
