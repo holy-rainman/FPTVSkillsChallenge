@@ -187,6 +187,13 @@
       color:#fff; font-size:1.5rem; margin:0 10px; transition:0.3s;
     }
     .social-icons a:hover { color:#ffd700; }
+    /* Bigger icons only on desktop */
+    @media (min-width: 992px) {
+      .social-icons a {
+        font-size: 2.5rem;   /* increase size */
+        margin: 0 15px;      /* add spacing */
+      }
+    }
 
     /* FAQ */
     .accordion-button { background:rgba(255,255,255,0.1); color:#fff; }
