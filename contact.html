@@ -133,6 +133,26 @@
       text-shadow:0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 40px #ffd700;
       transform:scale(1.2);
     }
+    /* Facebook */
+    .social-icons a.facebook:hover i {
+      color: #1877F2;
+      text-shadow: 0 0 10px #1877F2, 0 0 20px #1877F2, 0 0 40px #1877F2;
+      transform: scale(1.2);
+    }
+    
+    /* TikTok (putih glow) */
+    .social-icons a.tiktok:hover i {
+      color: #fff;
+      text-shadow: 0 0 10px #fff, 0 0 20px #ff0050, 0 0 40px #00f2ea;
+      transform: scale(1.2);
+    }
+    
+    /* Instagram (pink/purple) */
+    .social-icons a.instagram:hover i {
+      color: #E1306C;
+      text-shadow: 0 0 10px #E1306C, 0 0 20px #C13584, 0 0 40px #FD1D1D;
+      transform: scale(1.2);
+    }
     @media (min-width:992px) {
       .social-icons a i { font-size:4rem !important; margin:0 25px; }
     }
@@ -392,9 +412,9 @@ document.getElementById("enquiryForm").addEventListener("submit", async function
         <div class="contact-card d-flex flex-column justify-content-center align-items-center text-center">
           <h5 class="mb-4">Follow Us</h5>
           <div class="social-icons mt-3">
-            <a href="https://www.facebook.com/aim.kasi/" target="_blank"><i class="bi bi-facebook"></i></a>
-            <a href="https://www.tiktok.com/@aim.kasi" target="_blank"><i class="bi bi-tiktok"></i></a>
-            <a href="https://www.instagram.com/aim_platinum/" target="_blank"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com/aim.kasi/" target="_blank" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.tiktok.com/@aim.kasi" target="_blank" class="tiktok"><i class="bi bi-tiktok"></i></a>
+            <a href="https://www.instagram.com/aim_platinum/" target="_blank" class="instagram"><i class="bi bi-instagram"></i></a>
           </div>
         </div>
       </div>
