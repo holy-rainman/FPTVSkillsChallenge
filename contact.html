@@ -409,21 +409,34 @@ document.getElementById("enquiryForm").addEventListener("submit", async function
   </div>
 </section>
 
-<!-- Resources -->
-<section class="glass-section text-center">
-  <h2>Downloadable Resources</h2>
-  <a href="sponsors.html" class="download-btn">Sponsorship Prospectus</a>
-  <a href="schedule.html" class="download-btn">Event Schedule</a>
-  <a href="#" class="download-btn">FAQ PDF</a>
-</section>
+<!-- Resources + Social (side by side like contact/enquiry) -->
+<section class="glass-section">
+  <div class="container">
+    <div class="row g-4 align-items-stretch">
+      
+      <!-- LEFT: Downloadable Resources -->
+      <div class="col-lg-6 d-flex">
+        <div class="contact-card flex-fill text-center">
+          <h5>Downloadable Resources</h5>
+          <a href="sponsors.html" class="download-btn d-block mb-2">Sponsorship Prospectus</a>
+          <a href="schedule.html" class="download-btn d-block mb-2">Event Schedule</a>
+          <a href="#" class="download-btn d-block">FAQ PDF</a>
+        </div>
+      </div>
 
-<!-- Social -->
-<section class="glass-section text-center">
-  <h2>Follow Us</h2>
-  <div class="social-icons">
-    <a href="#"><i class="bi bi-facebook"></i></a>
-    <a href="#"><i class="bi bi-tiktok"></i></a>
-    <a href="#"><i class="bi bi-instagram"></i></a>
+      <!-- RIGHT: Follow Us -->
+      <div class="col-lg-6 d-flex">
+        <div class="contact-card flex-fill text-center">
+          <h5>Follow Us</h5>
+          <div class="social-icons mt-3">
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-tiktok"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
