@@ -241,12 +241,36 @@
     }
 
     /* FAQ */
-    .accordion-button { background:rgba(255,255,255,0.1); color:#fff; }
-    .accordion-button:not(.collapsed) {
-      background:#ffd700; color:#000; font-weight:bold;
+    /* FAQ Accordion */
+    .accordion-item {
+      background: rgba(0,0,0,0.3);
+      border: none;
+      margin-bottom: 8px;
+      border-radius: 8px;
+      overflow: hidden;
     }
-    .accordion-body { background:rgba(255,255,255,0.05); color:#ddd; }
-
+    
+    .accordion-button {
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      font-weight: 600;
+    }
+    
+    .accordion-button:hover {
+      background: rgba(255,215,0,0.15);
+    }
+    
+    .accordion-button:not(.collapsed) {
+      background: rgba(255,215,0,0.2);
+      color: #ffd700;
+      box-shadow: none;
+    }
+    
+    .accordion-body {
+      background: rgba(0,0,0,0.4);
+      color: #eee;
+      font-size: 0.95rem;
+    }
     /* Bottom floating items */
     .bottom-right-logo { position:fixed; bottom:10px; right:10px; z-index:1000; }
     .bottom-right-logo img { height:40px; opacity:0.9; }
@@ -260,19 +284,6 @@
       .hero-content { display:flex; justify-content:center; align-items:center; gap:40px; }
       .hero-text { max-width:40%; }
       .hero-logo img { height:180px; } 
-    }
-    .accordion-button {
-      background: rgba(255,255,255,0.1);
-      color: #fff;
-      font-weight: 600;
-    }
-    .accordion-button:not(.collapsed) {
-      background: rgba(255,215,0,0.2);
-      color: #ffd700;
-    }
-    .accordion-body {
-      background: rgba(0,0,0,0.3);
-      color: #f1f1f1;
     }
 
     /* Social Icons Override */
