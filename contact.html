@@ -94,16 +94,6 @@
       margin-bottom: 20px;
       text-align: left;
     }
-    .contact-section .row {
-      display: flex;
-      align-items: stretch;
-    }
-    
-    .contact-section .col-lg-5,
-    .contact-section .col-lg-7 {
-      display: flex;
-      flex-direction: column;
-    }
     .contact-card h5 { margin-bottom:10px; font-weight:bold; color: #ffd700; }
     .contact-card p { margin:2px 0; font-size:0.9rem; }
     .contact-card a { color:#ffd700; text-decoration:none; font-size: 0.95rem; }
@@ -277,10 +267,10 @@
     <div class="row g-4 align-items-stretch">
       
       <!-- LEFT: Key Contacts (col-5) -->
-      <div class="col-lg-5 equal-height">
+      <div class="col-lg-5 d-flex flex-column h-100">
 
         <!-- Card 1 -->
-        <div class="contact-card">
+        <div class="contact-card flex-fill">
           <h5>Administration & Sponsorship</h5>
           <p><strong>Ts. Dr. Reyanhealme Bin Rohanai</strong><br>
           <span class="desc">Pensyarah (DS11)<br>
@@ -297,7 +287,7 @@
         </div>
 
         <!-- Card 2 -->
-        <div class="contact-card">
+        <div class="contact-card flex-fill mt-3">
           <h5>Technical Enquiries</h5>
           <p><strong>Ts. Abd Rahim Bin Kasiman</strong><br>
           <span class="desc">Jurutera Pengajar (DV10)<br>
