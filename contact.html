@@ -94,6 +94,10 @@
       margin-bottom: 20px;
       text-align: left;
     }
+    .contact-section .row {
+      display: flex;
+      align-items: stretch;  /* makes both columns same height */
+    }
     .contact-card h5 { margin-bottom:10px; font-weight:bold; color: #ffd700; }
     .contact-card p { margin:2px 0; font-size:0.9rem; }
     .contact-card a { color:#ffd700; text-decoration:none; font-size: 0.95rem; }
@@ -267,7 +271,7 @@
     <div class="row g-4 align-items-stretch">
       
       <!-- LEFT: Key Contacts (col-5) -->
-      <div class="col-lg-5 d-flex flex-column h-100">
+      <div class="col-lg-5 d-flex flex-column">
 
         <!-- Card 1 -->
         <div class="contact-card flex-fill">
