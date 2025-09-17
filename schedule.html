@@ -78,9 +78,8 @@
       top: 0;
       bottom: 0;
       left: 50%;
-      margin-left: -3px; /* keep centered */
-      height: 100%;
-      z-index: 1; /* behind dots */
+      margin-left: -3px;
+      z-index: 1;
     }
     .timeline-item {
       position: relative;
@@ -116,15 +115,19 @@
     .timeline-item::before {
       content: "";
       position: absolute;
-      top: 40px; /* adjust vertically */
-      left: 50%; /* align with line */
-      transform: translateX(-50%); /* center the dot */
+      top: 30px;               /* vertical alignment */
+      left: 100%;              /* push to right edge for LEFT items */
+      transform: translateX(-50%); 
       width: 20px;
       height: 20px;
       border-radius: 50%;
       background: #ffd700;
       border: 4px solid rgba(255,255,255,0.6);
-      z-index: 3; /* above the line */
+      z-index: 3;
+    }
+    .timeline-item.right::before {
+      left: 0;                 /* push to left edge for RIGHT items */
+      transform: translateX(-50%);
     }
 
     /* Schedule Tables */
