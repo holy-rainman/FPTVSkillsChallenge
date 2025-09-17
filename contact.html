@@ -140,6 +140,18 @@
       flex-direction: column;
       height: 100%;
     }
+    .equal-row {
+      display: flex;
+      align-items: stretch;
+    }
+    
+    .equal-row > [class*="col-"] {
+      display: flex;
+    }
+    
+    .equal-row .contact-card {
+      flex: 1;  /* makes both cards same height */
+    }
     .whatsapp-inline:hover {
       background: #1ebe5d;
     }
@@ -431,11 +443,11 @@ document.getElementById("enquiryForm").addEventListener("submit", async function
 <!-- Resources + Social (side by side like contact/enquiry) -->
 <section class="glass-section">
   <div class="container">
-    <div class="row g-4 align-items-stretch">
+    <div class="row g-4 equal-row">
   
       <!-- LEFT -->
-      <div class="col-lg-6 d-flex">
-        <div class="contact-card flex-fill text-center">
+      <div class="col-lg-6">
+        <div class="contact-card text-center">
           <h5>Downloadable Resources</h5>
           <a href="sponsors.html" class="download-btn d-block mb-2">Sponsorship Prospectus</a>
           <a href="schedule.html" class="download-btn d-block mb-2">Event Schedule</a>
@@ -444,8 +456,8 @@ document.getElementById("enquiryForm").addEventListener("submit", async function
       </div>
     
       <!-- RIGHT -->
-      <div class="col-lg-6 d-flex">
-        <div class="contact-card flex-fill d-flex flex-column justify-content-center align-items-center text-center follow-card">
+      <div class="col-lg-6">
+        <div class="contact-card d-flex flex-column justify-content-center align-items-center text-center">
           <h5 class="mb-4">Follow Us</h5>
           <div class="social-icons">
             <a href="#"><i class="bi bi-facebook"></i></a>
