@@ -204,6 +204,12 @@
 
     /* Social */
     /* Default small (mobile/tablet) */
+    .social-icons {
+      display: flex;
+      justify-content: center;   /* center horizontally */
+      align-items: center;       /* center vertically */
+      gap: 40px;                 /* spacing between icons */
+    }
     .social-icons a {
       color:#fff;
       font-size:1.5rem;
@@ -256,6 +262,31 @@
       background: rgba(0,0,0,0.3);
       color: #f1f1f1;
     }
+
+    /* Social Icons Override */
+    .social-icons {
+      display: flex;
+      justify-content: center;   /* center horizontally */
+      align-items: center;       /* center vertically */
+      gap: 40px;                 /* spacing between icons */
+    }
+    
+    .social-icons a {
+      color:#fff;
+      font-size:1.5rem;          /* default kecil untuk mobile */
+      transition:0.3s;
+    }
+    
+    .social-icons a:hover { 
+      color:#ffd700; 
+    }
+    
+    /* Desktop view (besar + spacing lebih) */
+    @media (min-width: 992px) {
+      .social-icons a i {
+        font-size: 4rem !important;   /* paksa besar */
+        margin: 0 25px;               /* jarak kiri kanan */
+      }
     
   </style>
 </head>
