@@ -65,28 +65,42 @@
     }
 
     /* Timeline */
-    .timeline { position:relative; max-width:900px; margin:auto; }
+    .timeline {
+      position: relative;
+      max-width: 900px;
+      margin: auto;
+    }
     .timeline::after {
       content: '';
       position: absolute;
       width: 6px;
       background: linear-gradient(to bottom, #007bff, #dc3545);
       top: 0;
+      bottom: 0;
       left: 50%;
-      margin-left: -3px;
-    
-      height: 0; /* start hidden */
-      transition: height 2s ease-out;
-      z-index: 1; /* put line behind dots */
+      margin-left: -3px; /* keep centered */
+      height: 100%;
+      z-index: 1; /* behind dots */
     }
-    .timeline-item { padding:15px; position:relative; width:48%; }
-    .timeline-item.left { left:0; }
-    .timeline-item.right { left:50%; }
+    .timeline-item {
+      position: relative;
+      width: 50%;
+      padding: 20px 40px; /* space so text doesn’t overlap dots */
+    }
+    .timeline-item.left {
+      left: 0;
+      text-align: right;
+    }
+    .timeline-item.right {
+      left: 50%;
+    }
     .timeline-card {
-      background:rgba(255,255,255,0.15);
-      backdrop-filter:blur(8px);
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(8px);
       padding: 15px 20px;
       border-radius: 12px;
+      position: relative;
+      z-index: 2; /* above line */
     }
     .timeline-card h5 {
       font-weight: bold;
@@ -102,13 +116,15 @@
     .timeline-item::before {
       content: "";
       position: absolute;
-      top: 30px;
+      top: 40px; /* adjust vertically */
+      left: 50%; /* align with line */
+      transform: translateX(-50%); /* center the dot */
       width: 20px;
       height: 20px;
       border-radius: 50%;
       background: #ffd700;
       border: 4px solid rgba(255,255,255,0.6);
-      z-index: 2; /* keep dots above the line */
+      z-index: 3; /* above the line */
     }
 
     /* Schedule Tables */
