@@ -240,7 +240,6 @@
       }
     }
 
-    /* FAQ */
     /* FAQ Accordion */
     .accordion-item {
       background: rgba(0,0,0,0.3);
@@ -249,28 +248,35 @@
       border-radius: 8px;
       overflow: hidden;
     }
-    
     .accordion-button {
       background: rgba(255,255,255,0.1);
       color: #fff;
       font-weight: 600;
     }
-    
     .accordion-button:hover {
       background: rgba(255,215,0,0.15);
     }
-    
     .accordion-button:not(.collapsed) {
       background: rgba(255,215,0,0.2);
       color: #ffd700;
       box-shadow: none;
     }
-    
+    .accordion-collapse {
+      transition: all 0.4s ease;
+    }
     .accordion-body {
       background: rgba(0,0,0,0.4);
       color: #eee;
       font-size: 0.95rem;
+      opacity: 0;
+      transform: translateY(-5px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
     }
+    .accordion-collapse.show .accordion-body {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
     /* Bottom floating items */
     .bottom-right-logo { position:fixed; bottom:10px; right:10px; z-index:1000; }
     .bottom-right-logo img { height:40px; opacity:0.9; }
