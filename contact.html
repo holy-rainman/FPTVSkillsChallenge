@@ -315,47 +315,54 @@
       <!-- RIGHT: Enquiry Form (col-7) -->
       <div class="col-lg-7">
         <h2>Send Us Your Enquiry</h2>
-        <form id="enquiryForm" action="https://formspree.io/f/mzzalvby" method="POST">
-          <input type="text" name="name" placeholder="Your Name" required>
-          <input type="text" name="designation" placeholder="Your Designation" required>
-          <input type="email" name="_replyto" placeholder="Your Email" required>
-          <select name="category" required>
+        <form id="enquiryForm" action="https://formspree.io/f/mzzalvby" method="POST" class="contact-form">
+          <input type="text" name="name" class="form-control mb-3" placeholder="Your Name" required>
+          <input type="text" name="designation" class="form-control mb-3" placeholder="Your Designation" required>
+          <input type="email" name="_replyto" class="form-control mb-3" placeholder="Your Email" required>
+          <select name="category" class="form-control mb-3" required>
             <option value="">Select Type of Enquiry</option>
             <option value="Administration">Administration</option>
             <option value="Sponsorship">Sponsorship</option>
             <option value="Technical">Technical</option>
             <option value="Competition">Competition</option>
           </select>
-          <textarea name="message" placeholder="Your Enquiry" required></textarea>
-          <button type="submit">Submit</button>
+          <textarea name="message" class="form-control mb-3" placeholder="Your Enquiry" rows="5" required></textarea>
+          <button type="submit" class="btn btn-warning w-100">Submit</button>
         </form>
         
-        <p id="statusMessage" style="color: yellow; font-weight: bold; margin-top:10px;"></p>
+        <!-- Bootstrap alert placeholder -->
+        <div id="statusMessage" class="mt-3"></div>
         
         <script>
-        document.getElementById("enquiryForm").addEventListener("submit", function(e){
+        document.getElementById("enquiryForm").addEventListener("submit", async function(e){
           e.preventDefault();
         
           const form = this;
           const status = document.getElementById("statusMessage");
         
-          fetch("https://formspree.io/f/mzzalvby", {
-            method: "POST",
-            body: new FormData(form),
-            headers: { 'Accept': 'application/json' }
-          })
-          .then(response => {
+          try {
+            let response = await fetch(form.action, {
+              method: form.method,
+              body: new FormData(form),
+              headers: { 'Accept': 'application/json' }
+            });
+        
             if (response.ok) {
-              status.innerText = "✅ Message sent successfully!";
+              status.innerHTML = `<div class="alert alert-success" role="alert">
+                ✅ Message sent successfully!
+              </div>`;
               form.reset();
             } else {
-              status.innerText = "⚠️ Message sent but response not as expected.";
+              status.innerHTML = `<div class="alert alert-warning" role="alert">
+                ⚠️ Message sent but response not as expected.
+              </div>`;
             }
-          })
-          .catch(err => {
-            status.innerText = "❌ Error sending enquiry.";
+          } catch (err) {
+            status.innerHTML = `<div class="alert alert-danger" role="alert">
+              ❌ Error sending enquiry. Please try again later.
+            </div>`;
             console.error(err);
-          });
+          }
         });
         </script>
       </div> <!-- END col-7 -->
