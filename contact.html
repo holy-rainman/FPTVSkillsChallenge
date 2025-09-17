@@ -315,16 +315,22 @@
       <!-- RIGHT: Enquiry Form (col-7) -->
       <div class="col-lg-7">
         <h2>Send Us Your Enquiry</h2>
-        <form id="enquiryForm">
+        <form action="https://formspree.io/f/mzzalvby" method="POST" class="contact-form">
           <input type="text" name="name" placeholder="Your Name" required>
-          <input type="email" name="email" placeholder="Your Email" required>
+          <input type="text" name="designation" placeholder="Your Designation" required>
+          <input type="email" name="_replyto" placeholder="Your Email" required>
           <select name="category" required>
-            <option value="admin">Administration</option>
-            <option value="sponsor">Sponsorship</option>
-            <option value="technical">Technical</option>
-            <option value="competition">Competition</option>
+            <option value="">Select Type of Enquiry</option>
+            <option value="Administration">Administration</option>
+            <option value="Sponsorship">Sponsorship</option>
+            <option value="Technical">Technical</option>
+            <option value="Competition">Competition</option>
           </select>
           <textarea name="message" placeholder="Your Enquiry" required></textarea>
+        
+          <!-- hidden field for recipients -->
+          <input type="hidden" name="_to" value="arahim@uthm.edu.my,reyan@uthm.edu.my,holy_rainman@yahoo.com">
+        
           <button type="submit">Submit</button>
         </form>
 
