@@ -315,7 +315,7 @@
       <!-- RIGHT: Enquiry Form (col-7) -->
       <div class="col-lg-7">
         <h2>Send Us Your Enquiry</h2>
-        <form action="https://formspree.io/f/mzzalvby" method="POST" class="contact-form">
+        <form id="enquiryForm" action="https://formspree.io/f/xyzabcd" method="POST">
           <input type="text" name="name" placeholder="Your Name" required>
           <input type="text" name="designation" placeholder="Your Designation" required>
           <input type="email" name="_replyto" placeholder="Your Email" required>
@@ -327,12 +327,35 @@
             <option value="Competition">Competition</option>
           </select>
           <textarea name="message" placeholder="Your Enquiry" required></textarea>
-        
-          <!-- hidden field for recipients -->
-          <input type="hidden" name="_to" value="arahim@uthm.edu.my,reyan@uthm.edu.my,holy_rainman@yahoo.com">
-        
           <button type="submit">Submit</button>
         </form>
+        
+        <p id="statusMessage" style="color: yellow; font-weight: bold; margin-top:10px;"></p>
+        
+        <script>
+        document.getElementById("enquiryForm").addEventListener("submit", async function(e){
+          e.preventDefault();
+          const form = e.target;
+          const status = document.getElementById("statusMessage");
+        
+          try {
+            let response = await fetch(form.action, {
+              method: form.method,
+              body: new FormData(form),
+              headers: { 'Accept': 'application/json' }
+            });
+            if (response.ok) {
+              status.innerText = "✅ Message sent successfully!";
+              form.reset();
+            } else {
+              status.innerText = "❌ Error sending message. Try again.";
+            }
+          } catch (err) {
+            status.innerText = "⚠️ Network error. Please try later.";
+          }
+        });
+        </script>
+
 
         <script>
        document.getElementById("enquiryForm").addEventListener("submit", function(e){
