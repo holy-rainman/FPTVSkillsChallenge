@@ -250,6 +250,26 @@
     }
     .finalist-card h6 { margin:0; font-weight:bold; color:#ffd700; }
 
+    .trade-final-schedule .row {
+      display: flex;
+      align-items: stretch;   /* make children equal height */
+      gap: 20px;              /* spacing between columns */
+    }
+    .trade-final-schedule .schedule-table {
+      flex: 1;                /* both columns expand equally */
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+      .trade-title {
+      margin: 20px 0;
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #ffd700;
+      text-align: center;
+      text-shadow: 0 0 6px rgba(0,0,0,0.6);
+    }
+      
     /* Bottom items */
     .bottom-right-logo { position:fixed; bottom:10px; right:10px; z-index:1000; }
     .bottom-right-logo img { height:40px; opacity:0.9; }
@@ -641,6 +661,7 @@ document.addEventListener("scroll", () => {
 
     <!-- Example: Electronics Final Competition -->
     <div id="electronics-final" class="trade-final-schedule" style="display:block;">
+      <h4 class="trade-title">Electronics – Final Competition Schedule</h4>
       <div class="row">
         <!-- Day 1 -->
         <div class="col-md-6">
@@ -672,6 +693,7 @@ document.addEventListener("scroll", () => {
 
     <!-- Example: Culinary Arts Final Competition -->
     <div id="cooking-final" class="trade-final-schedule" style="display:none;">
+      <h4 class="trade-title">Aulinary Arts – Final Competition Schedule</h4>
       <div class="row">
         <div class="col-md-6">
           <div class="schedule-table">
@@ -701,6 +723,7 @@ document.addEventListener("scroll", () => {
 
     <!-- Example: CAM Programming Final Competition -->
     <div id="machining-final" class="trade-final-schedule" style="display:none;">
+      <h4 class="trade-title">CAM Programming – Final Competition Schedule</h4>
       <div class="row">
         <div class="col-md-6">
           <div class="schedule-table">
@@ -730,6 +753,7 @@ document.addEventListener("scroll", () => {
     
     <!-- Example: Civil Technology Final Competition -->
     <div id="civil-final" class="trade-final-schedule" style="display:none;">
+      <h4 class="trade-title">Civil Technology – Final Competition Schedule</h4>
       <div class="row">
         <div class="col-md-6">
           <div class="schedule-table">
@@ -759,6 +783,7 @@ document.addEventListener("scroll", () => {
 
     <!-- Example: Electrical Control Final Competition -->
     <div id="electrical-final" class="trade-final-schedule" style="display:none;">
+      <h4 class="trade-title">Electrical Control – Final Competition Schedule</h4>
       <div class="row">
         <div class="col-md-6">
           <div class="schedule-table">
@@ -788,6 +813,7 @@ document.addEventListener("scroll", () => {
 
     <!-- Example: Welding and Metal Fabrication Final Competition -->
     <div id="welding-final" class="trade-final-schedule" style="display:none;">
+      <h4 class="trade-title">Welding & Metal Fabrication – Final Competition Schedule</h4>
       <div class="row">
         <div class="col-md-6">
           <div class="schedule-table">
@@ -817,6 +843,7 @@ document.addEventListener("scroll", () => {
 
     <!-- Example: Creative Multimedia Final Competition -->
     <div id="creative-final" class="trade-final-schedule" style="display:none;">
+      <h4 class="trade-title">Creative Multimedia – Final Competition Schedule</h4>
       <div class="row">
         <div class="col-md-6">
           <div class="schedule-table">
@@ -846,6 +873,7 @@ document.addEventListener("scroll", () => {
 
     <!-- Example: Heating, Ventilation and Air Conditioning Final Competition -->
     <div id="hvac-final" class="trade-final-schedule" style="display:none;">
+      <h4 class="trade-title">HVAC – Final Competition Schedule</h4>
       <div class="row">
         <div class="col-md-6">
           <div class="schedule-table">
