@@ -271,8 +271,18 @@
     }
       
     /* Bottom items */
-    .bottom-right-logo { position:fixed; bottom:10px; right:10px; z-index:1000; }
-    .bottom-right-logo img { height:40px; opacity:0.9; }
+    .bottom-right-logo { 
+      position:fixed; 
+      bottom:15px; 
+      right:15px; 
+      z-index:1000;
+      pointer-events:none;   /* prevent it blocking clicks on schedule */
+    }
+    .bottom-right-logo img { 
+      height:55px;           /* make it consistent size */
+      opacity:0.15;          /* faint watermark look */
+      transition:opacity 0.3s, transform 0.3s;
+}
     .visitor-counter {
       position:fixed; bottom:10px; left:10px;
       background:rgba(255,255,255,0.7);
