@@ -994,27 +994,23 @@ document.addEventListener("scroll", () => {
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const timeline = document.querySelector(".timeline");
+  const schedules = document.querySelectorAll(".schedule-table ul");
 
-  function checkTimelineVisible() {
-    const rect = timeline.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 100) {
-      timeline.classList.add("animate");
-      window.removeEventListener("scroll", checkTimelineVisible);
-    }
+  // === Timeline animate on load ===
+  if (timeline) {
+    timeline.classList.add("animate");
   }
 
-  window.addEventListener("scroll", checkTimelineVisible);
-  checkTimelineVisible(); // run once on load
+  // === Schedule rows animate on load ===
+  schedules.forEach(schedule => {
+    const rows = schedule.querySelectorAll("li");
+    rows.forEach((row, index) => {
+      setTimeout(() => {
+        row.classList.add("visible");
+      }, index * 200);
+    });
+  });
 });
-</script>
-
-<script>
-function showFinalists(trade) {
-  // hide all finalist sections
-  document.querySelectorAll(".trade-finalists").forEach(el => el.style.display = "none");
-  // show selected
-  document.getElementById(trade).style.display = "block";
-}
 </script>
 
 <script>
