@@ -279,9 +279,9 @@
       pointer-events: none;
     }
     #fixed-logo img {
-      height: 40px;   /* fix size */
-      width: auto;
-      object-fit: contain;
+      height: 40px !important;
+      width: auto !important;
+      object-fit: contain !important;
       opacity: 0.8;
       display: block;
       margin: 0;
@@ -1030,7 +1030,7 @@ function showFinalCompetition(trade) {
 
 <!-- Bottom items (floating like about.html) -->
 <div id="fixed-logo">
-  <img src="pic3.png" alt="Reduced Logo">
+  <img src="pic3.png" alt="Reduced Logo" style="height:40px;width:auto;object-fit:contain;">
 </div>
 
 <div id="fixed-counter">
