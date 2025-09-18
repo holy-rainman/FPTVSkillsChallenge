@@ -382,16 +382,18 @@
 </section>
 
 <script>
-document.addEventListener("scroll", () => {
+document.addEventListener("DOMContentLoaded", () => {
   const items = document.querySelectorAll(".timeline-item");
   items.forEach((item, index) => {
-    const rect = item.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 100) {
-      setTimeout(() => {
-        item.classList.add("visible");
-      }, index * 400); // delay each card
-    }
+    setTimeout(() => {
+      item.classList.add("visible");
+    }, index * 400); // delay setiap card
   });
+
+  const timeline = document.querySelector(".timeline");
+  if (timeline) {
+    timeline.classList.add("animate");
+  }
 });
 </script>
 
