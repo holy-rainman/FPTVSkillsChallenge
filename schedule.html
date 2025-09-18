@@ -273,15 +273,15 @@
     /* Bottom items (same as about.html) */
     .bottom-right-logo {
       position:fixed; 
-      bottom:15px; 
-      right:15px; 
+      bottom:10px; 
+      right:10px; 
       z-index:1000;
       pointer-events:none;
     }
     .bottom-right-logo img {
       height:40px;
       width:auto;
-      opacity:0.2;
+      opacity:0.9;
       display:block;
     }
 
@@ -940,7 +940,9 @@ document.addEventListener("scroll", () => {
 <script>AOS.init({ duration:1000, once:true });</script>
 
 <!-- Bottom items -->
-
+<div class="bottom-right-logo">
+  <img src="pic3.png" alt="Reduced Logo">
+</div>
 
 <div class="visitor-counter">👀 <span id="visitorCount">Loading...</span> Visitors</div>
 <script>
