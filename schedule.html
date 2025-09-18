@@ -274,7 +274,7 @@
     #fixed-logo {
       position: fixed !important;
       bottom: 10px !important;
-      right: 10px !important;
+      right: 20px !important;
       z-index: 2147483647 !important; /* paling atas */
       pointer-events: none !important; /* jangan block klik */
     }
@@ -1031,7 +1031,8 @@ function showFinalCompetition(trade) {
   <img src="pic3.png" alt="Reduced Logo" style="height:40px;width:auto;object-fit:contain;">
 </div>
 
-<div id="fixed-counter">
+<!-- Floating Visitor Counter -->
+<div id="fixed-counter" style="position:fixed; bottom:10px; left:20px; background:rgba(255,255,255,0.7); padding:4px 10px; border-radius:8px; font-size:0.8rem; color:#333; z-index:2147483647; pointer-events:none;">
   👀 <span id="visitorCount">Loading...</span> Visitors
 </div>
 
