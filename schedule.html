@@ -270,29 +270,28 @@
       text-shadow: 0 0 6px rgba(0,0,0,0.6);
     }
       
-    /* Bottom items (force floating like about.html) */
-    .bottom-right-logo {
+    /* Force floating independent of parent */
+    .bottom-right-logo,
+    .visitor-counter {
       position: fixed !important;
+      z-index: 2147483647 !important; /* maximum browser z-index */
+    }
+    /* Logo */
+    .bottom-right-logo {
       bottom: 10px !important;
       right: 10px !important;
-      z-index: 99999 !important;     /* modify: naikkan dari 1000 → 99999 */
       pointer-events: none !important;
     }
     .bottom-right-logo img {
       height: 40px !important;
       width: auto !important;
-      max-width: 40px !important;
-      max-height: 40px !important;
       object-fit: contain !important;
       opacity: 0.8 !important;
       display: block !important;
-      margin: 0 !important;
-      padding: 0 !important;
     }
     
     /* Visitor Counter */
     .visitor-counter {
-      position: fixed !important;
       bottom: 10px !important;
       left: 10px !important;
       background: rgba(255,255,255,0.7) !important;
@@ -300,8 +299,6 @@
       border-radius: 8px !important;
       font-size: 0.8rem !important;
       color: #333 !important;
-      z-index: 99999 !important;      /* modify: naikkan dari 10000 → 99999 */
-      pointer-events: none !important; /* biar tak block klik */
     }
 
   </style>
