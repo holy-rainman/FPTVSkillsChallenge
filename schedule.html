@@ -279,9 +279,11 @@
       pointer-events:none;   /* prevent it blocking clicks on schedule */
     }
     .bottom-right-logo img { 
-      height:40px;           /* make it consistent size */
-      opacity:0.2;          /* faint watermark look */
-      transition:opacity 0.3s, transform 0.3s;
+      height:40px;     
+      width:auto;      
+      max-width:40px;  /* prevents it from stretching if PNG has padding */
+      opacity:0.2;
+      object-fit:contain;
     }
     .visitor-counter {
       position:fixed; bottom:10px; left:10px;
