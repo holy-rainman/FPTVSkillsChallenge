@@ -1029,6 +1029,15 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 <script>
+function showFinalists(trade) {
+  // hide all finalists
+  document.querySelectorAll(".trade-finalists").forEach(el => el.style.display = "none");
+  // show selected one
+  document.getElementById(trade).style.display = "block";
+}
+</script>
+
+<script>
 function showFinalCompetition(trade) {
   // hide all schedules
   document.querySelectorAll(".trade-final-schedule").forEach(el => el.style.display = "none");
