@@ -270,12 +270,12 @@
       text-shadow: 0 0 6px rgba(0,0,0,0.6);
     }
       
-    /* Bottom items (same as about.html) */
+    /* Bottom items (force floating like about.html) */
     .bottom-right-logo {
       position: fixed !important;
       bottom: 10px !important;
       right: 10px !important;
-      z-index: 1000 !important;
+      z-index: 99999 !important;     /* modify: naikkan dari 1000 → 99999 */
       pointer-events: none !important;
     }
     .bottom-right-logo img {
@@ -289,7 +289,8 @@
       margin: 0 !important;
       padding: 0 !important;
     }
-
+    
+    /* Visitor Counter */
     .visitor-counter {
       position: fixed !important;
       bottom: 10px !important;
@@ -299,9 +300,10 @@
       border-radius: 8px !important;
       font-size: 0.8rem !important;
       color: #333 !important;
-      z-index: 10000 !important;
-      pointer-events: none !important; /* avoid blocking clicks */
+      z-index: 99999 !important;      /* modify: naikkan dari 10000 → 99999 */
+      pointer-events: none !important; /* biar tak block klik */
     }
+
   </style>
 </head>
 <body>
@@ -950,12 +952,8 @@ document.addEventListener("scroll", () => {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>AOS.init({ duration:1000, once:true });</script>
 
-<!-- Bottom items -->
-<div class="bottom-right-logo">
-  <img src="pic3.png" alt="Reduced Logo" style="width:40px;height:40px;object-fit:contain;display:block;margin:0;padding:0;">
-</div>
 
-<div class="visitor-counter">👀 <span id="visitorCount">Loading...</span> Visitors</div>
+  
 <script>
   async function updateVisitorCounter() {
     try {
@@ -1032,5 +1030,11 @@ function showFinalCompetition(trade) {
 }
 </script>
 
+<!-- Bottom items -->
+<div class="bottom-right-logo">
+  <img src="pic3.png" alt="Reduced Logo" style="width:40px;height:40px;object-fit:contain;display:block;margin:0;padding:0;">
+</div>
+<div class="visitor-counter">👀 <span id="visitorCount">Loading...</span> Visitors</div>
+  
 </body>
 </html>
