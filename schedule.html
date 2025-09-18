@@ -270,16 +270,12 @@
       text-shadow: 0 0 6px rgba(0,0,0,0.6);
     }
       
-    /* Force floating independent of parent */
-    .bottom-right-logo,
-    .visitor-counter {
-      position: fixed !important;
-      z-index: 2147483647 !important; /* maximum browser z-index */
-    }
-    /* Logo */
+    /* Floating Logo */
     .bottom-right-logo {
+      position: fixed !important;
       bottom: 10px !important;
       right: 10px !important;
+      z-index: 2147483647 !important; /* max layer */
       pointer-events: none !important;
     }
     .bottom-right-logo img {
@@ -288,10 +284,13 @@
       object-fit: contain !important;
       opacity: 0.8 !important;
       display: block !important;
+      margin: 0 !important;
+      padding: 0 !important;
     }
     
-    /* Visitor Counter */
+    /* Floating Visitor Counter */
     .visitor-counter {
+      position: fixed !important;
       bottom: 10px !important;
       left: 10px !important;
       background: rgba(255,255,255,0.7) !important;
@@ -299,6 +298,8 @@
       border-radius: 8px !important;
       font-size: 0.8rem !important;
       color: #333 !important;
+      z-index: 2147483647 !important;
+      pointer-events: none !important;
     }
 
   </style>
