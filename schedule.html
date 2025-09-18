@@ -943,7 +943,10 @@ document.addEventListener("scroll", () => {
 <script>AOS.init({ duration:1000, once:true });</script>
 
 <!-- Bottom items -->
-<div class="bottom-right-logo"><img src="pic3.png" alt="Reduced Logo"></div>
+<div class="bottom-right-logo">
+  <img src="pic3.png" alt="Reduced Logo" style="width:40px;height:40px;object-fit:contain;">
+</div>
+
 <div class="visitor-counter">👀 <span id="visitorCount">Loading...</span> Visitors</div>
 <script>
   async function updateVisitorCounter() {
