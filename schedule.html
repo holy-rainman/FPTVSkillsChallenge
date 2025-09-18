@@ -272,20 +272,18 @@
       
     /* Floating Logo */
     #fixed-logo {
-      position: fixed;
-      bottom: 10px;
-      right: 10px;
-      z-index: 2147483647; /* paling atas */
-      pointer-events: none;
+      position: fixed !important;
+      bottom: 10px !important;
+      right: 10px !important;
+      z-index: 2147483647 !important; /* paling atas */
+      pointer-events: none !important; /* jangan block klik */
     }
     #fixed-logo img {
-      height: 40px !important;
+      height: 40px !important;   /* kecilkan */
       width: auto !important;
       object-fit: contain !important;
-      opacity: 0.8;
-      display: block;
-      margin: 0;
-      padding: 0;
+      opacity: 0.8 !important;
+      display: block !important;
     }
     
     /* Floating Visitor Counter */
@@ -1030,7 +1028,7 @@ function showFinalCompetition(trade) {
 
 <!-- Bottom items (floating like about.html) -->
 <div id="fixed-logo">
-  <img src="pic3.png" alt="Reduced Logo" style="height:40px;width:auto;object-fit:contain;">
+  <img src="pic3.png" alt="Reduced Logo"> <!-- style="height:40px;width:auto;object-fit:contain;"> -->
 </div>
 
 <div id="fixed-counter">
