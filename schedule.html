@@ -272,11 +272,11 @@
       
     /* Bottom items (same as about.html) */
     .bottom-right-logo {
-      position: fixed !important;
-      bottom: 10px !important;
-      right: 10px !important;
-      z-index: 9999 !important;
-      pointer-events: none !important;
+      position: fixed;
+      bottom: 15px;
+      right: 15px;
+      z-index: 1000;
+      pointer-events: none; /* supaya tak block klik */
     }
     .bottom-right-logo img {
       height: 40px !important;
@@ -955,7 +955,7 @@ document.addEventListener("scroll", () => {
 
 <!-- Bottom items -->
 <div class="bottom-right-logo">
-  <img src="pic3.png" alt="Reduced Logo">
+  <img src="pic3.png" alt="Reduced Logo" style="width:40px;height:40px;object-fit:contain;display:block;margin:0;padding:0;">
 </div>
 
 <div class="visitor-counter">👀 <span id="visitorCount">Loading...</span> Visitors</div>
