@@ -302,6 +302,37 @@
       pointer-events: none !important;
     }
 
+    /* Floating Logo */
+    #fixed-logo {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      z-index: 9999;
+      pointer-events: none;
+    }
+    #fixed-logo img {
+      height: 40px;
+      width: auto;
+      display: block;
+      opacity: 0.8;
+      object-fit: contain;
+    }
+    
+    /* Floating Visitor Counter */
+    #fixed-counter {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      background: rgba(255,255,255,0.7);
+      padding: 4px 10px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      color: #333;
+      z-index: 9999;
+      pointer-events: none;
+    }
+
+
   </style>
 </head>
 <body>
@@ -1028,11 +1059,15 @@ function showFinalCompetition(trade) {
 }
 </script>
 
-<!-- Bottom items -->
-<div class="bottom-right-logo">
+<!-- Bottom items (floating like about.html) -->
+<div id="fixed-logo">
   <img src="pic3.png" alt="Reduced Logo">
 </div>
-<div class="visitor-counter">👀 <span id="visitorCount">Loading...</span> Visitors</div>
+
+<div id="fixed-counter">
+  👀 <span id="visitorCount">Loading...</span> Visitors
+</div>
+
   
 </body>
 </html>
