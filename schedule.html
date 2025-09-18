@@ -354,25 +354,6 @@ document.addEventListener("scroll", () => {
 });
 </script>
 
-<!-- Hero 
-<script>
-document.addEventListener("scroll", () => {
-  const timeline = document.querySelector(".timeline");
-  const rect = timeline.getBoundingClientRect();
-
-  if (rect.top < window.innerHeight - 100) {
-    timeline.classList.add("revealed");
-
-    const items = document.querySelectorAll(".timeline-item .timeline-card");
-    items.forEach((card, i) => {
-      setTimeout(() => {
-        card.classList.add("visible");
-      }, i * 800); // 800ms delay between each
-    });
-  }
-});
-</script>
-
 <!-- Pre-Qualification Schedule -->
 <section class="glass-section" data-aos="fade-up">
   <div class="container text-center">
@@ -482,16 +463,161 @@ document.addEventListener("scroll", () => {
   </div>
 </section>
 
-<!-- Finalist List -->
+<!-- Finalists -->
 <section class="glass-section" data-aos="fade-up">
-  <div class="container">
-    <h2>Finalists (Sample)</h2>
-    <div class="finalist-list">
-      <div class="finalist-card"><h6>Participant A</h6></div>
-      <div class="finalist-card"><h6>Participant B</h6></div>
-      <div class="finalist-card"><h6>Participant C</h6></div>
-      <div class="finalist-card"><h6>Participant D</h6></div>
+  <div class="container text-center">
+    <h2>Finalists</h2>
+    <p>Select a trade to view its finalists</p>
+
+    <!-- Trade Icons -->
+    <div class="trade-icons">
+      <img src="icon_Electronics.png" alt="Electronics" onclick="showFinalists('electronics-finalists')">
+      <img src="icon_Cooking.png" alt="Culinary Arts" onclick="showFinalists('cooking-finalists')">
+      <img src="icon_Machining.png" alt="CAM Machining" onclick="showFinalists('machining-finalists')">
+      <img src="icon_Civil.png" alt="Civil Technology" onclick="showFinalists('civil-finalists')">
+      <img src="icon_Electrical.png" alt="Electrical Control" onclick="showFinalists('electrical-finalists')">
+      <img src="icon_Welding.png" alt="Welding & Fabrication" onclick="showFinalists('welding-finalists')">
+      <img src="icon_Creative.png" alt="Creative Multimedia" onclick="showFinalists('creative-finalists')">
+      <img src="icon_HVAC.png" alt="HVAC" onclick="showFinalists('hvac-finalists')">
     </div>
+
+    <!-- Example: Electronics Finalists -->
+    <div id="electronics-finalists" class="schedule-table trade-finalists" style="display:block;">
+      <h5>Electronics – Finalists</h5>
+      <ul>
+        <li>Ahmad Azhar Bin Abd Hamid (CDB202145)</li>
+        <li>Nur Aisyah Binti Mohd Zain (CDB202233)</li>
+        <li>Muhammad Firdaus Bin Hassan (CDB202122)</li>
+        <li>Lim Wei Jun (CDB202198)</li>
+        <li>Tan Jia Hui (CDB202210)</li>
+        <li>Farah Nabila Binti Ahmad (CDB202176)</li>
+        <li>Ali Imran Bin Salleh (CDB202190)</li>
+        <li>Siti Hawa Binti Roslan (CDB202205)</li>
+        <li>Muhammad Hakim Bin Rahman (CDB202111)</li>
+        <li>Chong Li Ying (CDB202187)</li>
+      </ul>
+    </div>
+
+    <!-- Example: Culinary Arts Finalists -->
+    <div id="cooking-finalists" class="schedule-table trade-finalists" style="display:none;">
+      <h5>Culinary Arts – Finalists</h5>
+      <ul>
+        <li>Participant A (CKG202101)</li>
+        <li>Participant B (CKG202102)</li>
+        <li>Participant C (CKG202103)</li>
+        <li>Participant D (CKG202104)</li>
+        <li>Participant E (CKG202105)</li>
+        <li>Participant F (CKG202106)</li>
+        <li>Participant G (CKG202107)</li>
+        <li>Participant H (CKG202108)</li>
+        <li>Participant I (CKG202109)</li>
+        <li>Participant J (CKG202110)</li>
+      </ul>
+    </div>
+
+    <!-- Example: Machining Finalists -->
+    <div id="machining-finalists" class="schedule-table trade-finalists" style="display:none;">
+      <h5>CAM Programming – Finalists</h5>
+      <ul>
+        <li>Participant A (CKG202101)</li>
+        <li>Participant B (CKG202102)</li>
+        <li>Participant C (CKG202103)</li>
+        <li>Participant D (CKG202104)</li>
+        <li>Participant E (CKG202105)</li>
+        <li>Participant F (CKG202106)</li>
+        <li>Participant G (CKG202107)</li>
+        <li>Participant H (CKG202108)</li>
+        <li>Participant I (CKG202109)</li>
+        <li>Participant J (CKG202110)</li>
+      </ul>
+    </div>
+
+    <!-- Example: Civil Finalists -->
+    <div id="civil-finalists" class="schedule-table trade-finalists" style="display:none;">
+      <h5>Civil Technology – Finalists</h5>
+      <ul>
+        <li>Participant A (CKG202101)</li>
+        <li>Participant B (CKG202102)</li>
+        <li>Participant C (CKG202103)</li>
+        <li>Participant D (CKG202104)</li>
+        <li>Participant E (CKG202105)</li>
+        <li>Participant F (CKG202106)</li>
+        <li>Participant G (CKG202107)</li>
+        <li>Participant H (CKG202108)</li>
+        <li>Participant I (CKG202109)</li>
+        <li>Participant J (CKG202110)</li>
+      </ul>
+    </div>
+
+    <!-- Example: Electrical Finalists -->
+    <div id="electrical-finalists" class="schedule-table trade-finalists" style="display:none;">
+      <h5>Electrical Control – Finalists</h5>
+      <ul>
+        <li>Participant A (CKG202101)</li>
+        <li>Participant B (CKG202102)</li>
+        <li>Participant C (CKG202103)</li>
+        <li>Participant D (CKG202104)</li>
+        <li>Participant E (CKG202105)</li>
+        <li>Participant F (CKG202106)</li>
+        <li>Participant G (CKG202107)</li>
+        <li>Participant H (CKG202108)</li>
+        <li>Participant I (CKG202109)</li>
+        <li>Participant J (CKG202110)</li>
+      </ul>
+    </div>
+
+    <!-- Example: Welding and Metal Fabrication Finalists -->
+    <div id="welding-finalists" class="schedule-table trade-finalists" style="display:none;">
+      <h5>Welding and Metal Fabrication – Finalists</h5>
+      <ul>
+        <li>Participant A (CKG202101)</li>
+        <li>Participant B (CKG202102)</li>
+        <li>Participant C (CKG202103)</li>
+        <li>Participant D (CKG202104)</li>
+        <li>Participant E (CKG202105)</li>
+        <li>Participant F (CKG202106)</li>
+        <li>Participant G (CKG202107)</li>
+        <li>Participant H (CKG202108)</li>
+        <li>Participant I (CKG202109)</li>
+        <li>Participant J (CKG202110)</li>
+      </ul>
+    </div>
+
+    <!-- Example: Creative Multimedia Finalists -->
+    <div id="creative-finalists" class="schedule-table trade-finalists" style="display:none;">
+      <h5>Creative Multimedia – Finalists</h5>
+      <ul>
+        <li>Participant A (CKG202101)</li>
+        <li>Participant B (CKG202102)</li>
+        <li>Participant C (CKG202103)</li>
+        <li>Participant D (CKG202104)</li>
+        <li>Participant E (CKG202105)</li>
+        <li>Participant F (CKG202106)</li>
+        <li>Participant G (CKG202107)</li>
+        <li>Participant H (CKG202108)</li>
+        <li>Participant I (CKG202109)</li>
+        <li>Participant J (CKG202110)</li>
+      </ul>
+    </div>
+
+    <!-- Example: Heating, Ventilation & Air Conditioning Finalists -->
+    <div id="hvac-finalists" class="schedule-table trade-finalists" style="display:none;">
+      <h5>Heating, Ventilation & Air Conditioning – Finalists</h5>
+      <ul>
+        <li>Participant A (CKG202101)</li>
+        <li>Participant B (CKG202102)</li>
+        <li>Participant C (CKG202103)</li>
+        <li>Participant D (CKG202104)</li>
+        <li>Participant E (CKG202105)</li>
+        <li>Participant F (CKG202106)</li>
+        <li>Participant G (CKG202107)</li>
+        <li>Participant H (CKG202108)</li>
+        <li>Participant I (CKG202109)</li>
+        <li>Participant J (CKG202110)</li>
+      </ul>
+    </div>
+
+    <!-- Add similar blocks for machining-finalists, civil-finalists, etc. -->
   </div>
 </section>
 
@@ -576,7 +702,7 @@ document.addEventListener("scroll", () => {
 });
 </script>
 
-  <script>
+<script>
 document.addEventListener("DOMContentLoaded", () => {
   const timeline = document.querySelector(".timeline");
 
@@ -591,6 +717,15 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", checkTimelineVisible);
   checkTimelineVisible(); // run once on load
 });
+</script>
+
+<script>
+function showFinalists(trade) {
+  // hide all finalist sections
+  document.querySelectorAll(".trade-finalists").forEach(el => el.style.display = "none");
+  // show selected
+  document.getElementById(trade).style.display = "block";
+}
 </script>
 
 </body>
