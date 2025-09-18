@@ -270,24 +270,18 @@
       text-shadow: 0 0 6px rgba(0,0,0,0.6);
     }
       
-    /* Bottom items */
-    .bottom-right-logo { 
-      position:fixed; 
-      bottom:15px; 
-      right:15px; 
-      z-index:1000;
-      pointer-events:none;   /* prevent it blocking clicks on schedule */
+    /* Bottom items (same as about.html) */
+    .bottom-right-logo {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      z-index: 1000;
     }
-    .bottom-right-logo img { 
-      height:40px !important;
-      width:auto !important;
-      max-width:40px !important;
-      max-height:40px !important;
-      display:block !important;
-      padding:0 !important;
-      margin:0 !important;
-      opacity:0.2 !important;
+    .bottom-right-logo img {
+      height: 40px;
+      opacity: 0.9;
     }
+
     .visitor-counter {
       position:fixed; bottom:10px; left:10px;
       background:rgba(255,255,255,0.7);
@@ -944,7 +938,7 @@ document.addEventListener("scroll", () => {
 
 <!-- Bottom items -->
 <div class="bottom-right-logo">
-  <img src="pic3.png" alt="Reduced Logo" style="width:40px;height:40px;object-fit:contain;">
+  <img src="pic3.png" alt="Reduced Logo">
 </div>
 
 <div class="visitor-counter">👀 <span id="visitorCount">Loading...</span> Visitors</div>
