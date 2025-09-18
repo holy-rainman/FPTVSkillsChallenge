@@ -88,7 +88,7 @@
     .timeline-item {
       position: relative;
       width: 50%;
-      padding: 10px 30px; /* space so text doesn’t overlap dots */
+      padding: 5px 20px; /* space so text doesn’t overlap dots */
     }
     .timeline-item.left {
       left: 0;
@@ -100,11 +100,11 @@
     .timeline-card {
       background: rgba(255,255,255,0.15);
       backdrop-filter: blur(8px);
-      padding: 15px 20px;
+      padding: 12px 16px;
       border-radius: 12px;
       position: relative;
       z-index: 2; /* above line */
-      margin-bottom: 20px; /* reduce space between cards */
+      margin-bottom: 5px; /* reduce space between cards */
 
       opacity: 0;
       transform: translateY(30px);
@@ -134,7 +134,7 @@
     .timeline-item::before {
       content: "";
       position: absolute;
-      top: 30px;               /* vertical alignment */
+      top: 20px;               /* vertical alignment */
       left: 100%;              /* push to right edge for LEFT items */
       transform: translateX(-50%); 
       width: 20px;
