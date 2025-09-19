@@ -201,6 +201,17 @@
         height: 18px;
       }
     }
+
+    /* Force only one vertical scrollbar */
+    html {
+      overflow-y: scroll;   /* always show single scrollbar */
+      overflow-x: hidden;   /* prevent horizontal overflow */
+    }
+    body {
+      overflow: visible;    /* let body expand naturally */
+    }
+
+    
   </style>
 </head>
 <body>
